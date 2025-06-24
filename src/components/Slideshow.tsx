@@ -33,7 +33,7 @@ const Slideshow = () => {
 
     const interval = setInterval(() => {
       api.scrollNext();
-    }, 20000); // 20 seconds
+    }, 7000); // 7 seconds
 
     return () => clearInterval(interval);
   }, [api]);
@@ -52,11 +52,11 @@ const Slideshow = () => {
           <CarouselContent>
             {images.map((image, index) => (
               <CarouselItem key={index}>
-                <div className="relative w-full h-64 md:h-80 lg:h-96 overflow-hidden rounded-lg shadow-lg">
+                <div className="relative w-full h-64 md:h-80 lg:h-96 overflow-hidden rounded-lg shadow-lg bg-gray-100">
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
               </CarouselItem>
