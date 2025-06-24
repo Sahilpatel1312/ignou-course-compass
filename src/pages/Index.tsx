@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import CourseCard from "@/components/CourseCard";
 import CounselingForm from "@/components/CounselingForm";
 import Footer from "@/components/Footer";
+import Slideshow from "@/components/Slideshow";
 import { ignouCourses, courseCategories } from "@/data/ignouCourses";
 
 const Index = () => {
@@ -35,6 +36,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header onCounselingClick={handleCounselingClick} />
+      
+      {/* Slideshow Section */}
+      <Slideshow />
       
       {/* Hero Stats Section */}
       <section className="bg-white py-12 border-b">
