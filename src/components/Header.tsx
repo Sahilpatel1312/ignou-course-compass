@@ -42,7 +42,7 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
               <img 
                 src="/lovable-uploads/982f1493-4e50-4a70-9c06-ba13e9576910.png" 
                 alt="IGNOU Logo" 
-                className="h-16 w-16"
+                className="h-8 w-8"
               />
               <div className="text-sm">
                 <div className="font-semibold">Government of India</div>
@@ -73,7 +73,7 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
                 <img 
                   src="/lovable-uploads/982f1493-4e50-4a70-9c06-ba13e9576910.png" 
                   alt="IGNOU Logo" 
-                  className="h-32 w-32"
+                  className="h-16 w-16"
                 />
                 <div>
                   <h1 className="text-2xl font-bold text-blue-900">
