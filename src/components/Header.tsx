@@ -43,6 +43,11 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
                 alt="Government of India Emblem" 
                 className="h-8 w-8"
               />
+              <img 
+                src="/lovable-uploads/fa3dc09e-6cf8-4bc8-8400-f56e8d7ca69b.png" 
+                alt="IGNOU Logo" 
+                className="h-8 w-8 brightness-0 invert"
+              />
               <div className="text-sm">
                 <div className="font-semibold">Government of India</div>
                 <div>Ministry of Education</div>
@@ -70,9 +75,10 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-3">
                 <img 
-                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNDAiIGN5PSI0MCIgcj0iNDAiIGZpbGw9IiMwMDczRTYiLz4KPHN2ZyB4PSIxNSIgeT0iMTUiIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDUwIDUwIiBmaWxsPSJub25lIj4KPHBhdGggZD0iTTI1IDVMMzAgMTVIMjBMMjUgNVoiIGZpbGw9IiNGRkZGRkYiLz4KPHJlY3QgeD0iMTAiIHk9IjIwIiB3aWR0aD0iMzAiIGhlaWdodD0iMjAiIGZpbGw9IiNGRkZGRkYiLz4KPC9zdmc+Cjwvc3ZnPg==" 
+                  src="/lovable-uploads/fa3dc09e-6cf8-4bc8-8400-f56e8d7ca69b.png" 
                   alt="IGNOU Logo" 
                   className="h-16 w-16"
+                  style={{ filter: 'hue-rotate(220deg) saturate(2) brightness(0.8)' }}
                 />
                 <div>
                   <h1 className="text-2xl font-bold text-blue-900">
