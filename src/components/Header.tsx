@@ -1,4 +1,3 @@
-
 import { GraduationCap, Phone, Mail, MapPin, Search, Menu, User, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -39,14 +38,9 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-4">
               <img 
-                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiNGRkZGRkYiLz4KPHN2ZyB4PSI1IiB5PSI1IiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgZmlsbD0ibm9uZSI+CjxwYXRoIGQ9Ik0xNSAxMEwxOCAyTDIxIDEwSDE1WiIgZmlsbD0iIzAwNzNFNiIvPgo8L3N2Zz4KPC9zdmc+" 
-                alt="Government of India Emblem" 
-                className="h-8 w-8"
-              />
-              <img 
-                src="/lovable-uploads/fa3dc09e-6cf8-4bc8-8400-f56e8d7ca69b.png" 
+                src="/lovable-uploads/67630ad5-a2ff-4de0-b82f-500ead64640c.png" 
                 alt="IGNOU Logo" 
-                className="h-8 w-8 brightness-0 invert"
+                className="h-8 w-8"
               />
               <div className="text-sm">
                 <div className="font-semibold">Government of India</div>
@@ -75,10 +69,9 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-3">
                 <img 
-                  src="/lovable-uploads/fa3dc09e-6cf8-4bc8-8400-f56e8d7ca69b.png" 
+                  src="/lovable-uploads/67630ad5-a2ff-4de0-b82f-500ead64640c.png" 
                   alt="IGNOU Logo" 
                   className="h-16 w-16"
-                  style={{ filter: 'hue-rotate(220deg) saturate(2) brightness(0.8)' }}
                 />
                 <div>
                   <h1 className="text-2xl font-bold text-blue-900">
