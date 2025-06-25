@@ -1,3 +1,4 @@
+
 import { GraduationCap, Phone, Mail, MapPin, Search, Menu, User, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -40,7 +41,7 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
               <img 
                 src="/lovable-uploads/67630ad5-a2ff-4de0-b82f-500ead64640c.png" 
                 alt="IGNOU Logo" 
-                className="h-8 w-8"
+                className="h-16 w-16"
               />
               <div className="text-sm">
                 <div className="font-semibold">Government of India</div>
@@ -71,7 +72,7 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
                 <img 
                   src="/lovable-uploads/67630ad5-a2ff-4de0-b82f-500ead64640c.png" 
                   alt="IGNOU Logo" 
-                  className="h-16 w-16"
+                  className="h-32 w-32"
                 />
                 <div>
                   <h1 className="text-2xl font-bold text-blue-900">
