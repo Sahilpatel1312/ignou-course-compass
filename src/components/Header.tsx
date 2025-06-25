@@ -1,4 +1,5 @@
 
+
 import { GraduationCap, Phone, Mail, MapPin, Search, Menu, User, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -39,7 +40,7 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-4">
               <img 
-                src="/lovable-uploads/67630ad5-a2ff-4de0-b82f-500ead64640c.png" 
+                src="/lovable-uploads/982f1493-4e50-4a70-9c06-ba13e9576910.png" 
                 alt="IGNOU Logo" 
                 className="h-16 w-16"
               />
@@ -70,7 +71,7 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-3">
                 <img 
-                  src="/lovable-uploads/67630ad5-a2ff-4de0-b82f-500ead64640c.png" 
+                  src="/lovable-uploads/982f1493-4e50-4a70-9c06-ba13e9576910.png" 
                   alt="IGNOU Logo" 
                   className="h-32 w-32"
                 />
@@ -211,3 +212,4 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
 };
 
 export default Header;
+
