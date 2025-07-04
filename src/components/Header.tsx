@@ -88,93 +88,130 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
       {/* Navigation Menu */}
       <div className="bg-blue-800 text-white">
         <div className="container mx-auto px-4">
-          <div className="overflow-x-auto">
-            <NavigationMenu className="w-full">
-              <NavigationMenuList className="flex justify-start space-x-2 sm:space-x-8 py-2 sm:py-3 min-w-max">
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-white hover:text-orange-300 bg-transparent hover:bg-blue-700 text-xs sm:text-sm px-2 sm:px-3 data-[state=open]:bg-blue-700 data-[state=open]:text-orange-300">
-                    About IGNOU
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent className="left-0 min-w-[200px] p-4 bg-white shadow-lg rounded-md border z-50">
-                    <div className="grid gap-2">
-                      <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
-                        Vision & Mission
-                      </NavigationMenuLink>
-                      <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
-                        History
-                      </NavigationMenuLink>
-                      <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
-                        Organization
-                      </NavigationMenuLink>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
+          <NavigationMenu className="w-full">
+            <NavigationMenuList className="flex justify-start flex-wrap gap-2 sm:gap-8 py-2 sm:py-3 w-full">
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-white hover:text-orange-300 bg-transparent hover:bg-blue-700 text-xs sm:text-sm px-2 sm:px-3 data-[state=open]:bg-blue-700 data-[state=open]:text-orange-300">
+                  About IGNOU
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="min-w-[200px] p-4 bg-white shadow-lg rounded-md border z-50">
+                  <div className="grid gap-2">
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Vision & Mission
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      History
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Organization
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Leadership
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Awards & Recognition
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Annual Report
+                    </NavigationMenuLink>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-white hover:text-orange-300 bg-transparent hover:bg-blue-700 text-xs sm:text-sm px-2 sm:px-3 data-[state=open]:bg-blue-700 data-[state=open]:text-orange-300">
-                    Academics
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent className="left-0 min-w-[200px] p-4 bg-white shadow-lg rounded-md border z-50">
-                    <div className="grid gap-2">
-                      <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
-                        Schools & Programmes
-                      </NavigationMenuLink>
-                      <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
-                        Course Finder
-                      </NavigationMenuLink>
-                      <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
-                        Academic Calendar
-                      </NavigationMenuLink>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-white hover:text-orange-300 bg-transparent hover:bg-blue-700 text-xs sm:text-sm px-2 sm:px-3 data-[state=open]:bg-blue-700 data-[state=open]:text-orange-300">
+                  Academics
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="min-w-[200px] p-4 bg-white shadow-lg rounded-md border z-50">
+                  <div className="grid gap-2">
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Schools & Programmes
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Course Finder
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Academic Calendar
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Examination
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Result
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Convocation
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Academic Quality
+                    </NavigationMenuLink>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-white hover:text-orange-300 bg-transparent hover:bg-blue-700 text-xs sm:text-sm px-2 sm:px-3 data-[state=open]:bg-blue-700 data-[state=open]:text-orange-300">
-                    Admission
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent className="left-0 min-w-[200px] p-4 bg-white shadow-lg rounded-md border z-50">
-                    <div className="grid gap-2">
-                      <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
-                        Online Admission
-                      </NavigationMenuLink>
-                      <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
-                        Admission Guidelines
-                      </NavigationMenuLink>
-                      <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
-                        Prospectus
-                      </NavigationMenuLink>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-white hover:text-orange-300 bg-transparent hover:bg-blue-700 text-xs sm:text-sm px-2 sm:px-3 data-[state=open]:bg-blue-700 data-[state=open]:text-orange-300">
+                  Admission
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="min-w-[200px] p-4 bg-white shadow-lg rounded-md border z-50">
+                  <div className="grid gap-2">
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Online Admission
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Admission Guidelines
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Prospectus
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Fee Structure
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Re-admission
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Credit Transfer
+                    </NavigationMenuLink>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-white hover:text-orange-300 bg-transparent hover:bg-blue-700 text-xs sm:text-sm px-2 sm:px-3 data-[state=open]:bg-blue-700 data-[state=open]:text-orange-300">
-                    Student Support
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent className="left-0 min-w-[200px] p-4 bg-white shadow-lg rounded-md border z-50">
-                    <div className="grid gap-2">
-                      <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
-                        Study Centers
-                      </NavigationMenuLink>
-                      <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
-                        Student Portal
-                      </NavigationMenuLink>
-                      <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
-                        Help & Support
-                      </NavigationMenuLink>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-white hover:text-orange-300 bg-transparent hover:bg-blue-700 text-xs sm:text-sm px-2 sm:px-3 data-[state=open]:bg-blue-700 data-[state=open]:text-orange-300">
+                  Student Support
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="min-w-[200px] p-4 bg-white shadow-lg rounded-md border z-50">
+                  <div className="grid gap-2">
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Study Centers
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Student Portal
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Help & Support
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Student Grievance
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Learning Management System
+                    </NavigationMenuLink>
+                    <NavigationMenuLink className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900">
+                      Digital Library
+                    </NavigationMenuLink>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-                <NavigationMenuItem>
-                  <NavigationMenuLink className="text-white hover:text-orange-300 px-2 sm:px-3 py-2 rounded hover:bg-blue-700 text-xs sm:text-sm whitespace-nowrap">
-                    Alumni
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
-          </div>
+              <NavigationMenuItem>
+                <NavigationMenuLink className="text-white hover:text-orange-300 px-2 sm:px-3 py-2 rounded hover:bg-blue-700 text-xs sm:text-sm whitespace-nowrap">
+                  Alumni
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
         </div>
       </div>
     </header>
