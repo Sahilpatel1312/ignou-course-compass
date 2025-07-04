@@ -1,5 +1,4 @@
 
-
 import { GraduationCap, Phone, Mail, MapPin, Search, Menu, User, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,26 +13,6 @@ import {
 const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
   return (
     <header className="bg-white shadow-md">
-      {/* Top Bar with Quick Links */}
-      <div className="bg-orange-600 text-white py-1">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center text-sm">
-            <div className="flex items-center space-x-4">
-              <span>Hindi</span>
-              <span>|</span>
-              <span>English</span>
-              <span className="ml-4">Text Size: A A+ A++</span>
-            </div>
-            <div className="flex items-center space-x-4">
-              <span>Screen Reader</span>
-              <span>|</span>
-              <span>Skip to Main Content</span>
-              <Globe className="h-4 w-4" />
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Government Header */}
       <div className="bg-blue-900 text-white py-2">
         <div className="container mx-auto px-4">
@@ -52,7 +31,7 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
             <div className="flex items-center space-x-6 text-sm">
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span>Student Helpline: +91-11-29572514</span>
+                <span>Student Helpline: 7349007840</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
@@ -212,4 +191,3 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
 };
 
 export default Header;
-

@@ -20,69 +20,19 @@ export const courseCategories = [
 ];
 
 export const ignouCourses: Course[] = [
-  // Undergraduate Programs
+  // MBA - 1st position
   {
-    id: "ba",
-    name: "Bachelor of Arts (BA)",
-    duration: "3 Years",
-    fee: 7200,
-    category: "Undergraduate Programs",
-    description: "A comprehensive undergraduate program covering various subjects in humanities and social sciences, designed to provide a broad foundation in liberal arts education.",
-    eligibility: "10+2 or equivalent from a recognized board",
-    highlights: ["Flexible study schedule", "Wide range of elective subjects", "Industry-relevant curriculum", "Distance learning mode"]
-  },
-  {
-    id: "bcom",
-    name: "Bachelor of Commerce (B.Com)",
-    duration: "3 Years", 
-    fee: 10800,
-    category: "Undergraduate Programs",
-    description: "A professional undergraduate degree focusing on commerce, accounting, finance, and business studies to prepare students for careers in business and finance.",
-    eligibility: "10+2 with Mathematics or equivalent",
-    highlights: ["Commerce and finance focused", "Practical business knowledge", "Career-oriented curriculum", "Industry partnerships"]
-  },
-  {
-    id: "bca",
-    name: "Bachelor of Computer Applications (BCA)",
-    duration: "3 Years",
-    fee: 39000,
-    category: "Undergraduate Programs", 
-    description: "A technical undergraduate program covering computer applications, programming languages, software development, and IT fundamentals.",
-    eligibility: "10+2 with Mathematics as a subject",
-    highlights: ["IT and programming focus", "Hands-on practical training", "Industry-relevant skills", "Software development emphasis"]
-  },
-  {
-    id: "bsc",
-    name: "Bachelor of Science (B.Sc)",
-    duration: "3 Years",
-    fee: 16200,
-    category: "Undergraduate Programs",
-    description: "Science undergraduate program offering specializations in various scientific disciplines including Mathematics, Physics, Chemistry, and Life Sciences.",
-    eligibility: "10+2 with Science subjects",
-    highlights: ["Multiple specializations available", "Research-oriented approach", "Laboratory-based learning", "Scientific methodology focus"]
+    id: "mba",
+    name: "Master of Business Administration (MBA)",
+    duration: "2 Years",
+    fee: 31200,
+    category: "Postgraduate Programs",
+    description: "A comprehensive postgraduate management program covering all aspects of business administration, leadership, and strategic management for career advancement.",
+    eligibility: "Bachelor's degree with 50% marks from recognized university",
+    highlights: ["Management and leadership focus", "Strategic business skills", "Industry exposure", "Career advancement opportunities"]
   },
   
-  // Postgraduate Programs
-  {
-    id: "ma",
-    name: "Master of Arts (MA)",
-    duration: "2 Years",
-    fee: 7200,
-    category: "Postgraduate Programs",
-    description: "Advanced postgraduate program in humanities and social sciences with various specialization options including English, Hindi, Political Science, and more.",
-    eligibility: "Bachelor's degree from a recognized university",
-    highlights: ["Multiple specialization options", "Research methodology", "Advanced theoretical knowledge", "Dissertation component"]
-  },
-  {
-    id: "mcom",
-    name: "Master of Commerce (M.Com)",
-    duration: "2 Years",
-    fee: 10800,
-    category: "Postgraduate Programs",
-    description: "Advanced commerce and business studies program focusing on advanced accounting, finance, business management, and research methodologies.",
-    eligibility: "Bachelor's degree in Commerce or related field",
-    highlights: ["Advanced business concepts", "Financial analysis skills", "Research component", "Professional development"]
-  },
+  // MCA - 2nd position
   {
     id: "mca",
     name: "Master of Computer Applications (MCA)",
@@ -93,6 +43,92 @@ export const ignouCourses: Course[] = [
     eligibility: "Bachelor's degree with Mathematics at 10+2 or graduation level",
     highlights: ["Advanced programming skills", "Software engineering focus", "Industry projects", "Emerging technology coverage"]
   },
+
+  // MA - 3rd position
+  {
+    id: "ma",
+    name: "Master of Arts (MA)",
+    duration: "2 Years",
+    fee: 7200,
+    category: "Postgraduate Programs",
+    description: "Advanced postgraduate program in humanities and social sciences with various specialization options including English, Hindi, Political Science, and more.",
+    eligibility: "Bachelor's degree from a recognized university",
+    highlights: ["Multiple specialization options", "Research methodology", "Advanced theoretical knowledge", "Dissertation component"]
+  },
+
+  // M.Com - 4th position
+  {
+    id: "mcom",
+    name: "Master of Commerce (M.Com)",
+    duration: "2 Years",
+    fee: 10800,
+    category: "Postgraduate Programs",
+    description: "Advanced commerce and business studies program focusing on advanced accounting, finance, business management, and research methodologies.",
+    eligibility: "Bachelor's degree in Commerce or related field",
+    highlights: ["Advanced business concepts", "Financial analysis skills", "Research component", "Professional development"]
+  },
+
+  // BCA - 5th position
+  {
+    id: "bca",
+    name: "Bachelor of Computer Applications (BCA)",
+    duration: "3 Years",
+    fee: 39000,
+    category: "Undergraduate Programs", 
+    description: "A technical undergraduate program covering computer applications, programming languages, software development, and IT fundamentals.",
+    eligibility: "10+2 with Mathematics as a subject",
+    highlights: ["IT and programming focus", "Hands-on practical training", "Industry-relevant skills", "Software development emphasis"]
+  },
+
+  // BBA - 6th position
+  {
+    id: "bba",
+    name: "Bachelor of Business Administration (BBA)",
+    duration: "3 Years",
+    fee: 28800,
+    category: "Undergraduate Programs",
+    description: "Undergraduate business administration program covering management principles, marketing, finance, human resources, and entrepreneurship fundamentals.",
+    eligibility: "10+2 or equivalent from a recognized board",
+    highlights: ["Business management focus", "Leadership development", "Industry exposure", "Entrepreneurship skills"]
+  },
+
+  // BA - 7th position
+  {
+    id: "ba",
+    name: "Bachelor of Arts (BA)",
+    duration: "3 Years",
+    fee: 7200,
+    category: "Undergraduate Programs",
+    description: "A comprehensive undergraduate program covering various subjects in humanities and social sciences, designed to provide a broad foundation in liberal arts education.",
+    eligibility: "10+2 or equivalent from a recognized board",
+    highlights: ["Flexible study schedule", "Wide range of elective subjects", "Industry-relevant curriculum", "Distance learning mode"]
+  },
+
+  // B.Sc - 8th position
+  {
+    id: "bsc",
+    name: "Bachelor of Science (B.Sc)",
+    duration: "3 Years",
+    fee: 16200,
+    category: "Undergraduate Programs",
+    description: "Science undergraduate program offering specializations in various scientific disciplines including Mathematics, Physics, Chemistry, and Life Sciences.",
+    eligibility: "10+2 with Science subjects",
+    highlights: ["Multiple specializations available", "Research-oriented approach", "Laboratory-based learning", "Scientific methodology focus"]
+  },
+
+  // B.Com - 9th position (rest of the order remains same)
+  {
+    id: "bcom",
+    name: "Bachelor of Commerce (B.Com)",
+    duration: "3 Years", 
+    fee: 10800,
+    category: "Undergraduate Programs",
+    description: "A professional undergraduate degree focusing on commerce, accounting, finance, and business studies to prepare students for careers in business and finance.",
+    eligibility: "10+2 with Mathematics or equivalent",
+    highlights: ["Commerce and finance focused", "Practical business knowledge", "Career-oriented curriculum", "Industry partnerships"]
+  },
+
+  // M.Sc - 10th position
   {
     id: "msc",
     name: "Master of Science (M.Sc)",

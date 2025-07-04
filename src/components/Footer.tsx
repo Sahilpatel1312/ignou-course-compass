@@ -31,7 +31,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-yellow-400" />
-                <span className="text-sm">+91-11-29572514</span>
+                <span className="text-sm">7349007840</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-yellow-400" />
@@ -65,12 +65,12 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-white">Popular Courses</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-sm hover:text-yellow-400 transition-colors">Bachelor of Arts (BA)</a></li>
-              <li><a href="#" className="text-sm hover:text-yellow-400 transition-colors">Bachelor of Commerce (B.Com)</a></li>
+              <li><a href="#" className="text-sm hover:text-yellow-400 transition-colors">Master of Business Administration (MBA)</a></li>
+              <li><a href="#" className="text-sm hover:text-yellow-400 transition-colors">Master of Computer Applications (MCA)</a></li>
               <li><a href="#" className="text-sm hover:text-yellow-400 transition-colors">Master of Arts (MA)</a></li>
-              <li><a href="#" className="text-sm hover:text-yellow-400 transition-colors">MCA</a></li>
-              <li><a href="#" className="text-sm hover:text-yellow-400 transition-colors">MBA</a></li>
-              <li><a href="#" className="text-sm hover:text-yellow-400 transition-colors">PGDCA</a></li>
+              <li><a href="#" className="text-sm hover:text-yellow-400 transition-colors">Master of Commerce (M.Com)</a></li>
+              <li><a href="#" className="text-sm hover:text-yellow-400 transition-colors">Bachelor of Computer Applications (BCA)</a></li>
+              <li><a href="#" className="text-sm hover:text-yellow-400 transition-colors">Bachelor of Business Administration (BBA)</a></li>
             </ul>
           </div>
         </div>
