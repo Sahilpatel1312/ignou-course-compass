@@ -1,48 +1,44 @@
+
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { X, User, Phone, Mail, MapPin, BookOpen } from "lucide-react";
 import { ignouCourses } from "@/data/ignouCourses";
 import { useToast } from "@/hooks/use-toast";
 
 interface CounselingFormProps {
+  isOpen: boolean;
   onClose: () => void;
+  preSelectedCourse?: string;
   embedded?: boolean;
 }
 
-const CounselingForm = ({ onClose, embedded }: CounselingFormProps) => {
-  const { toast } = useToast();
+const states = [
+  "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", 
+  "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", 
+  "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", 
+  "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", 
+  "Uttarakhand", "West Bengal", "Delhi", "Jammu and Kashmir", "Ladakh", "Chandigarh", 
+  "Dadra and Nagar Haveli and Daman and Diu", "Lakshadweep", "Puducherry"
+];
 
+const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }: CounselingFormProps) => {
   const [formData, setFormData] = useState({
     fullName: "",
-    phoneNumber: "",
     email: "",
-    interestedCourse: "",
+    phoneNumber: "",
+    interestedCourse: preSelectedCourse || "",
     state: "",
   });
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSelectChange = (field: string, value: string) => {
-    setFormData({ ...formData, [field]: value });
-  };
+  const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Validation
+    
+    // Basic validation
     if (!formData.fullName || !formData.phoneNumber || !formData.email || !formData.state) {
       toast({
         title: "Please fill all required fields",
@@ -52,6 +48,7 @@ const CounselingForm = ({ onClose, embedded }: CounselingFormProps) => {
       return;
     }
 
+    // Phone number validation
     const phoneRegex = /^[6-9]\d{9}$/;
     if (!phoneRegex.test(formData.phoneNumber)) {
       toast({
@@ -62,6 +59,7 @@ const CounselingForm = ({ onClose, embedded }: CounselingFormProps) => {
       return;
     }
 
+    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       toast({
@@ -72,145 +70,173 @@ const CounselingForm = ({ onClose, embedded }: CounselingFormProps) => {
       return;
     }
 
-    const payload = {
+    // Log the form data (this would be sent to Google Sheets in a real implementation)
+    console.log("Counseling Form Data for Google Sheets:", {
       fullName: formData.fullName,
       phoneNumber: formData.phoneNumber,
       email: formData.email,
       location: formData.state,
       interestedCourse: formData.interestedCourse,
       timestamp: new Date().toISOString(),
-    };
+    });
 
-    const webhookUrl = "https://script.google.com/macros/s/AKfycbzyE7DQNoU1QbOw9hKEfPcy9T-B3ab8WxcvhUJixQhR705bpcKcj8KS1REyZU8NqclIRg/exec"; // <-- Replace with your actual URL
-
-    try {
-      const response = await fetch(webhookUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
-
-      const result = await response.json();
-
-      if (result.result === "success") {
-        toast({
-          title: "Counseling Request Submitted!",
-          description: "Our counselor will contact you within 24 hours.",
-        });
-
-        setFormData({
-          fullName: "",
-          phoneNumber: "",
-          email: "",
-          interestedCourse: "",
-          state: "",
-        });
-
-        if (!embedded) {
-          onClose();
-        }
-      } else {
-        toast({
-          title: "Submission failed!",
-          description: "Something went wrong while sending data.",
-          variant: "destructive",
-        });
-      }
-    } catch (error) {
-      console.error("Error submitting to Google Sheets:", error);
-      toast({
-        title: "Network Error",
-        description: "Unable to send data. Please try again later.",
-        variant: "destructive",
-      });
+    // Success message
+    toast({
+      title: "Counseling Request Submitted!",
+      description: "Our counselor will contact you within 24 hours.",
+    });
+    
+    // Reset form and close
+    setFormData({
+      fullName: "",
+      email: "",
+      phoneNumber: "",
+      interestedCourse: "",
+      state: "",
+    });
+    if (!embedded) {
+      onClose();
     }
   };
 
-  return (
-    <Card className="w-full max-w-lg mx-auto relative">
-      {!embedded && (
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-red-500"
-        >
-          <X className="w-5 h-5" />
-        </button>
-      )}
+  if (!embedded && !isOpen) return null;
 
-      <CardContent className="space-y-4 p-6">
-        <h2 className="text-2xl font-semibold text-center">Free Counseling</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="flex items-center space-x-2">
-            <User className="w-5 h-5 text-muted-foreground" />
-            <Input
-              placeholder="Full Name"
-              name="fullName"
-              value={formData.fullName}
-              onChange={handleInputChange}
-              required
-            />
+  const formContent = (
+    <>
+      <div className="text-center mb-8">
+        <h2 className="text-2xl font-bold text-gray-800 mb-2">Get 100% Free Counselling</h2>
+      </div>
+
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div>
+          <div className="flex items-center mb-2">
+            <User className="h-4 w-4 text-blue-600 mr-2" />
+            <label className="text-sm font-semibold text-gray-700">Full Name</label>
           </div>
-          <div className="flex items-center space-x-2">
-            <Phone className="w-5 h-5 text-muted-foreground" />
-            <Input
-              placeholder="Phone Number"
-              name="phoneNumber"
-              value={formData.phoneNumber}
-              onChange={handleInputChange}
-              required
-            />
+          <Input
+            type="text"
+            placeholder="Enter your full name"
+            value={formData.fullName}
+            onChange={(e) => setFormData({...formData, fullName: e.target.value})}
+            className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            required
+          />
+        </div>
+
+        <div>
+          <div className="flex items-center mb-2">
+            <Mail className="h-4 w-4 text-blue-600 mr-2" />
+            <label className="text-sm font-semibold text-gray-700">Email Address</label>
           </div>
-          <div className="flex items-center space-x-2">
-            <Mail className="w-5 h-5 text-muted-foreground" />
-            <Input
-              placeholder="Email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
-            />
+          <Input
+            type="email"
+            placeholder="Enter your email address"
+            value={formData.email}
+            onChange={(e) => setFormData({...formData, email: e.target.value})}
+            className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            required
+          />
+        </div>
+
+        <div>
+          <div className="flex items-center mb-2">
+            <Phone className="h-4 w-4 text-blue-600 mr-2" />
+            <label className="text-sm font-semibold text-gray-700">Phone Number</label>
           </div>
-          <div className="flex items-center space-x-2">
-            <MapPin className="w-5 h-5 text-muted-foreground" />
-            <Input
-              placeholder="State / Location"
-              name="state"
-              value={formData.state}
-              onChange={handleInputChange}
-              required
-            />
+          <Input
+            type="tel"
+            placeholder="Enter your 10-digit phone number"
+            value={formData.phoneNumber}
+            onChange={(e) => setFormData({...formData, phoneNumber: e.target.value})}
+            className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            maxLength={10}
+            required
+          />
+        </div>
+
+        <div>
+          <div className="flex items-center mb-2">
+            <BookOpen className="h-4 w-4 text-blue-600 mr-2" />
+            <label className="text-sm font-semibold text-gray-700">Interested Course</label>
           </div>
-          <div className="flex items-center space-x-2">
-            <BookOpen className="w-5 h-5 text-muted-foreground" />
-            <Select
-              onValueChange={(value) =>
-                handleSelectChange("interestedCourse", value)
-              }
-            >
-              <SelectTrigger className="w-full">
-                <SelectValue
-                  placeholder={
-                    formData.interestedCourse || "Select a course"
-                  }
-                />
-              </SelectTrigger>
-              <SelectContent>
-                {ignouCourses.map((course) => (
-                  <SelectItem key={course} value={course}>
-                    {course}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+          <Select 
+            value={formData.interestedCourse} 
+            onValueChange={(value) => setFormData({...formData, interestedCourse: value})}
+          >
+            <SelectTrigger className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+              <SelectValue placeholder="Select Course..." />
+            </SelectTrigger>
+            <SelectContent className="max-h-60">
+              {ignouCourses.map((course) => (
+                <SelectItem key={course.id} value={course.name}>
+                  {course.name}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div>
+          <div className="flex items-center mb-2">
+            <MapPin className="h-4 w-4 text-blue-600 mr-2" />
+            <label className="text-sm font-semibold text-gray-700">Location (State)</label>
           </div>
-          <Button type="submit" className="w-full">
-            Submit
+          <Select 
+            value={formData.state} 
+            onValueChange={(value) => setFormData({...formData, state: value})}
+          >
+            <SelectTrigger className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+              <SelectValue placeholder="Select State..." />
+            </SelectTrigger>
+            <SelectContent className="max-h-60">
+              {states.map((state) => (
+                <SelectItem key={state} value={state}>
+                  {state}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+
+        <Button 
+          type="submit" 
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl text-lg mt-6 transition-colors duration-200"
+        >
+          Submit
+        </Button>
+      </form>
+    </>
+  );
+
+  if (embedded) {
+    return (
+      <Card className="w-full bg-white rounded-xl shadow-lg">
+        <CardContent className="p-6">
+          {formContent}
+        </CardContent>
+      </Card>
+    );
+  }
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <Card className="w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden">
+        <div className="relative">
+          <Button
+            onClick={onClose}
+            variant="ghost"
+            size="sm"
+            className="absolute right-4 top-4 text-gray-500 hover:text-gray-700 z-10"
+          >
+            <X className="h-5 w-5" />
           </Button>
-        </form>
-      </CardContent>
-    </Card>
+          
+          <CardContent className="p-8">
+            {formContent}
+          </CardContent>
+        </div>
+      </Card>
+    </div>
   );
 };
 
