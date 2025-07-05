@@ -148,11 +148,24 @@ const Index = () => {
           {/* Course Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredCourses.map((course) => (
-              <CourseCard 
-                key={course.id} 
-                course={course} 
-                onApplyNow={handleApplyNow}
-              />
+              <div key={course.id}>
+                <CourseCard 
+                  course={course} 
+                  onApplyNow={handleApplyNow}
+                />
+                {course.name === "Master of Business Administration (MBA)" && (
+                  <div className="mt-3 text-center">
+                    <Button 
+                      onClick={handleMbaDetailsClick}
+                      variant="outline" 
+                      className="text-blue-600 border-blue-600 hover:bg-blue-50 px-6 py-2"
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Check Details
+                    </Button>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
 

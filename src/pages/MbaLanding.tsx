@@ -75,15 +75,13 @@ const MbaLanding = () => {
               </div>
             </div>
 
-            {/* Right Side - Counseling Form */}
-            <div className="bg-white rounded-xl p-6 shadow-2xl">
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Get Free Counseling</h3>
-              <p className="text-gray-600 mb-6">Connect with our experts to know more about the MBA program</p>
-              
+            {/* Right Side - Embedded Counseling Form */}
+            <div className="w-full">
               <CounselingForm 
                 isOpen={true} 
                 onClose={() => {}} 
                 preSelectedCourse="Master of Business Administration (MBA)"
+                embedded={true}
               />
             </div>
           </div>
