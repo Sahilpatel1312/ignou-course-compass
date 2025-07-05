@@ -94,7 +94,7 @@ const Index = () => {
               <Button 
                 onClick={handleMbaDetailsClick}
                 variant="outline" 
-                className="border-white text-white hover:bg-white hover:text-blue-600 px-6 py-2"
+                className="border-white text-blue-600 bg-white hover:bg-blue-50 hover:text-blue-700 px-6 py-2"
               >
                 <ExternalLink className="mr-2 h-4 w-4" />
                 Check Details
@@ -152,19 +152,8 @@ const Index = () => {
                 <CourseCard 
                   course={course} 
                   onApplyNow={handleApplyNow}
+                  onCheckDetails={course.name === "Master of Business Administration (MBA)" ? handleMbaDetailsClick : undefined}
                 />
-                {course.name === "Master of Business Administration (MBA)" && (
-                  <div className="mt-3 text-center">
-                    <Button 
-                      onClick={handleMbaDetailsClick}
-                      variant="outline" 
-                      className="text-blue-600 border-blue-600 hover:bg-blue-50 px-6 py-2"
-                    >
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Check Details
-                    </Button>
-                  </div>
-                )}
               </div>
             ))}
           </div>

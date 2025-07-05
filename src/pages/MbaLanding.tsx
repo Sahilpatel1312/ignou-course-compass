@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, GraduationCap, Clock, IndianRupee, Users, Award, BookOpen, TrendingUp } from "lucide-react";
+import { CheckCircle, GraduationCap, Clock, IndianRupee, Users, Award, BookOpen, TrendingUp, Download, Star } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CounselingForm from "@/components/CounselingForm";
@@ -20,6 +20,11 @@ const MbaLanding = () => {
   const handleCounselingClick = () => {
     setPreSelectedCourse("Master of Business Administration (MBA)");
     setIsCounselingOpen(true);
+  };
+
+  const handleDownloadSample = () => {
+    // Open reference link in new tab for sample degree
+    window.open('https://ignou.collegevidya.com/online-mba/', '_blank');
   };
 
   return (
@@ -61,16 +66,18 @@ const MbaLanding = () => {
 
               <div className="flex flex-wrap gap-4">
                 <Button 
+                  onClick={handleDownloadSample}
+                  variant="outline" 
+                  className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-lg"
+                >
+                  <Download className="mr-2 h-5 w-5" />
+                  Sample Degree
+                </Button>
+                <Button 
                   onClick={handleApplyNow}
                   className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-8 py-3 text-lg"
                 >
                   Apply Now
-                </Button>
-                <Button 
-                  variant="outline" 
-                  className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-lg"
-                >
-                  Check Details
                 </Button>
               </div>
             </div>
@@ -182,26 +189,67 @@ const MbaLanding = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Specializations Available</h2>
-            <p className="text-xl text-gray-600">Choose your area of expertise</p>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">MBA Specializations Available</h2>
+            <p className="text-xl text-gray-600">Choose your area of expertise from our comprehensive specialization options</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              "Human Resource Management",
-              "Marketing Management", 
-              "Financial Management",
-              "Operations Management",
-              "Information Technology",
-              "International Business"
+              { name: "Human Resource Management", description: "Focus on talent acquisition, employee development, and organizational behavior" },
+              { name: "Marketing Management", description: "Learn digital marketing, brand management, and consumer behavior strategies" },
+              { name: "Financial Management", description: "Master financial planning, investment analysis, and corporate finance" },
+              { name: "Operations Management", description: "Optimize business processes, supply chain, and quality management" },
+              { name: "Information Technology Management", description: "Bridge technology and business with IT strategy and systems management" },
+              { name: "International Business", description: "Understand global markets, trade policies, and cross-cultural management" },
+              { name: "Rural & Agribusiness Management", description: "Specialize in agricultural economics and rural development strategies" },
+              { name: "Banking & Financial Services", description: "Focus on banking operations, financial markets, and regulatory compliance" },
+              { name: "Public Policy & Governance", description: "Learn public administration, policy analysis, and governance frameworks" }
             ].map((specialization, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-                <div className="flex items-center">
-                  <GraduationCap className="h-8 w-8 text-blue-600 mr-4" />
-                  <h3 className="font-semibold text-lg">{specialization}</h3>
+              <Card key={index} className="p-6 hover:shadow-lg transition-shadow border-l-4 border-l-blue-500 hover:border-l-yellow-500">
+                <div className="flex items-start mb-3">
+                  <Star className="h-6 w-6 text-blue-600 mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">{specialization.name}</h3>
+                    <p className="text-gray-600 text-sm">{specialization.description}</p>
+                  </div>
                 </div>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Key Features */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Why IGNOU MBA Stands Out</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="h-8 w-8 text-blue-600" />
+              </div>
+              <h3 className="font-bold text-lg mb-2">NAAC A+ Accredited</h3>
+              <p className="text-gray-600">Highest quality education standards maintained</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="h-8 w-8 text-green-600" />
+              </div>
+              <h3 className="font-bold text-lg mb-2">40+ Lakh Alumni</h3>
+              <p className="text-gray-600">Largest network of professionals across industries</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <BookOpen className="h-8 w-8 text-purple-600" />
+              </div>
+              <h3 className="font-bold text-lg mb-2">Self-Paced Learning</h3>
+              <p className="text-gray-600">Study materials designed for working professionals</p>
+            </div>
           </div>
         </div>
       </section>
@@ -213,12 +261,22 @@ const MbaLanding = () => {
           <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
             Join thousands of successful professionals who have advanced their careers with IGNOU MBA
           </p>
-          <Button 
-            onClick={handleApplyNow}
-            className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
-          >
-            Apply for MBA Now
-          </Button>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button 
+              onClick={handleDownloadSample}
+              variant="outline" 
+              className="border-white text-white hover:bg-white hover:text-blue-600 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300"
+            >
+              <Download className="mr-2 h-5 w-5" />
+              View Sample Degree
+            </Button>
+            <Button 
+              onClick={handleApplyNow}
+              className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+            >
+              Apply for MBA Now
+            </Button>
+          </div>
         </div>
       </section>
 

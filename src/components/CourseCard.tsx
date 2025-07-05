@@ -2,15 +2,16 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Clock, IndianRupee, BookOpen, CheckCircle } from "lucide-react";
+import { Clock, IndianRupee, BookOpen, CheckCircle, ExternalLink } from "lucide-react";
 import { Course } from "@/data/ignouCourses";
 
 interface CourseCardProps {
   course: Course;
   onApplyNow: (courseName: string) => void;
+  onCheckDetails?: () => void;
 }
 
-const CourseCard = ({ course, onApplyNow }: CourseCardProps) => {
+const CourseCard = ({ course, onApplyNow, onCheckDetails }: CourseCardProps) => {
   return (
     <Card className="h-full hover:shadow-xl transition-all duration-300 border-l-4 border-l-blue-500 group hover:border-l-yellow-500">
       <CardHeader className="pb-4">
@@ -57,12 +58,25 @@ const CourseCard = ({ course, onApplyNow }: CourseCardProps) => {
           </div>
         </div>
 
-        <Button 
-          onClick={() => onApplyNow(course.name)}
-          className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105"
-        >
-          Apply Now
-        </Button>
+        <div className="space-y-3">
+          {onCheckDetails && (
+            <Button 
+              onClick={onCheckDetails}
+              variant="outline" 
+              className="w-full text-blue-600 border-blue-600 hover:bg-blue-50"
+            >
+              <ExternalLink className="mr-2 h-4 w-4" />
+              Check Details
+            </Button>
+          )}
+          
+          <Button 
+            onClick={() => onApplyNow(course.name)}
+            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105"
+          >
+            Apply Now
+          </Button>
+        </div>
       </CardContent>
     </Card>
   );
