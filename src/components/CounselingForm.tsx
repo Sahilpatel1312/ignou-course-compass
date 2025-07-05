@@ -5,8 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import { X, UserCheck, Phone, MapPin, GraduationCap, MessageCircle } from "lucide-react";
+import { X, UserCheck, Phone, MapPin, GraduationCap, Mail } from "lucide-react";
 import { ignouCourses } from "@/data/ignouCourses";
 import { useToast } from "@/hooks/use-toast";
 
@@ -23,7 +22,6 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse }: CounselingFormPr
     email: "",
     location: "",
     interestedCourse: preSelectedCourse || "",
-    message: ""
   });
 
   const { toast } = useToast();
@@ -32,10 +30,10 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse }: CounselingFormPr
     e.preventDefault();
     
     // Basic validation
-    if (!formData.fullName || !formData.phoneNumber || !formData.location) {
+    if (!formData.fullName || !formData.phoneNumber || !formData.email || !formData.location) {
       toast({
         title: "Please fill all required fields",
-        description: "Full Name, Phone Number, and Location are required.",
+        description: "All fields are required.",
         variant: "destructive",
       });
       return;
@@ -47,6 +45,17 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse }: CounselingFormPr
       toast({
         title: "Invalid Phone Number",
         description: "Please enter a valid 10-digit Indian phone number.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast({
+        title: "Invalid Email Address",
+        description: "Please enter a valid email address.",
         variant: "destructive",
       });
       return;
@@ -67,7 +76,6 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse }: CounselingFormPr
       email: "",
       location: "",
       interestedCourse: "",
-      message: ""
     });
     onClose();
   };
@@ -128,7 +136,10 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse }: CounselingFormPr
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email">Email Address (Optional)</Label>
+              <Label htmlFor="email" className="flex items-center">
+                <Mail className="h-4 w-4 mr-2 text-blue-600" />
+                Email Address *
+              </Label>
               <Input
                 id="email"
                 type="email"
@@ -136,6 +147,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse }: CounselingFormPr
                 value={formData.email}
                 onChange={(e) => setFormData({...formData, email: e.target.value})}
                 className="border-gray-300 focus:border-blue-500"
+                required
               />
             </div>
 
@@ -172,31 +184,6 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse }: CounselingFormPr
                   ))}
                 </SelectContent>
               </Select>
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="message" className="flex items-center">
-                <MessageCircle className="h-4 w-4 mr-2 text-blue-600" />
-                Additional Message (Optional)
-              </Label>
-              <Textarea
-                id="message"
-                placeholder="Tell us about your career goals, preferred study mode, or any specific questions..."
-                value={formData.message}
-                onChange={(e) => setFormData({...formData, message: e.target.value})}
-                className="border-gray-300 focus:border-blue-500 min-h-[100px]"
-                rows={4}
-              />
-            </div>
-
-            <div className="bg-blue-50 p-4 rounded-lg">
-              <h4 className="font-semibold text-blue-800 mb-2">What happens next?</h4>
-              <ul className="text-sm text-blue-700 space-y-1">
-                <li>• Our expert counselor will call you within 24 hours</li>
-                <li>• Get personalized course recommendations</li>
-                <li>• Learn about admission process and career opportunities</li>
-                <li>• Completely free consultation with no obligations</li>
-              </ul>
             </div>
 
             <Button 
