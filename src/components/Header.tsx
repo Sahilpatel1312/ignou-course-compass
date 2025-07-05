@@ -1,7 +1,7 @@
 
-import { GraduationCap, Phone, Mail, MapPin, Search, Menu, User, Globe } from "lucide-react";
+import { GraduationCap, Phone, Mail, MapPin, Search, Menu, User, Globe, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -19,12 +19,23 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
     setActiveDropdown(null);
   };
 
-  const handleClickOutside = () => {
-    setActiveDropdown(null);
-  };
+  // Auto-close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      if (!target.closest('.dropdown-container')) {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
-    <div onClick={handleClickOutside}>
+    <div>
       <header className="bg-white shadow-md">
         {/* Government Header */}
         <div className="bg-blue-900 text-white py-2">
@@ -104,15 +115,20 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
             <div className="flex justify-start flex-wrap gap-2 sm:gap-8 py-2 sm:py-3 w-full">
               
               {/* About IGNOU Dropdown */}
-              <div className="relative">
+              <div className="relative dropdown-container">
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     handleDropdownClick('about');
                   }}
-                  className="text-white hover:text-orange-300 bg-transparent hover:bg-blue-700 text-xs sm:text-sm px-2 sm:px-3 py-2 rounded"
+                  className="text-white hover:text-orange-300 bg-transparent hover:bg-blue-700 text-xs sm:text-sm px-2 sm:px-3 py-2 rounded flex items-center"
                 >
                   About IGNOU
+                  {activeDropdown === 'about' ? (
+                    <ChevronUp className="ml-1 h-3 w-3" />
+                  ) : (
+                    <ChevronDown className="ml-1 h-3 w-3" />
+                  )}
                 </button>
                 {activeDropdown === 'about' && (
                   <div className="absolute top-full left-0 mt-1 min-w-[200px] p-4 bg-white shadow-lg rounded-md border z-50">
@@ -141,15 +157,20 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
               </div>
 
               {/* Academics Dropdown */}
-              <div className="relative">
+              <div className="relative dropdown-container">
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     handleDropdownClick('academics');
                   }}
-                  className="text-white hover:text-orange-300 bg-transparent hover:bg-blue-700 text-xs sm:text-sm px-2 sm:px-3 py-2 rounded"
+                  className="text-white hover:text-orange-300 bg-transparent hover:bg-blue-700 text-xs sm:text-sm px-2 sm:px-3 py-2 rounded flex items-center"
                 >
                   Academics
+                  {activeDropdown === 'academics' ? (
+                    <ChevronUp className="ml-1 h-3 w-3" />
+                  ) : (
+                    <ChevronDown className="ml-1 h-3 w-3" />
+                  )}
                 </button>
                 {activeDropdown === 'academics' && (
                   <div className="absolute top-full left-0 mt-1 min-w-[200px] p-4 bg-white shadow-lg rounded-md border z-50">
@@ -181,15 +202,20 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
               </div>
 
               {/* Admission Dropdown */}
-              <div className="relative">
+              <div className="relative dropdown-container">
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     handleDropdownClick('admission');
                   }}
-                  className="text-white hover:text-orange-300 bg-transparent hover:bg-blue-700 text-xs sm:text-sm px-2 sm:px-3 py-2 rounded"
+                  className="text-white hover:text-orange-300 bg-transparent hover:bg-blue-700 text-xs sm:text-sm px-2 sm:px-3 py-2 rounded flex items-center"
                 >
                   Admission
+                  {activeDropdown === 'admission' ? (
+                    <ChevronUp className="ml-1 h-3 w-3" />
+                  ) : (
+                    <ChevronDown className="ml-1 h-3 w-3" />
+                  )}
                 </button>
                 {activeDropdown === 'admission' && (
                   <div className="absolute top-full left-0 mt-1 min-w-[200px] p-4 bg-white shadow-lg rounded-md border z-50">
@@ -218,15 +244,20 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
               </div>
 
               {/* Student Support Dropdown */}
-              <div className="relative">
+              <div className="relative dropdown-container">
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     handleDropdownClick('student-support');
                   }}
-                  className="text-white hover:text-orange-300 bg-transparent hover:bg-blue-700 text-xs sm:text-sm px-2 sm:px-3 py-2 rounded"
+                  className="text-white hover:text-orange-300 bg-transparent hover:bg-blue-700 text-xs sm:text-sm px-2 sm:px-3 py-2 rounded flex items-center"
                 >
                   Student Support
+                  {activeDropdown === 'student-support' ? (
+                    <ChevronUp className="ml-1 h-3 w-3" />
+                  ) : (
+                    <ChevronDown className="ml-1 h-3 w-3" />
+                  )}
                 </button>
                 {activeDropdown === 'student-support' && (
                   <div className="absolute top-full left-0 mt-1 min-w-[200px] p-4 bg-white shadow-lg rounded-md border z-50">

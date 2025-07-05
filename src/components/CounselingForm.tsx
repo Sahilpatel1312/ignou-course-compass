@@ -1,11 +1,11 @@
 
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { X, UserCheck, Phone, MapPin, GraduationCap, Mail } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
+import { X } from "lucide-react";
 import { ignouCourses } from "@/data/ignouCourses";
 import { useToast } from "@/hooks/use-toast";
 
@@ -15,13 +15,23 @@ interface CounselingFormProps {
   preSelectedCourse?: string;
 }
 
+const states = [
+  "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", 
+  "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", 
+  "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", 
+  "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", 
+  "Uttarakhand", "West Bengal", "Delhi", "Jammu and Kashmir", "Ladakh", "Chandigarh", 
+  "Dadra and Nagar Haveli and Daman and Diu", "Lakshadweep", "Puducherry"
+];
+
 const CounselingForm = ({ isOpen, onClose, preSelectedCourse }: CounselingFormProps) => {
   const [formData, setFormData] = useState({
     fullName: "",
-    phoneNumber: "",
     email: "",
-    location: "",
+    phoneNumber: "",
     interestedCourse: preSelectedCourse || "",
+    state: "",
+    agreedToTerms: false,
   });
 
   const { toast } = useToast();
@@ -30,10 +40,19 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse }: CounselingFormPr
     e.preventDefault();
     
     // Basic validation
-    if (!formData.fullName || !formData.phoneNumber || !formData.email || !formData.location) {
+    if (!formData.fullName || !formData.phoneNumber || !formData.email || !formData.state) {
       toast({
         title: "Please fill all required fields",
         description: "All fields are required.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!formData.agreedToTerms) {
+      toast({
+        title: "Agreement Required",
+        description: "Please agree to the terms and conditions.",
         variant: "destructive",
       });
       return;
@@ -72,10 +91,11 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse }: CounselingFormPr
     // Reset form and close
     setFormData({
       fullName: "",
-      phoneNumber: "",
       email: "",
-      location: "",
+      phoneNumber: "",
       interestedCourse: "",
+      state: "",
+      agreedToTerms: false,
     });
     onClose();
   };
@@ -84,116 +104,118 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse }: CounselingFormPr
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <Card className="w-full max-w-2xl max-h-[90vh] overflow-y-auto">
-        <CardHeader className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white relative">
+      <Card className="w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden">
+        <div className="relative">
           <Button
             onClick={onClose}
             variant="ghost"
             size="sm"
-            className="absolute right-4 top-4 text-white hover:bg-white/20"
+            className="absolute right-4 top-4 text-gray-500 hover:text-gray-700 z-10"
           >
-            <X className="h-4 w-4" />
+            <X className="h-5 w-5" />
           </Button>
-          <CardTitle className="text-2xl font-bold">Free Career Counseling</CardTitle>
-          <p className="text-blue-100">Get personalized guidance for your IGNOU journey</p>
-        </CardHeader>
-        
-        <CardContent className="p-6">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="fullName" className="flex items-center">
-                  <UserCheck className="h-4 w-4 mr-2 text-blue-600" />
-                  Full Name *
-                </Label>
+          
+          <CardContent className="p-8">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-gray-800 mb-2">Get 100% Free Counselling</h2>
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
                 <Input
-                  id="fullName"
                   type="text"
-                  placeholder="Enter your full name"
+                  placeholder="Type name"
                   value={formData.fullName}
                   onChange={(e) => setFormData({...formData, fullName: e.target.value})}
-                  className="border-gray-300 focus:border-blue-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   required
                 />
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="phoneNumber" className="flex items-center">
-                  <Phone className="h-4 w-4 mr-2 text-blue-600" />
-                  Phone Number *
-                </Label>
+              <div>
                 <Input
-                  id="phoneNumber"
+                  type="email"
+                  placeholder="Type email id"
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  required
+                />
+              </div>
+
+              <div>
+                <Input
                   type="tel"
-                  placeholder="Enter 10-digit mobile number"
+                  placeholder="Enter Contact Number"
                   value={formData.phoneNumber}
                   onChange={(e) => setFormData({...formData, phoneNumber: e.target.value})}
-                  className="border-gray-300 focus:border-blue-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   maxLength={10}
                   required
                 />
               </div>
-            </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="email" className="flex items-center">
-                <Mail className="h-4 w-4 mr-2 text-blue-600" />
-                Email Address *
-              </Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="Enter your email address"
-                value={formData.email}
-                onChange={(e) => setFormData({...formData, email: e.target.value})}
-                className="border-gray-300 focus:border-blue-500"
-                required
-              />
-            </div>
+              <div>
+                <Select 
+                  value={formData.interestedCourse} 
+                  onValueChange={(value) => setFormData({...formData, interestedCourse: value})}
+                >
+                  <SelectTrigger className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <SelectValue placeholder="Select Course..." />
+                  </SelectTrigger>
+                  <SelectContent className="max-h-60">
+                    {ignouCourses.map((course) => (
+                      <SelectItem key={course.id} value={course.name}>
+                        {course.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="location" className="flex items-center">
-                <MapPin className="h-4 w-4 mr-2 text-blue-600" />
-                Location (City/State) *
-              </Label>
-              <Input
-                id="location"
-                type="text"
-                placeholder="Enter your city and state"
-                value={formData.location}
-                onChange={(e) => setFormData({...formData, location: e.target.value})}
-                className="border-gray-300 focus:border-blue-500"
-                required
-              />
-            </div>
+              <div>
+                <Select 
+                  value={formData.state} 
+                  onValueChange={(value) => setFormData({...formData, state: value})}
+                >
+                  <SelectTrigger className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <SelectValue placeholder="Select State..." />
+                  </SelectTrigger>
+                  <SelectContent className="max-h-60">
+                    {states.map((state) => (
+                      <SelectItem key={state} value={state}>
+                        {state}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="course" className="flex items-center">
-                <GraduationCap className="h-4 w-4 mr-2 text-blue-600" />
-                Interested Course
-              </Label>
-              <Select value={formData.interestedCourse} onValueChange={(value) => setFormData({...formData, interestedCourse: value})}>
-                <SelectTrigger className="border-gray-300 focus:border-blue-500">
-                  <SelectValue placeholder="Select a course you're interested in" />
-                </SelectTrigger>
-                <SelectContent className="max-h-60">
-                  {ignouCourses.map((course) => (
-                    <SelectItem key={course.id} value={course.name}>
-                      {course.name} - ₹{course.fee.toLocaleString()}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+              <div className="flex items-start space-x-3 pt-2">
+                <Checkbox
+                  id="terms"
+                  checked={formData.agreedToTerms}
+                  onCheckedChange={(checked) => setFormData({...formData, agreedToTerms: checked === true})}
+                  className="mt-1"
+                />
+                <label htmlFor="terms" className="text-sm text-gray-600 leading-relaxed">
+                  I Agree to Distance MBA College{" "}
+                  <span className="text-pink-500 underline cursor-pointer">Terms and Conditions</span>{" "}
+                  and{" "}
+                  <span className="text-pink-500 underline cursor-pointer">Privacy Policy</span>{" "}
+                  and provide consent to be contacted for promotion via WhatsApp, SMS, Mail etc.
+                </label>
+              </div>
 
-            <Button 
-              type="submit" 
-              className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-lg py-3 font-semibold transition-all duration-300 transform hover:scale-105"
-            >
-              Submit Counseling Request
-            </Button>
-          </form>
-        </CardContent>
+              <Button 
+                type="submit" 
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl text-lg mt-6 transition-colors duration-200"
+              >
+                Submit
+              </Button>
+            </form>
+          </CardContent>
+        </div>
       </Card>
     </div>
   );

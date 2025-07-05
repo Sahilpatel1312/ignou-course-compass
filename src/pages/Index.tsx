@@ -2,7 +2,9 @@
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
-import { Search, BookOpen, Users, Award, TrendingUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Search, BookOpen, Users, Award, TrendingUp, ExternalLink } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import CourseCard from "@/components/CourseCard";
 import CounselingForm from "@/components/CounselingForm";
@@ -15,6 +17,7 @@ const Index = () => {
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
   const [preSelectedCourse, setPreSelectedCourse] = useState("");
+  const navigate = useNavigate();
 
   const filteredCourses = ignouCourses.filter(course => {
     const matchesSearch = course.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -31,6 +34,10 @@ const Index = () => {
   const handleCounselingClick = () => {
     setPreSelectedCourse("");
     setIsCounselingOpen(true);
+  };
+
+  const handleMbaDetailsClick = () => {
+    navigate('/mba');
   };
 
   return (
@@ -70,6 +77,34 @@ const Index = () => {
               <TrendingUp className="h-12 w-12 text-purple-600 mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-purple-600">25+ Years</h3>
               <p className="text-gray-600">Educational Excellence</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* MBA Highlight Section */}
+      <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-12 text-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold mb-4">Master of Business Administration (MBA)</h2>
+            <p className="text-xl mb-6 text-blue-100 max-w-2xl mx-auto">
+              Advance your career with IGNOU's prestigious MBA program - comprehensive postgraduate management degree
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button 
+                onClick={handleMbaDetailsClick}
+                variant="outline" 
+                className="border-white text-white hover:bg-white hover:text-blue-600 px-6 py-2"
+              >
+                <ExternalLink className="mr-2 h-4 w-4" />
+                Check Details
+              </Button>
+              <Button 
+                onClick={() => handleApplyNow("Master of Business Administration (MBA)")}
+                className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-6 py-2"
+              >
+                Apply Now
+              </Button>
             </div>
           </div>
         </div>
