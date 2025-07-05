@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { X } from "lucide-react";
+import { X, User, Phone, Mail, MapPin, BookOpen } from "lucide-react";
 import { ignouCourses } from "@/data/ignouCourses";
 import { useToast } from "@/hooks/use-toast";
 
@@ -35,7 +35,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
 
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -70,13 +70,21 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
       return;
     }
 
+    // Log the form data (this would be sent to Google Sheets in a real implementation)
+    console.log("Counseling Form Data for Google Sheets:", {
+      fullName: formData.fullName,
+      phoneNumber: formData.phoneNumber,
+      email: formData.email,
+      location: formData.state,
+      interestedCourse: formData.interestedCourse,
+      timestamp: new Date().toISOString(),
+    });
+
     // Success message
     toast({
       title: "Counseling Request Submitted!",
       description: "Our counselor will contact you within 24 hours.",
     });
-
-    console.log("Counseling Form Data:", formData);
     
     // Reset form and close
     setFormData({
@@ -99,11 +107,15 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
         <h2 className="text-2xl font-bold text-gray-800 mb-2">Get 100% Free Counselling</h2>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-6">
         <div>
+          <div className="flex items-center mb-2">
+            <User className="h-4 w-4 text-blue-600 mr-2" />
+            <label className="text-sm font-semibold text-gray-700">Full Name</label>
+          </div>
           <Input
             type="text"
-            placeholder="Type name"
+            placeholder="Enter your full name"
             value={formData.fullName}
             onChange={(e) => setFormData({...formData, fullName: e.target.value})}
             className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -112,9 +124,13 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
         </div>
 
         <div>
+          <div className="flex items-center mb-2">
+            <Mail className="h-4 w-4 text-blue-600 mr-2" />
+            <label className="text-sm font-semibold text-gray-700">Email Address</label>
+          </div>
           <Input
             type="email"
-            placeholder="Type email id"
+            placeholder="Enter your email address"
             value={formData.email}
             onChange={(e) => setFormData({...formData, email: e.target.value})}
             className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -123,9 +139,13 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
         </div>
 
         <div>
+          <div className="flex items-center mb-2">
+            <Phone className="h-4 w-4 text-blue-600 mr-2" />
+            <label className="text-sm font-semibold text-gray-700">Phone Number</label>
+          </div>
           <Input
             type="tel"
-            placeholder="Enter Contact Number"
+            placeholder="Enter your 10-digit phone number"
             value={formData.phoneNumber}
             onChange={(e) => setFormData({...formData, phoneNumber: e.target.value})}
             className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -135,6 +155,10 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
         </div>
 
         <div>
+          <div className="flex items-center mb-2">
+            <BookOpen className="h-4 w-4 text-blue-600 mr-2" />
+            <label className="text-sm font-semibold text-gray-700">Interested Course</label>
+          </div>
           <Select 
             value={formData.interestedCourse} 
             onValueChange={(value) => setFormData({...formData, interestedCourse: value})}
@@ -153,6 +177,10 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
         </div>
 
         <div>
+          <div className="flex items-center mb-2">
+            <MapPin className="h-4 w-4 text-blue-600 mr-2" />
+            <label className="text-sm font-semibold text-gray-700">Location (State)</label>
+          </div>
           <Select 
             value={formData.state} 
             onValueChange={(value) => setFormData({...formData, state: value})}

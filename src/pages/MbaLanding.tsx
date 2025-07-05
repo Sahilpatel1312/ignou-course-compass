@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, GraduationCap, Clock, IndianRupee, Users, Award, BookOpen, TrendingUp, Download, Star } from "lucide-react";
+import { CheckCircle, GraduationCap, Clock, IndianRupee, Users, Award, BookOpen, TrendingUp, Star } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CounselingForm from "@/components/CounselingForm";
@@ -20,11 +20,6 @@ const MbaLanding = () => {
   const handleCounselingClick = () => {
     setPreSelectedCourse("Master of Business Administration (MBA)");
     setIsCounselingOpen(true);
-  };
-
-  const handleDownloadSample = () => {
-    // Open reference link in new tab for sample degree
-    window.open('https://ignou.collegevidya.com/online-mba/', '_blank');
   };
 
   return (
@@ -66,14 +61,6 @@ const MbaLanding = () => {
 
               <div className="flex flex-wrap gap-4">
                 <Button 
-                  onClick={handleDownloadSample}
-                  variant="outline" 
-                  className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-lg"
-                >
-                  <Download className="mr-2 h-5 w-5" />
-                  Sample Degree
-                </Button>
-                <Button 
                   onClick={handleApplyNow}
                   className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-8 py-3 text-lg"
                 >
@@ -95,8 +82,28 @@ const MbaLanding = () => {
         </div>
       </section>
 
-      {/* Program Highlights */}
+      {/* Sample Degree Section */}
       <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Sample IGNOU Degree Certificate</h2>
+            <p className="text-xl text-gray-600">Your IGNOU MBA degree will look like this</p>
+          </div>
+          
+          <div className="flex justify-center">
+            <div className="max-w-md w-full">
+              <img 
+                src="/lovable-uploads/f9d48fc2-828e-4cd5-a4d3-e9f977a87470.png" 
+                alt="IGNOU Sample Degree Certificate" 
+                className="w-full h-auto rounded-lg shadow-2xl border-4 border-blue-100"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Program Highlights */}
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Program Highlights</h2>
@@ -132,7 +139,7 @@ const MbaLanding = () => {
       </section>
 
       {/* Eligibility & Fee Structure */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <Card className="p-8">
@@ -186,7 +193,7 @@ const MbaLanding = () => {
       </section>
 
       {/* Specializations */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">MBA Specializations Available</h2>
@@ -220,7 +227,7 @@ const MbaLanding = () => {
       </section>
 
       {/* Key Features */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Why IGNOU MBA Stands Out</h2>
@@ -261,22 +268,12 @@ const MbaLanding = () => {
           <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
             Join thousands of successful professionals who have advanced their careers with IGNOU MBA
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button 
-              onClick={handleDownloadSample}
-              variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-blue-600 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300"
-            >
-              <Download className="mr-2 h-5 w-5" />
-              View Sample Degree
-            </Button>
-            <Button 
-              onClick={handleApplyNow}
-              className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
-            >
-              Apply for MBA Now
-            </Button>
-          </div>
+          <Button 
+            onClick={handleApplyNow}
+            className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+          >
+            Apply for MBA Now
+          </Button>
         </div>
       </section>
 
