@@ -38,8 +38,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Basic validation
+
     if (!formData.fullName || !formData.phoneNumber || !formData.email || !formData.state) {
       toast({
         title: "Please fill all required fields",
@@ -49,7 +48,6 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
       return;
     }
 
-    // Phone number validation
     const phoneRegex = /^[6-9]\d{9}$/;
     if (!phoneRegex.test(formData.phoneNumber)) {
       toast({
@@ -60,7 +58,6 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
       return;
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       toast({
@@ -74,30 +71,44 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
     setIsSubmitting(true);
 
     try {
-      // Simulate form submission delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-
-      console.log("Form submitted successfully:", formData);
-
-      // Success message
-      toast({
-        title: "Counseling Request Submitted!",
-        description: "Our counselor will contact you within 24 hours.",
+      const response = await fetch("https://script.google.com/macros/s/AKfycbwGC32UrD2Cd0d1r5pvy3DekIrYbJjsjzeClIjNW2KcQNw0LOzXaQbI6lWYzeO2Bry3yw/exec", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phoneNumber,
+          course: formData.interestedCourse,
+          state: formData.state,
+        }),
       });
-      
-      // Reset form and close
-      setFormData({
-        fullName: "",
-        email: "",
-        phoneNumber: "",
-        interestedCourse: "",
-        state: "",
-      });
-      
-      if (!embedded) {
-        onClose();
+
+      if (response.ok) {
+        toast({
+          title: "✅ Counseling Request Submitted!",
+          description: "Our counselor will contact you within 24 hours.",
+        });
+
+        setFormData({
+          fullName: "",
+          email: "",
+          phoneNumber: "",
+          interestedCourse: "",
+          state: "",
+        });
+
+        if (!embedded) {
+          onClose();
+        }
+      } else {
+        toast({
+          title: "Submission Failed",
+          description: "Please try again later.",
+          variant: "destructive",
+        });
       }
-
     } catch (error: any) {
       console.error("Form submission error:", error);
       toast({
@@ -128,7 +139,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
             type="text"
             placeholder="Enter your full name"
             value={formData.fullName}
-            onChange={(e) => setFormData({...formData, fullName: e.target.value})}
+            onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
             className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             required
             disabled={isSubmitting}
@@ -144,7 +155,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
             type="email"
             placeholder="Enter your email address"
             value={formData.email}
-            onChange={(e) => setFormData({...formData, email: e.target.value})}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             required
             disabled={isSubmitting}
@@ -160,7 +171,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
             type="tel"
             placeholder="Enter your 10-digit phone number"
             value={formData.phoneNumber}
-            onChange={(e) => setFormData({...formData, phoneNumber: e.target.value})}
+            onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
             className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             maxLength={10}
             required
@@ -173,9 +184,9 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
             <BookOpen className="h-4 w-4 text-blue-600 mr-2" />
             <label className="text-sm font-semibold text-gray-700">Interested Course</label>
           </div>
-          <Select 
-            value={formData.interestedCourse} 
-            onValueChange={(value) => setFormData({...formData, interestedCourse: value})}
+          <Select
+            value={formData.interestedCourse}
+            onValueChange={(value) => setFormData({ ...formData, interestedCourse: value })}
             disabled={isSubmitting}
           >
             <SelectTrigger className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
@@ -196,9 +207,9 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
             <MapPin className="h-4 w-4 text-blue-600 mr-2" />
             <label className="text-sm font-semibold text-gray-700">Location (State)</label>
           </div>
-          <Select 
-            value={formData.state} 
-            onValueChange={(value) => setFormData({...formData, state: value})}
+          <Select
+            value={formData.state}
+            onValueChange={(value) => setFormData({ ...formData, state: value })}
             disabled={isSubmitting}
           >
             <SelectTrigger className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
@@ -214,8 +225,8 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
           </Select>
         </div>
 
-        <Button 
-          type="submit" 
+        <Button
+          type="submit"
           className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl text-lg mt-6 transition-colors duration-200"
           disabled={isSubmitting}
         >
@@ -228,9 +239,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
   if (embedded) {
     return (
       <Card className="w-full bg-white rounded-xl shadow-lg">
-        <CardContent className="p-6">
-          {formContent}
-        </CardContent>
+        <CardContent className="p-6">{formContent}</CardContent>
       </Card>
     );
   }
@@ -248,10 +257,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
           >
             <X className="h-5 w-5" />
           </Button>
-          
-          <CardContent className="p-8">
-            {formContent}
-          </CardContent>
+          <CardContent className="p-8">{formContent}</CardContent>
         </div>
       </Card>
     </div>
