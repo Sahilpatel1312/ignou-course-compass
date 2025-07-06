@@ -19,72 +19,96 @@ serve(async (req: Request) => {
     const formData = await req.json();
     console.log("Received form data:", formData);
 
-    // Google Apps Script web app URL
+    // Google Apps Script web app URL - Updated with your provided URL
     const googleScriptUrl = "https://script.google.com/macros/s/AKfycbzyE7DQNoU1QbOw9hKEfPcy9T-B3ab8WxcvhUJixQhR705bpcKcj8KS1REyZU8NqclIRg/exec";
 
-    // Send data to Google Apps Script
-    console.log("Sending data to Google Apps Script...");
+    // Prepare data in a format that Google Apps Script expects
+    const googleSheetData = {
+      fullName: formData.fullName,
+      email: formData.email,
+      phoneNumber: formData.phoneNumber,
+      state: formData.location || formData.state,
+      interestedCourse: formData.interestedCourse,
+      timestamp: formData.timestamp || new Date().toISOString(),
+    };
+
+    console.log("Sending data to Google Apps Script:", googleSheetData);
+
+    // Send data to Google Apps Script with proper headers and error handling
     const response = await fetch(googleScriptUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Accept': 'application/json',
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(googleSheetData),
+      // Add redirect handling for Google Apps Script
+      redirect: 'follow'
     });
 
     console.log("Google Apps Script response status:", response.status);
+    console.log("Google Apps Script response headers:", Object.fromEntries(response.headers.entries()));
     
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error("Google Apps Script error:", errorText);
-      throw new Error(`Google Apps Script error: ${response.status} - ${errorText}`);
+    let result;
+    const contentType = response.headers.get('content-type');
+    
+    if (contentType && contentType.includes('application/json')) {
+      result = await response.json();
+    } else {
+      result = await response.text();
     }
-
-    const result = await response.text();
+    
     console.log("Google Apps Script result:", result);
 
-    // Also store in Supabase for backup
-    const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
-    const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-    const supabase = createClient(supabaseUrl, supabaseKey);
+    // Check if the response indicates success (Google Apps Script often returns 200 even for redirects)
+    if (response.status >= 200 && response.status < 400) {
+      // Also store in Supabase for backup
+      const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
+      const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+      const supabase = createClient(supabaseUrl, supabaseKey);
 
-    console.log("Storing backup in Supabase...");
-    const { error: supabaseError } = await supabase
-      .from('counselling_submissions')
-      .insert({
-        form_data: formData,
-        timestamp: formData.timestamp || new Date().toISOString(),
-        processed: false
-      });
+      console.log("Storing backup in Supabase...");
+      const { error: supabaseError } = await supabase
+        .from('counselling_submissions')
+        .insert({
+          form_data: formData,
+          timestamp: formData.timestamp || new Date().toISOString(),
+          processed: false
+        });
 
-    if (supabaseError) {
-      console.error("Supabase storage error:", supabaseError);
-      // Don't throw here, as the main Google Sheets submission succeeded
-    } else {
-      console.log("Successfully stored backup in Supabase");
-    }
-
-    return new Response(
-      JSON.stringify({ 
-        success: true, 
-        message: "Form submitted successfully",
-        googleResponse: result
-      }),
-      {
-        headers: { 
-          'Content-Type': 'application/json',
-          ...corsHeaders 
-        },
+      if (supabaseError) {
+        console.error("Supabase storage error:", supabaseError);
+        // Don't throw here, as the main Google Sheets submission succeeded
+      } else {
+        console.log("Successfully stored backup in Supabase");
       }
-    );
+
+      return new Response(
+        JSON.stringify({ 
+          success: true, 
+          message: "Form submitted successfully to Google Sheets",
+          googleResponse: result
+        }),
+        {
+          headers: { 
+            'Content-Type': 'application/json',
+            ...corsHeaders 
+          },
+        }
+      );
+    } else {
+      throw new Error(`Google Apps Script returned status ${response.status}: ${result}`);
+    }
 
   } catch (error: any) {
     console.error("Error in counselling-form function:", error);
+    console.error("Error stack:", error.stack);
     
     return new Response(
       JSON.stringify({ 
-        error: error.message || "Failed to submit form",
-        details: error.toString()
+        error: error.message || "Failed to submit form to Google Sheets",
+        details: error.toString(),
+        timestamp: new Date().toISOString()
       }),
       {
         status: 500,
