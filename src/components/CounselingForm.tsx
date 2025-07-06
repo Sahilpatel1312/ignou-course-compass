@@ -74,7 +74,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
       const response = await fetch("https://script.google.com/macros/s/AKfycbwGC32UrD2Cd0d1r5pvy3DekIrYbJjsjzeClIjNW2KcQNw0LOzXaQbI6lWYzeO2Bry3yw/exec", {
         method: "POST",
         headers: {
-          "Content-Type": "text/plain;charset=utf-8",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           fullName: formData.fullName,
