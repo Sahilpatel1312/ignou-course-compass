@@ -71,6 +71,15 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
     setIsSubmitting(true);
 
     try {
+      // ✅ Debug: Log the data being sent
+      console.log("🚀 Sending form data:", {
+        fullName: formData.fullName,
+        email: formData.email,
+        phone: formData.phoneNumber,
+        course: formData.interestedCourse,
+        state: formData.state,
+      });
+
       const response = await fetch("https://script.google.com/macros/s/AKfycbwGC32UrD2Cd0d1r5pvy3DekIrYbJjsjzeClIjNW2KcQNw0LOzXaQbI6lWYzeO2Bry3yw/exec", {
         method: "POST",
         headers: {
@@ -84,6 +93,9 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
           state: formData.state,
         }),
       });
+
+      // ✅ Debug: Log response status
+      console.log("📬 Response status:", response.status);
 
       if (response.ok) {
         toast({
@@ -110,7 +122,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
         });
       }
     } catch (error: any) {
-      console.error("Form submission error:", error);
+      console.error("❌ Form submission error:", error);
       toast({
         title: "Submission Failed",
         description: "There was an error submitting your form. Please try again.",
@@ -130,6 +142,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Full Name */}
         <div>
           <div className="flex items-center mb-2">
             <User className="h-4 w-4 text-blue-600 mr-2" />
@@ -146,6 +159,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
           />
         </div>
 
+        {/* Email */}
         <div>
           <div className="flex items-center mb-2">
             <Mail className="h-4 w-4 text-blue-600 mr-2" />
@@ -162,6 +176,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
           />
         </div>
 
+        {/* Phone */}
         <div>
           <div className="flex items-center mb-2">
             <Phone className="h-4 w-4 text-blue-600 mr-2" />
@@ -179,6 +194,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
           />
         </div>
 
+        {/* Interested Course */}
         <div>
           <div className="flex items-center mb-2">
             <BookOpen className="h-4 w-4 text-blue-600 mr-2" />
@@ -202,6 +218,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
           </Select>
         </div>
 
+        {/* State */}
         <div>
           <div className="flex items-center mb-2">
             <MapPin className="h-4 w-4 text-blue-600 mr-2" />
