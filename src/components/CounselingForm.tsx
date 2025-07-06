@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -6,7 +7,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { X, User, Phone, Mail, MapPin, BookOpen } from "lucide-react";
 import { ignouCourses } from "@/data/ignouCourses";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 
 interface CounselingFormProps {
   isOpen: boolean;
@@ -74,29 +74,10 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
     setIsSubmitting(true);
 
     try {
-      // Prepare data for Google Sheets
-      const sheetData = {
-        fullName: formData.fullName,
-        phoneNumber: formData.phoneNumber,
-        email: formData.email,
-        location: formData.state,
-        interestedCourse: formData.interestedCourse,
-        timestamp: new Date().toISOString(),
-      };
+      // Simulate form submission delay
+      await new Promise(resolve => setTimeout(resolve, 1000));
 
-      console.log("Sending data to Google Sheets:", sheetData);
-
-      // Call the Edge Function to store data in Google Sheets
-      const { data, error } = await supabase.functions.invoke('counselling-form', {
-        body: sheetData
-      });
-
-      if (error) {
-        console.error("Edge Function error:", error);
-        throw new Error(error.message || "Failed to submit form");
-      }
-
-      console.log("Google Sheets response:", data);
+      console.log("Form submitted successfully:", formData);
 
       // Success message
       toast({
@@ -121,7 +102,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
       console.error("Form submission error:", error);
       toast({
         title: "Submission Failed",
-        description: error.message || "There was an error submitting your form. Please try again.",
+        description: "There was an error submitting your form. Please try again.",
         variant: "destructive",
       });
     } finally {
