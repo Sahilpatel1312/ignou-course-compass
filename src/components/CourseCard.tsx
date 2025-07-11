@@ -2,16 +2,17 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Clock, IndianRupee, BookOpen, CheckCircle, ExternalLink } from "lucide-react";
+import { Clock, BookOpen, CheckCircle, ExternalLink, Download } from "lucide-react";
 import { Course } from "@/data/ignouCourses";
 
 interface CourseCardProps {
   course: Course;
   onApplyNow: (courseName: string) => void;
   onCheckDetails?: () => void;
+  onDownloadBrochure: (courseName: string) => void;
 }
 
-const CourseCard = ({ course, onApplyNow, onCheckDetails }: CourseCardProps) => {
+const CourseCard = ({ course, onApplyNow, onCheckDetails, onDownloadBrochure }: CourseCardProps) => {
   return (
     <Card className="h-full hover:shadow-xl transition-all duration-300 border-l-4 border-l-blue-500 group hover:border-l-yellow-500">
       <CardHeader className="pb-4">
@@ -19,10 +20,6 @@ const CourseCard = ({ course, onApplyNow, onCheckDetails }: CourseCardProps) => 
           <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
             {course.category}
           </Badge>
-          <div className="flex items-center text-green-600 font-bold text-lg">
-            <IndianRupee className="h-5 w-5" />
-            {course.fee.toLocaleString()}
-          </div>
         </div>
         <CardTitle className="text-xl group-hover:text-blue-600 transition-colors">
           {course.name}
@@ -59,16 +56,27 @@ const CourseCard = ({ course, onApplyNow, onCheckDetails }: CourseCardProps) => 
         </div>
 
         <div className="space-y-3">
-          {onCheckDetails && (
+          {/* Two buttons in a row */}
+          <div className="flex gap-2">
             <Button 
-              onClick={onCheckDetails}
-              variant="outline" 
-              className="w-full text-blue-600 border-blue-600 hover:bg-blue-50"
+              onClick={() => onDownloadBrochure(course.name)}
+              className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold"
             >
-              <ExternalLink className="mr-2 h-4 w-4" />
-              Check Details
+              <Download className="mr-2 h-4 w-4" />
+              Download Brochure
             </Button>
-          )}
+            
+            {onCheckDetails && (
+              <Button 
+                onClick={onCheckDetails}
+                variant="outline" 
+                className="flex-1 text-blue-600 border-blue-600 hover:bg-blue-50"
+              >
+                <ExternalLink className="mr-2 h-4 w-4" />
+                Check Details
+              </Button>
+            )}
+          </div>
           
           <Button 
             onClick={() => onApplyNow(course.name)}

@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -222,7 +223,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
         <div>
           <div className="flex items-center mb-2">
             <MapPin className="h-4 w-4 text-blue-600 mr-2" />
-            <label className="text-sm font-semibold text-gray-700">Location (State)</label>
+            <label className="text-sm font-semibold text-gray-700">State</label>
           </div>
           <Select
             value={formData.state}
@@ -262,8 +263,8 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
   }
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <Card className="w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" onClick={onClose}>
+      <Card className="w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
         <div className="relative">
           <Button
             onClick={onClose}

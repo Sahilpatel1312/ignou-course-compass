@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -17,7 +17,17 @@ const Index = () => {
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
   const [preSelectedCourse, setPreSelectedCourse] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate();
+
+  // Show popup after 10 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 10000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const filteredCourses = ignouCourses.filter(course => {
     const matchesSearch = course.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -31,6 +41,11 @@ const Index = () => {
     setIsCounselingOpen(true);
   };
 
+  const handleDownloadBrochure = (courseName: string) => {
+    setPreSelectedCourse(courseName);
+    setIsCounselingOpen(true);
+  };
+
   const handleCounselingClick = () => {
     setPreSelectedCourse("");
     setIsCounselingOpen(true);
@@ -38,6 +53,14 @@ const Index = () => {
 
   const handleMbaDetailsClick = () => {
     navigate('/mba');
+  };
+
+  const handleCourseDetailsClick = (courseId: string) => {
+    navigate(`/${courseId}`);
+  };
+
+  const handlePopupClose = () => {
+    setShowPopup(false);
   };
 
   return (
@@ -86,9 +109,9 @@ const Index = () => {
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-12 text-white">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4">Master of Business Administration (MBA)</h2>
+            <h2 className="text-3xl font-bold mb-4">Online Master of Business Administration (MBA)</h2>
             <p className="text-xl mb-6 text-blue-100 max-w-2xl mx-auto">
-              Advance your career with IGNOU's prestigious MBA program - comprehensive postgraduate management degree
+              Advance your career with IGNOU's prestigious Online MBA program - comprehensive postgraduate management degree
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button 
@@ -100,7 +123,7 @@ const Index = () => {
                 Check Details
               </Button>
               <Button 
-                onClick={() => handleApplyNow("Master of Business Administration (MBA)")}
+                onClick={() => handleApplyNow("Online Master of Business Administration (MBA)")}
                 className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-6 py-2"
               >
                 Apply Now
@@ -152,7 +175,11 @@ const Index = () => {
                 <CourseCard 
                   course={course} 
                   onApplyNow={handleApplyNow}
-                  onCheckDetails={course.name === "Master of Business Administration (MBA)" ? handleMbaDetailsClick : undefined}
+                  onDownloadBrochure={handleDownloadBrochure}
+                  onCheckDetails={course.name === "Online Master of Business Administration (MBA)" 
+                    ? handleMbaDetailsClick 
+                    : () => handleCourseDetailsClick(course.id)
+                  }
                 />
               </div>
             ))}
@@ -186,11 +213,21 @@ const Index = () => {
 
       <Footer />
       
+      {/* Regular Counseling Form */}
       <CounselingForm 
         isOpen={isCounselingOpen} 
         onClose={() => setIsCounselingOpen(false)}
         preSelectedCourse={preSelectedCourse}
       />
+
+      {/* Popup Counseling Form */}
+      {showPopup && (
+        <CounselingForm 
+          isOpen={showPopup} 
+          onClose={handlePopupClose}
+          preSelectedCourse=""
+        />
+      )}
     </div>
   );
 };

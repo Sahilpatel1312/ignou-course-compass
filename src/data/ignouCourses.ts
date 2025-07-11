@@ -23,7 +23,7 @@ export const ignouCourses: Course[] = [
   // MBA - 1st position
   {
     id: "mba",
-    name: "Master of Business Administration (MBA)",
+    name: "Online Master of Business Administration (MBA)",
     duration: "2 Years",
     fee: 62000,
     category: "Postgraduate Programs",
@@ -35,7 +35,7 @@ export const ignouCourses: Course[] = [
   // MCA - 2nd position
   {
     id: "mca",
-    name: "Master of Computer Applications (MCA)",
+    name: "Online Master of Computer Applications (MCA)",
     duration: "3 Years",
     fee: 58500,
     category: "Postgraduate Programs",
@@ -47,7 +47,7 @@ export const ignouCourses: Course[] = [
   // MA - 3rd position
   {
     id: "ma",
-    name: "Master of Arts (MA)",
+    name: "Online Master of Arts (MA)",
     duration: "2 Years",
     fee: 7200,
     category: "Postgraduate Programs",
@@ -59,7 +59,7 @@ export const ignouCourses: Course[] = [
   // M.Com - 4th position
   {
     id: "mcom",
-    name: "Master of Commerce (M.Com)",
+    name: "Online Master of Commerce (M.Com)",
     duration: "2 Years",
     fee: 10800,
     category: "Postgraduate Programs",
@@ -71,7 +71,7 @@ export const ignouCourses: Course[] = [
   // BCA - 5th position
   {
     id: "bca",
-    name: "Bachelor of Computer Applications (BCA)",
+    name: "Online Bachelor of Computer Applications (BCA)",
     duration: "3 Years",
     fee: 40200,
     category: "Undergraduate Programs", 
@@ -83,7 +83,7 @@ export const ignouCourses: Course[] = [
   // BBA - 6th position
   {
     id: "bba",
-    name: "Bachelor of Business Administration (BBA)",
+    name: "Online Bachelor of Business Administration (BBA)",
     duration: "3 Years",
     fee: 28800,
     category: "Undergraduate Programs",
@@ -95,7 +95,7 @@ export const ignouCourses: Course[] = [
   // BA - 7th position
   {
     id: "ba",
-    name: "Bachelor of Arts (BA)",
+    name: "Online Bachelor of Arts (BA)",
     duration: "3 Years",
     fee: 7200,
     category: "Undergraduate Programs",
@@ -107,7 +107,7 @@ export const ignouCourses: Course[] = [
   // B.Sc - 8th position
   {
     id: "bsc",
-    name: "Bachelor of Science (B.Sc)",
+    name: "Online Bachelor of Science (B.Sc)",
     duration: "3 Years",
     fee: 16200,
     category: "Undergraduate Programs",
@@ -119,7 +119,7 @@ export const ignouCourses: Course[] = [
   // B.Com - 9th position (rest of the order remains same)
   {
     id: "bcom",
-    name: "Bachelor of Commerce (B.Com)",
+    name: "Online Bachelor of Commerce (B.Com)",
     duration: "3 Years", 
     fee: 10800,
     category: "Undergraduate Programs",
@@ -131,7 +131,7 @@ export const ignouCourses: Course[] = [
   // M.Sc - 10th position
   {
     id: "msc",
-    name: "Master of Science (M.Sc)",
+    name: "Online Master of Science (M.Sc)",
     duration: "2 Years", 
     fee: 18000,
     category: "Postgraduate Programs",
@@ -143,7 +143,7 @@ export const ignouCourses: Course[] = [
   // Diploma Programs
   {
     id: "dmlt",
-    name: "Diploma in Medical Laboratory Technology (DMLT)",
+    name: "Online Diploma in Medical Laboratory Technology (DMLT)",
     duration: "2 Years",
     fee: 18600,
     category: "Diploma Programs",
@@ -153,7 +153,7 @@ export const ignouCourses: Course[] = [
   },
   {
     id: "dafe",
-    name: "Diploma in Agriculture and Food Engineering (DAFE)",
+    name: "Online Diploma in Agriculture and Food Engineering (DAFE)",
     duration: "2 Years",
     fee: 15600,
     category: "Diploma Programs", 
@@ -165,7 +165,7 @@ export const ignouCourses: Course[] = [
   // Certificate Programs
   {
     id: "cig",
-    name: "Certificate in Information and Communication Technology (CIC)",
+    name: "Online Certificate in Information and Communication Technology (CIC)",
     duration: "6 Months",
     fee: 3600,
     category: "Certificate Programs",
@@ -175,7 +175,7 @@ export const ignouCourses: Course[] = [
   },
   {
     id: "cul",
-    name: "Certificate in Urdu Language (CUL)", 
+    name: "Online Certificate in Urdu Language (CUL)", 
     duration: "6 Months",
     fee: 1800,
     category: "Certificate Programs",
@@ -187,7 +187,7 @@ export const ignouCourses: Course[] = [
   // PG Diploma Programs
   {
     id: "pgdca",
-    name: "Post Graduate Diploma in Computer Applications (PGDCA)",
+    name: "Online Post Graduate Diploma in Computer Applications (PGDCA)",
     duration: "1 Year",
     fee: 19500,
     category: "PG Diploma Programs",
@@ -197,7 +197,7 @@ export const ignouCourses: Course[] = [
   },
   {
     id: "pgdhrm",
-    name: "Post Graduate Diploma in Human Resource Management (PGDHRM)",
+    name: "Online Post Graduate Diploma in Human Resource Management (PGDHRM)",
     duration: "1 Year", 
     fee: 15600,
     category: "PG Diploma Programs",
@@ -209,7 +209,7 @@ export const ignouCourses: Course[] = [
   // Doctoral Programs  
   {
     id: "phd",
-    name: "Doctor of Philosophy (Ph.D)",
+    name: "Online Doctor of Philosophy (Ph.D)",
     duration: "3-6 Years",
     fee: 21600,
     category: "Doctoral Programs",

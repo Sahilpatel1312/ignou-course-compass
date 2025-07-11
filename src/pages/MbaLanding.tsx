@@ -10,15 +10,15 @@ import CounselingForm from "@/components/CounselingForm";
 
 const MbaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
-  const [preSelectedCourse, setPreSelectedCourse] = useState("Master of Business Administration (MBA)");
+  const [preSelectedCourse, setPreSelectedCourse] = useState("Online Master of Business Administration (MBA)");
 
   const handleApplyNow = () => {
-    setPreSelectedCourse("Master of Business Administration (MBA)");
+    setPreSelectedCourse("Online Master of Business Administration (MBA)");
     setIsCounselingOpen(true);
   };
 
   const handleCounselingClick = () => {
-    setPreSelectedCourse("Master of Business Administration (MBA)");
+    setPreSelectedCourse("Online Master of Business Administration (MBA)");
     setIsCounselingOpen(true);
   };
 
@@ -32,12 +32,12 @@ const MbaLanding = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
-              <Badge className="bg-yellow-500 text-blue-900 mb-4">IGNOU MBA Program</Badge>
+              <Badge className="bg-yellow-500 text-blue-900 mb-4">IGNOU Online MBA Program</Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Master of Business Administration (MBA)
+                Online Master of Business Administration (MBA)
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Advance your career with IGNOU's prestigious MBA program - a comprehensive postgraduate management degree designed for aspiring business leaders.
+                Advance your career with IGNOU's prestigious Online MBA program - a comprehensive postgraduate management degree designed for aspiring business leaders.
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-8">
@@ -74,7 +74,7 @@ const MbaLanding = () => {
               <CounselingForm 
                 isOpen={true} 
                 onClose={() => {}} 
-                preSelectedCourse="Master of Business Administration (MBA)"
+                preSelectedCourse="Online Master of Business Administration (MBA)"
                 embedded={true}
               />
             </div>
