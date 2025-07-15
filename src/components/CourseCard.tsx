@@ -4,15 +4,40 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Clock, BookOpen, CheckCircle, ExternalLink, Download } from "lucide-react";
 import { Course } from "@/data/ignouCourses";
+import { useNavigate } from "react-router-dom";
 
 interface CourseCardProps {
   course: Course;
   onApplyNow: (courseName: string) => void;
-  onCheckDetails?: () => void;
   onDownloadBrochure: (courseName: string) => void;
 }
 
-const CourseCard = ({ course, onApplyNow, onCheckDetails, onDownloadBrochure }: CourseCardProps) => {
+const CourseCard = ({ course, onApplyNow, onDownloadBrochure }: CourseCardProps) => {
+  const navigate = useNavigate();
+
+  const handleCheckDetails = () => {
+    const routeMap: { [key: string]: string } = {
+      "Online Master of Business Administration (MBA)": "/mba",
+      "Online Master of Computer Applications (MCA)": "/mca", 
+      "Online Master of Arts (MA)": "/ma",
+      "Online Master of Commerce (M.Com)": "/mcom",
+      "Online Bachelor of Computer Applications (BCA)": "/bca",
+      "Online Bachelor of Business Administration (BBA)": "/bba",
+      "Online Bachelor of Arts (BA)": "/ba",
+      "Online Bachelor of Commerce (B.Com)": "/bcom"
+    };
+
+    const route = routeMap[course.name];
+    if (route) {
+      // Navigate to the route and scroll to top
+      navigate(route);
+      // Use setTimeout to ensure navigation completes before scrolling
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    }
+  };
+
   return (
     <Card className="h-full hover:shadow-xl transition-all duration-300 border-l-4 border-l-blue-500 group hover:border-l-yellow-500">
       <CardHeader className="pb-4">
@@ -66,16 +91,14 @@ const CourseCard = ({ course, onApplyNow, onCheckDetails, onDownloadBrochure }: 
               Download Brochure
             </Button>
             
-            {onCheckDetails && (
-              <Button 
-                onClick={onCheckDetails}
-                variant="outline" 
-                className="flex-1 text-blue-600 border-blue-600 hover:bg-blue-50"
-              >
-                <ExternalLink className="mr-2 h-4 w-4" />
-                Check Details
-              </Button>
-            )}
+            <Button 
+              onClick={handleCheckDetails}
+              variant="outline" 
+              className="flex-1 text-blue-600 border-blue-600 hover:bg-blue-50"
+            >
+              <ExternalLink className="mr-2 h-4 w-4" />
+              Check Details
+            </Button>
           </div>
           
           <Button 

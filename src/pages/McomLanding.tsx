@@ -281,7 +281,7 @@ const McomLanding = () => {
       
       <CounselingForm 
         isOpen={isCounselingOpen} 
-        onClose={() => setIsCounselingForm(false)}
+        onClose={() => setIsCounselingOpen(false)}
         preSelectedCourse={preSelectedCourse}
       />
     </div>

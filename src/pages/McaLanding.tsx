@@ -1,5 +1,4 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -11,6 +10,14 @@ import CounselingForm from "@/components/CounselingForm";
 const McaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
   const [preSelectedCourse, setPreSelectedCourse] = useState("Online Master of Computer Applications (MCA)");
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsCounselingOpen(true);
+    }, 10000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleApplyNow = () => {
     setPreSelectedCourse("Online Master of Computer Applications (MCA)");
