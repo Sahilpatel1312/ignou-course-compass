@@ -1,5 +1,5 @@
 
-import { GraduationCap, Phone, Mail, MapPin, Search, Menu, User, Globe, ChevronDown, ChevronUp } from "lucide-react";
+import { GraduationCap, Mail, MapPin, Search, Menu, User, Globe, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
@@ -52,15 +52,9 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
                   <div className="text-xs sm:text-sm">Ministry of Education</div>
                 </div>
               </div>
-              <div className="flex flex-col sm:flex-row items-end sm:items-center space-y-1 sm:space-y-0 sm:space-x-6 text-xs sm:text-sm">
-                <div className="flex items-center space-x-2">
-                  <Phone className="h-3 w-3 sm:h-4 sm:w-4" />
-                  <span>Student Helpline: 7349007840</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Mail className="h-3 w-3 sm:h-4 sm:w-4" />
-                  <span>admission@ignou.ac.in</span>
-                </div>
+              <div className="flex items-center space-x-2 text-xs sm:text-sm">
+                <Mail className="h-3 w-3 sm:h-4 sm:w-4" />
+                <span>admission@ignou.ac.in</span>
               </div>
             </div>
           </div>

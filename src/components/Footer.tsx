@@ -1,5 +1,5 @@
 
-import { GraduationCap, Phone, Mail, MapPin, Globe, Facebook, Twitter, Youtube } from "lucide-react";
+import { GraduationCap, Mail, MapPin, Globe, Facebook, Twitter, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -29,10 +29,6 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-white">Contact Information</h4>
             <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <Phone className="h-4 w-4 text-yellow-400" />
-                <span className="text-sm">7349007840</span>
-              </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-yellow-400" />
                 <span className="text-sm">admission@ignou.ac.in</span>
