@@ -55,10 +55,6 @@ const Index = () => {
     navigate('/mba');
   };
 
-  const handleCourseDetailsClick = (courseId: string) => {
-    navigate(`/${courseId}`);
-  };
-
   const handlePopupClose = () => {
     setShowPopup(false);
   };
@@ -176,10 +172,6 @@ const Index = () => {
                   course={course} 
                   onApplyNow={handleApplyNow}
                   onDownloadBrochure={handleDownloadBrochure}
-                  onCheckDetails={course.name === "Online Master of Business Administration (MBA)" 
-                    ? handleMbaDetailsClick 
-                    : () => handleCourseDetailsClick(course.id)
-                  }
                 />
               </div>
             ))}
