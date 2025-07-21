@@ -10,6 +10,7 @@ import CourseCard from "@/components/CourseCard";
 import CounselingForm from "@/components/CounselingForm";
 import Footer from "@/components/Footer";
 import Slideshow from "@/components/Slideshow";
+import SEO from "@/components/SEO";
 import { ignouCourses, courseCategories } from "@/data/ignouCourses";
 
 const Index = () => {
@@ -61,6 +62,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="IGNOU Admission 2025 - IGNOU Distance Education | Online Courses"
+        description="Apply for IGNOU Admission 2025 Online. UGC-approved IGNOU Distance Education with 200+ online courses. IGNOU MBA Admission 2025, MCA, BCA, MA programs available."
+        keywords="IGNOU Admission 2025, IGNOU Distance Education, IGNOU Online Courses, Apply for IGNOU Admission 2025 Online, UGC-approved IGNOU Online Degrees, Best Online Courses by IGNOU"
+        canonical="/"
+      />
       <Header onCounselingClick={handleCounselingClick} />
       
       {/* Slideshow Section */}
@@ -70,9 +77,9 @@ const Index = () => {
       <section className="bg-white py-12 border-b">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Why Choose IGNOU?</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Why Choose IGNOU Distance Education 2025?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              India's largest open university offering world-class distance education with flexibility and affordability
+              India's largest open university offering UGC-approved IGNOU online degrees with world-class distance learning programs, flexibility and affordability
             </p>
           </div>
           
@@ -105,9 +112,9 @@ const Index = () => {
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-12 text-white">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4">Online Master of Business Administration (MBA)</h2>
+            <h2 className="text-3xl font-bold mb-4">IGNOU MBA Admission 2025 - Online MBA from IGNOU</h2>
             <p className="text-xl mb-6 text-blue-100 max-w-2xl mx-auto">
-              Advance your career with IGNOU's prestigious Online MBA program - comprehensive postgraduate management degree
+              Apply for IGNOU MBA Admission 2025 - Get your Online MBA from IGNOU, a prestigious UGC-approved comprehensive postgraduate management degree
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button 
@@ -133,9 +140,9 @@ const Index = () => {
       <section className="py-12" data-section="courses">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Explore IGNOU Courses</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">IGNOU Online Courses 2025 - Best Online Courses by IGNOU</h2>
             <p className="text-xl text-gray-600">
-              Find the perfect course to advance your career and achieve your educational goals
+              Explore IGNOU Online Degree Programs and find the perfect UGC-approved course to advance your career with IGNOU Distance Learning Programs
             </p>
           </div>
 
@@ -190,9 +197,9 @@ const Index = () => {
       {/* Call to Action Section */}
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Start Your Educational Journey?</h2>
+          <h2 className="text-3xl font-bold mb-4">Ready to Apply for IGNOU Admission 2025 Online?</h2>
           <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
-            Get personalized guidance from our expert counselors. Free consultation to help you choose the right course for your career goals.
+            Get personalized guidance for IGNOU Admission 2025. Free consultation to help you choose the right IGNOU online degree program for your career goals.
           </p>
           <button 
             onClick={handleCounselingClick}

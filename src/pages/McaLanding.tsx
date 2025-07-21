@@ -6,6 +6,7 @@ import { CheckCircle, GraduationCap, Clock, IndianRupee, Users, Award, BookOpen,
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CounselingForm from "@/components/CounselingForm";
+import SEO from "@/components/SEO";
 
 const McaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -31,6 +32,19 @@ const McaLanding = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="IGNOU MCA Admission 2025 - Online MCA IGNOU | UGC Approved Degree"
+        description="Apply for IGNOU MCA Admission 2025. Online MCA IGNOU with advanced programming and IT skills. UGC-approved IGNOU Distance Education. Fee ₹58,500."
+        keywords="IGNOU MCA Admission 2025, Online MCA IGNOU, IGNOU MCA Distance Education, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs"
+        canonical="/mca"
+        course={{
+          name: "Master of Computer Applications (MCA)",
+          description: "Advanced postgraduate IT program for aspiring computer professionals",
+          duration: "3 Years",
+          fee: "₹58,500",
+          eligibility: "Bachelor's degree with Mathematics at 10+2 or graduation level"
+        }}
+      />
       <Header onCounselingClick={handleCounselingClick} />
       
       {/* Hero Section */}
@@ -41,10 +55,10 @@ const McaLanding = () => {
             <div>
               <Badge className="bg-yellow-500 text-blue-900 mb-4">IGNOU Online MCA Program</Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Online Master of Computer Applications (MCA)
+                IGNOU MCA Admission 2025 - Online MCA IGNOU
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Master advanced programming and software engineering with IGNOU's comprehensive Online MCA program - designed for aspiring IT professionals.
+                Apply for IGNOU MCA Admission 2025. Master advanced programming with Online MCA IGNOU - UGC-approved IGNOU Distance Education program for aspiring IT professionals.
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-8">

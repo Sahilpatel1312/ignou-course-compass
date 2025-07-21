@@ -6,6 +6,7 @@ import { CheckCircle, GraduationCap, Clock, IndianRupee, Users, Award, BookOpen,
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CounselingForm from "@/components/CounselingForm";
+import SEO from "@/components/SEO";
 
 const MaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -31,6 +32,19 @@ const MaLanding = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="IGNOU MA Online Programs 2025 - Master of Arts Distance Education"
+        description="Apply for IGNOU MA Online Programs 2025. IGNOU MA in Political Science Online, IGNOU MA in English Admission. UGC-approved distance learning programs. Low fees."
+        keywords="IGNOU MA Online Programs, IGNOU MA in Political Science Online, IGNOU MA in English Admission, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs"
+        canonical="/ma"
+        course={{
+          name: "Master of Arts (MA)",
+          description: "Comprehensive postgraduate arts program for academic and professional growth",
+          duration: "2 Years",
+          fee: "₹7,200",
+          eligibility: "Bachelor's degree from recognized university"
+        }}
+      />
       <Header onCounselingClick={handleCounselingClick} />
       
       {/* Hero Section */}
@@ -41,10 +55,10 @@ const MaLanding = () => {
             <div>
               <Badge className="bg-yellow-500 text-blue-900 mb-4">IGNOU Online MA Program</Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Online Master of Arts (MA)
+                IGNOU MA Online Programs 2025 - UGC Approved Degrees
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Advance your knowledge in humanities and social sciences with IGNOU's prestigious Online MA program - designed for academic and professional growth.
+                Apply for IGNOU MA Online Programs 2025. Choose from IGNOU MA in Political Science Online, English and more - UGC-approved IGNOU Distance Learning Programs.
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-8">

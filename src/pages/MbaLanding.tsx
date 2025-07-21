@@ -33,9 +33,9 @@ const MbaLanding = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU MBA Online - Master of Business Administration Distance Learning 2024"
-        description="Apply for IGNOU MBA Online program. Master of Business Administration distance learning with 9 specializations. UGC recognized degree. Fee ₹62,000. Apply now for 2024 admission."
-        keywords="IGNOU MBA, MBA online, master of business administration, distance learning MBA, online MBA degree, IGNOU MBA admission, MBA courses, business management degree"
+        title="IGNOU MBA Admission 2025 - Online MBA from IGNOU | UGC Approved Degree"
+        description="Apply for IGNOU MBA Admission 2025. Get Online MBA from IGNOU with 9 specializations. UGC-approved IGNOU Online MBA Fee Structure ₹62,000. Distance education MBA program."
+        keywords="IGNOU MBA Admission 2025, Online MBA from IGNOU, IGNOU Online MBA Fee Structure, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs, Best Online Courses by IGNOU"
         canonical="/mba"
         course={{
           name: "Master of Business Administration (MBA)",
@@ -55,10 +55,10 @@ const MbaLanding = () => {
             <div>
               <Badge className="bg-yellow-500 text-blue-900 mb-4">IGNOU Online MBA Program</Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Online Master of Business Administration (MBA)
+                IGNOU MBA Admission 2025 - Online MBA from IGNOU
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Advance your career with IGNOU's prestigious Online MBA program - a comprehensive postgraduate management degree designed for aspiring business leaders.
+                Apply for IGNOU MBA Admission 2025. Get your Online MBA from IGNOU - a UGC-approved comprehensive postgraduate management degree with best IGNOU Online MBA Fee Structure.
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-8">
@@ -127,8 +127,8 @@ const MbaLanding = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Program Highlights</h2>
-            <p className="text-xl text-gray-600">Why choose IGNOU MBA?</p>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">IGNOU Online MBA Program Highlights</h2>
+            <p className="text-xl text-gray-600">Why choose Online MBA from IGNOU Distance Education?</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

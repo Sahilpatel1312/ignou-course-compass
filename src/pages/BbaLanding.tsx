@@ -7,6 +7,7 @@ import { CheckCircle, GraduationCap, Clock, IndianRupee, Users, Award, BookOpen,
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CounselingForm from "@/components/CounselingForm";
+import SEO from "@/components/SEO";
 
 const BbaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -32,6 +33,19 @@ const BbaLanding = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="IGNOU Online BBA/BCA Programs 2025 - Bachelor of Business Administration"
+        description="Apply for IGNOU Online BBA/BCA Programs 2025. Bachelor of Business Administration distance learning. UGC-approved IGNOU Online Degree Programs. Fee ₹32,400."
+        keywords="IGNOU Online BBA/BCA Programs, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs, Best Online Courses by IGNOU"
+        canonical="/bba"
+        course={{
+          name: "Bachelor of Business Administration (BBA)",
+          description: "Comprehensive undergraduate business program for future leaders",
+          duration: "3 Years",
+          fee: "₹32,400",
+          eligibility: "12th pass from recognized board"
+        }}
+      />
       <Header onCounselingClick={handleCounselingClick} />
       
       {/* Hero Section */}
@@ -42,10 +56,10 @@ const BbaLanding = () => {
             <div>
               <Badge className="bg-yellow-500 text-blue-900 mb-4">IGNOU Online BBA Program</Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Online Bachelor of Business Administration (BBA)
+                IGNOU Online BBA/BCA Programs 2025 - UGC Approved
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Build your business foundation with IGNOU's comprehensive Online BBA program - designed for future business leaders.
+                Apply for IGNOU Online BBA/BCA Programs 2025. Build your business foundation with UGC-approved IGNOU Distance Learning Programs for future leaders.
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-8">
