@@ -20,6 +20,9 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <h1 style={{ display: 'none' }}>
+        IGNOU Distance Education – Admission Open for MBA, BBA, MCA 2024
+      </h1>
       <Toaster />
       <Sonner />
       <BrowserRouter>
