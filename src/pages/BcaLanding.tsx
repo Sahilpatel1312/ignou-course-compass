@@ -7,6 +7,7 @@ import { CheckCircle, GraduationCap, Clock, IndianRupee, Users, Award, BookOpen,
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CounselingForm from "@/components/CounselingForm";
+import SEO from "@/components/SEO";
 
 const BcaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -32,6 +33,19 @@ const BcaLanding = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="IGNOU BCA Online - Bachelor of Computer Applications Distance Learning 2024"
+        description="Apply for IGNOU BCA Online program. Bachelor of Computer Applications distance learning with programming, web development, and IT skills. UGC recognized degree. Fee ₹36,000."
+        keywords="IGNOU BCA, BCA online, bachelor of computer applications, distance learning BCA, computer science degree, IGNOU BCA admission, IT courses, programming courses"
+        canonical="/bca"
+        course={{
+          name: "Bachelor of Computer Applications (BCA)",
+          description: "Comprehensive undergraduate IT program for aspiring computer professionals",
+          duration: "3 Years",
+          fee: "₹36,000",
+          eligibility: "12th pass with Mathematics from recognized board"
+        }}
+      />
       <Header onCounselingClick={handleCounselingClick} />
       
       {/* Hero Section */}

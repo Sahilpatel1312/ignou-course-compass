@@ -6,6 +6,7 @@ import { CheckCircle, GraduationCap, Clock, IndianRupee, Users, Award, BookOpen,
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CounselingForm from "@/components/CounselingForm";
+import SEO from "@/components/SEO";
 
 const MbaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -31,6 +32,19 @@ const MbaLanding = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="IGNOU MBA Online - Master of Business Administration Distance Learning 2024"
+        description="Apply for IGNOU MBA Online program. Master of Business Administration distance learning with 9 specializations. UGC recognized degree. Fee ₹62,000. Apply now for 2024 admission."
+        keywords="IGNOU MBA, MBA online, master of business administration, distance learning MBA, online MBA degree, IGNOU MBA admission, MBA courses, business management degree"
+        canonical="/mba"
+        course={{
+          name: "Master of Business Administration (MBA)",
+          description: "Comprehensive postgraduate management degree for aspiring business leaders",
+          duration: "2 Years",
+          fee: "₹62,000",
+          eligibility: "Bachelor's degree with 50% marks from recognized university"
+        }}
+      />
       <Header onCounselingClick={handleCounselingClick} />
       
       {/* Hero Section */}
