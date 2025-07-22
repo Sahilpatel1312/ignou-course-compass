@@ -1,5 +1,6 @@
 
 import { GraduationCap, Mail, MapPin, Globe, Facebook, Twitter, Youtube } from "lucide-react";
+import { DisclaimerModal, TermsConditionsModal, PrivacyPolicyModal } from "./LegalModals";
 
 const Footer = () => {
   return (
@@ -71,8 +72,39 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Legal Links Section */}
+        <div className="border-t border-gray-800 mt-8 pt-6">
+          <div className="flex flex-col items-center space-y-4">
+            <div className="flex flex-wrap justify-center items-center gap-2 text-sm">
+              <DisclaimerModal 
+                trigger={
+                  <button className="text-gray-400 hover:text-yellow-400 transition-colors cursor-pointer">
+                    Disclaimer
+                  </button>
+                }
+              />
+              <span className="text-gray-600">|</span>
+              <TermsConditionsModal 
+                trigger={
+                  <button className="text-gray-400 hover:text-yellow-400 transition-colors cursor-pointer">
+                    Terms & Conditions
+                  </button>
+                }
+              />
+              <span className="text-gray-600">|</span>
+              <PrivacyPolicyModal 
+                trigger={
+                  <button className="text-gray-400 hover:text-yellow-400 transition-colors cursor-pointer">
+                    Privacy Policy
+                  </button>
+                }
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Section */}
-        <div className="border-t border-gray-800 mt-8 pt-8">
+        <div className="border-t border-gray-800 mt-6 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-gray-400">
               © 2024 IGNOU Course Compass. All rights reserved. 

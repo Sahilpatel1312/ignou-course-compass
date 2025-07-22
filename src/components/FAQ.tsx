@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { CounselingFormModal } from "./CounselingFormModal";
 
 interface FAQItem {
   question: string;
@@ -97,9 +98,13 @@ const FAQ = () => {
           <p className="text-muted-foreground mb-4">
             Still have questions? Get personalized guidance from our counselors.
           </p>
-          <button className="bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
-            Contact Our Counselors
-          </button>
+          <CounselingFormModal 
+            trigger={
+              <button className="bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+                Contact Our Counselors
+              </button>
+            }
+          />
         </div>
       </div>
     </section>
