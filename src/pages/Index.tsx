@@ -11,6 +11,7 @@ import CounselingForm from "@/components/CounselingForm";
 import Footer from "@/components/Footer";
 import Slideshow from "@/components/Slideshow";
 import SEO from "@/components/SEO";
+import FAQ from "@/components/FAQ";
 import { ignouCourses, courseCategories } from "@/data/ignouCourses";
 
 const Index = () => {
@@ -63,9 +64,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU Admission 2025 - IGNOU Distance Education | Online Courses"
-        description="Apply for IGNOU Admission 2025 Online. UGC-approved IGNOU Distance Education with 200+ online courses. IGNOU MBA Admission 2025, MCA, BCA, MA programs available."
-        keywords="IGNOU Admission 2025, IGNOU Distance Education, IGNOU Online Courses, Apply for IGNOU Admission 2025 Online, UGC-approved IGNOU Online Degrees, Best Online Courses by IGNOU"
+        title="IGNOU Admission 2025 Open - Apply Online for Distance Learning Courses"
+        description="IGNOU Admission 2025 Last Date July 31st. Apply for UGC-approved IGNOU Distance Education, Online MBA, MCA, BCA, MA, BCom programs. 200+ courses available with flexible schedules & affordable fees."
+        keywords="IGNOU Admission 2025, IGNOU Distance Education, IGNOU Online Courses, Apply for IGNOU Admission 2025 Online, UGC-approved IGNOU Online Degrees, Best Online Courses by IGNOU, IGNOU July 2025 Session"
         canonical="/"
       />
       <Header onCounselingClick={handleCounselingClick} />
@@ -193,6 +194,62 @@ const Index = () => {
           )}
         </div>
       </section>
+
+      {/* About IGNOU Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-gray-800 mb-6">About IGNOU - India's Premier Distance Learning University</h2>
+            <div className="text-lg text-gray-600 space-y-4 text-left">
+              <p>
+                <strong>Indira Gandhi National Open University (IGNOU)</strong>, established in 1985, is India's largest open university and a pioneer in distance education. With over 4 million students enrolled across India and abroad, IGNOU has revolutionized higher education accessibility through its innovative teaching methodologies and comprehensive support system.
+              </p>
+              <p>
+                IGNOU is recognized by the University Grants Commission (UGC), accredited by NAAC with Grade A++, and ranked No. 1 in the NIRF 2024 Open University category. The university offers 200+ programs through 21 schools of study, 67+ regional centers, and an extensive network of study centers.
+              </p>
+              <p>
+                What sets IGNOU apart is its commitment to quality education at affordable fees, flexible learning schedules, and comprehensive student support services including eGyankosh (digital repository), Gyandhara (audio counseling), GyanVani (educational FM radio), and Gyandarshan (education TV channel).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Features Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Why IGNOU is the Best Choice for Distance Education</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="text-xl font-semibold text-blue-600 mb-3">UGC Approved & NAAC A++ Accredited</h3>
+              <p className="text-gray-600">All IGNOU degrees are UGC-approved and widely accepted by employers and institutions for jobs and higher education.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="text-xl font-semibold text-green-600 mb-3">Affordable Fee Structure</h3>
+              <p className="text-gray-600">Quality education at pocket-friendly fees, making higher education accessible to students from all economic backgrounds.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="text-xl font-semibold text-purple-600 mb-3">Flexible Learning Options</h3>
+              <p className="text-gray-600">Study at your own pace with online and distance learning modes, perfect for working professionals and homemakers.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="text-xl font-semibold text-orange-600 mb-3">Comprehensive Study Materials</h3>
+              <p className="text-gray-600">High-quality printed books, online resources, video lectures, and digital library access for complete learning support.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="text-xl font-semibold text-red-600 mb-3">Strong Alumni Network</h3>
+              <p className="text-gray-600">Join millions of successful IGNOU graduates working in top companies and government positions worldwide.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="text-xl font-semibold text-teal-600 mb-3">Multiple Admission Cycles</h3>
+              <p className="text-gray-600">Two admission cycles per year (January & July) provide flexibility to start your educational journey when convenient.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* Call to Action Section */}
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">
