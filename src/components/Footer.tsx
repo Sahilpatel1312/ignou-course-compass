@@ -107,10 +107,13 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-6 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-gray-400">
-              © 2025 Ingou Online Course. Not affiliated with IGNOU. All rights reserved. 
+              © 2025 Ignou Online Courses. Not affiliated with IGNOU. All rights reserved.
             </p>
             <p className="text-sm text-gray-400 mt-2 md:mt-0">
-               Not affiliated with IGNOU — for official info, visit <a href="https://www.ignou.ac.in" target="_blank" rel="noopener noreferrer" className="underline">ignou.ac.in</a>
+              Not affiliated with IGNOU — for official info, visit{" "}
+              <a href="https://www.ignou.ac.in" target="_blank" rel="noopener noreferrer" className="underline">
+                ignou.ac.in
+              </a>
             </p>
           </div>
         </div>
