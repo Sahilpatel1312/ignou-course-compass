@@ -1,6 +1,6 @@
 
 import { GraduationCap, Mail, MapPin, Globe, Facebook, Twitter, Youtube } from "lucide-react";
-import { DisclaimerModal, TermsConditionsModal, PrivacyPolicyModal } from "./LegalModals";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -76,29 +76,17 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-8 pt-6">
           <div className="flex flex-col items-center space-y-4">
             <div className="flex flex-wrap justify-center items-center gap-4 text-sm font-medium">
-              <DisclaimerModal 
-                trigger={
-                  <button className="text-yellow-400 hover:underline transition-colors cursor-pointer">
-                    Disclaimer
-                  </button>
-                }
-              />
+              <Link to="/disclaimer" className="text-yellow-400 hover:underline transition-colors">
+                Disclaimer
+              </Link>
               <span className="text-gray-600">|</span>
-              <TermsConditionsModal 
-                trigger={
-                  <button className="text-yellow-400 hover:underline transition-colors cursor-pointer">
-                    Terms & Conditions
-                  </button>
-                }
-              />
+              <Link to="/terms-conditions" className="text-yellow-400 hover:underline transition-colors">
+                Terms & Conditions
+              </Link>
               <span className="text-gray-600">|</span>
-              <PrivacyPolicyModal 
-                trigger={
-                  <button className="text-yellow-400 hover:underline transition-colors cursor-pointer">
-                    Privacy Policy
-                  </button>
-                }
-              />
+              <Link to="/privacy-policy" className="text-yellow-400 hover:underline transition-colors">
+                Privacy Policy
+              </Link>
             </div>
           </div>
         </div>
