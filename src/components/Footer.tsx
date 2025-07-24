@@ -12,7 +12,7 @@ const Footer = () => {
             <div className="flex items-center space-x-3">
               <GraduationCap className="h-8 w-8 text-yellow-400" />
               <div>
-                <h3 className="text-xl font-bold text-white">IGNOU Course Compass</h3>
+                <h3 className="text-xl font-bold text-white">Ignou online courses</h3>
                 <p className="text-sm text-gray-400">Your Educational Journey Starts Here</p>
               </div>
             </div>
@@ -107,10 +107,10 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-6 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-gray-400">
-              © 2024 IGNOU Course Compass. All rights reserved. 
+              © 2025 Ingou Online Course. Not affiliated with IGNOU. All rights reserved. 
             </p>
             <p className="text-sm text-gray-400 mt-2 md:mt-0">
-              Affiliated with Indira Gandhi National Open University
+               Not affiliated with IGNOU — for official info, visit <a href="https://www.ignou.ac.in" target="_blank" rel="noopener noreferrer" className="underline">ignou.ac.in</a>
             </p>
           </div>
         </div>
