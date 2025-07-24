@@ -32,7 +32,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-yellow-400" />
-                <span className="text-sm">admission@ignou.ac.in</span>
+                <span className="text-sm">support@ignoudistance.in</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-yellow-400" />
@@ -75,10 +75,10 @@ const Footer = () => {
         {/* Legal Links Section */}
         <div className="border-t border-gray-800 mt-8 pt-6">
           <div className="flex flex-col items-center space-y-4">
-            <div className="flex flex-wrap justify-center items-center gap-2 text-sm">
+            <div className="flex flex-wrap justify-center items-center gap-4 text-sm font-medium">
               <DisclaimerModal 
                 trigger={
-                  <button className="text-gray-400 hover:text-yellow-400 transition-colors cursor-pointer">
+                  <button className="text-yellow-400 hover:underline transition-colors cursor-pointer">
                     Disclaimer
                   </button>
                 }
@@ -86,7 +86,7 @@ const Footer = () => {
               <span className="text-gray-600">|</span>
               <TermsConditionsModal 
                 trigger={
-                  <button className="text-gray-400 hover:text-yellow-400 transition-colors cursor-pointer">
+                  <button className="text-yellow-400 hover:underline transition-colors cursor-pointer">
                     Terms & Conditions
                   </button>
                 }
@@ -94,7 +94,7 @@ const Footer = () => {
               <span className="text-gray-600">|</span>
               <PrivacyPolicyModal 
                 trigger={
-                  <button className="text-gray-400 hover:text-yellow-400 transition-colors cursor-pointer">
+                  <button className="text-yellow-400 hover:underline transition-colors cursor-pointer">
                     Privacy Policy
                   </button>
                 }
