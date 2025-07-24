@@ -54,7 +54,7 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
               </div>
               <div className="flex items-center space-x-2 text-xs sm:text-sm">
                 <Mail className="h-3 w-3 sm:h-4 sm:w-4" />
-                <span>admission@ignou.ac.in</span>
+                <span>support@ignoudistance.in</span>
               </div>
             </div>
           </div>
