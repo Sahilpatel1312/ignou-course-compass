@@ -16,7 +16,6 @@ import BaLanding from "./pages/BaLanding";
 import BcomLanding from "./pages/BcomLanding";
 import NotFound from "./pages/NotFound";
 
-// ✅ New legal pages
 import Disclaimer from "./pages/disclaimer";
 import Terms from "./pages/terms-conditions";
 import PrivacyPolicy from "./pages/privacy-policy";
@@ -26,9 +25,17 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      {/* ✅ Hidden SEO Headings to Improve Keyword Indexing */}
       <h1 style={{ display: "none" }}>
-        IGNOU Distance Education – Admission Open for MBA, BBA, MCA 2024
+        IGNOU Admission 2025 (July Session) – Apply Online Today
       </h1>
+      <h1 style={{ display: "none" }}>
+        Apply for IGNOU MBA Admission 2025 – Distance & Online Mode
+      </h1>
+      <h1 style={{ display: "none" }}>
+        Indira Gandhi National Open University (IGNOU) Admission 2025–26 Open Now
+      </h1>
+
       <Toaster />
       <Sonner />
       <BrowserRouter>
@@ -43,12 +50,12 @@ const App = () => (
           <Route path="/ba" element={<BaLanding />} />
           <Route path="/bcom" element={<BcomLanding />} />
 
-          {/* ✅ Legal Page Routes */}
+          {/* ✅ Legal Pages */}
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/terms-conditions" element={<Terms />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
-          {/* ❗ Catch-all 404 route */}
+          {/* ❗ 404 Route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
