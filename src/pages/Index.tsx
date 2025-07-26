@@ -64,7 +64,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU Admission 2025 Open - Apply Online for Distance Learning Courses"
+        title="IGNOU Admission 2025 (July Session) – Apply Online Today"
         description="IGNOU Admission 2025 Last Date July 31st. Apply for UGC-approved IGNOU Distance Education, Online MBA, MCA, BCA, MA, BCom programs. 200+ courses available with flexible schedules & affordable fees."
         keywords="IGNOU Admission 2025, IGNOU Distance Education, IGNOU Online Courses, Apply for IGNOU Admission 2025 Online, UGC-approved IGNOU Online Degrees, Best Online Courses by IGNOU, IGNOU July 2025 Session"
         canonical="/"
