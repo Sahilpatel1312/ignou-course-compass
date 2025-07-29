@@ -71,16 +71,6 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
     setIsSubmitting(true);
 
     try {
-      // ✅ Debug: Log the data being sent
-      console.log("🚀 Sending form data:", {
-        fullName: formData.fullName,
-        email: formData.email,
-        phone: formData.phoneNumber,
-        course: formData.interestedCourse,
-        state: formData.state,
-      });
-
-      // Send data to backend API
       const response = await fetch("https://ignou-server.onrender.com/api/submit-lead", {
         method: "POST",
         headers: {
@@ -95,7 +85,6 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
         }),
       });
 
-      console.log("📬 Response status:", response.status);
       const result = await response.json();
 
       if (response.ok && result.success) {
@@ -103,6 +92,15 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
           title: "✅ Counseling Request Submitted!",
           description: "Our counselor will contact you within 24 hours.",
         });
+
+        // 🔥 Trigger Google Ads conversion tracking
+        if (typeof window !== "undefined" && typeof window.gtag === "function") {
+          window.gtag("event", "conversion", {
+            send_to: "AW-17409910638/bI1GCMSi6_oaEO7O2O1A",
+            value: 1.0,
+            currency: "INR",
+          });
+        }
 
         setFormData({
           fullName: "",
@@ -154,7 +152,6 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
             placeholder="Enter your full name"
             value={formData.fullName}
             onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             required
             disabled={isSubmitting}
           />
@@ -171,7 +168,6 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
             placeholder="Enter your email address"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             required
             disabled={isSubmitting}
           />
@@ -188,7 +184,6 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
             placeholder="Enter your 10-digit phone number"
             value={formData.phoneNumber}
             onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             maxLength={10}
             required
             disabled={isSubmitting}
@@ -206,7 +201,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
             onValueChange={(value) => setFormData({ ...formData, interestedCourse: value })}
             disabled={isSubmitting}
           >
-            <SelectTrigger className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+            <SelectTrigger>
               <SelectValue placeholder="Select Course..." />
             </SelectTrigger>
             <SelectContent className="max-h-60">
@@ -230,7 +225,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
             onValueChange={(value) => setFormData({ ...formData, state: value })}
             disabled={isSubmitting}
           >
-            <SelectTrigger className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+            <SelectTrigger>
               <SelectValue placeholder="Select State..." />
             </SelectTrigger>
             <SelectContent className="max-h-60">
