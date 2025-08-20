@@ -91,7 +91,14 @@ export const useSmartPopup = () => {
     const handleScroll = () => {
       if (scrollTriggeredRef.current) return;
       
-      const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      const scrollHeight = document.documentElement.scrollHeight;
+      const viewportHeight = window.innerHeight;
+      const scrollTop = window.scrollY;
+      
+      // Ensure we have valid scroll dimensions
+      if (scrollHeight <= viewportHeight) return;
+      
+      const scrollPercent = scrollTop / (scrollHeight - viewportHeight);
       
       if (scrollPercent >= SCROLL_TRIGGER) {
         scrollTriggeredRef.current = true;
@@ -99,14 +106,16 @@ export const useSmartPopup = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [hasTriggered]);
 
   // Time delay trigger
   useEffect(() => {
+    if (hasTriggered) return;
+    
     timeoutRef.current = setTimeout(() => {
-      if (!timeTriggeredRef.current) {
+      if (!timeTriggeredRef.current && canShowPopup()) {
         timeTriggeredRef.current = true;
         triggerPopup();
       }
@@ -117,7 +126,7 @@ export const useSmartPopup = () => {
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [hasTriggered]);
+  }, []);
 
   // Manual popup trigger
   const openPopup = () => {

@@ -7,18 +7,13 @@ import { CheckCircle, GraduationCap, Clock, IndianRupee, Users, Award, BookOpen,
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CounselingForm from "@/components/CounselingForm";
+import FloatingHelpButton from "@/components/FloatingHelpButton";
+import { useSmartPopup } from "@/hooks/useSmartPopup";
 
 const BaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
   const [preSelectedCourse, setPreSelectedCourse] = useState("Online Bachelor of Arts (BA)");
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsCounselingOpen(true);
-    }, 10000);
-
-    return () => clearTimeout(timer);
-  }, []);
+  const { showPopup, openPopup, closePopup, markFormSubmitted } = useSmartPopup();
 
   const handleApplyNow = () => {
     setPreSelectedCourse("Online Bachelor of Arts (BA)");
@@ -287,11 +282,24 @@ const BaLanding = () => {
 
       <Footer />
       
+      {/* Smart Popup */}
+      <CounselingForm 
+        isOpen={showPopup} 
+        onClose={closePopup}
+        preSelectedCourse="Online Bachelor of Arts (BA)"
+        onFormSubmitted={markFormSubmitted}
+      />
+      
+      {/* Manual Counseling Form */}
       <CounselingForm 
         isOpen={isCounselingOpen} 
         onClose={() => setIsCounselingOpen(false)}
         preSelectedCourse={preSelectedCourse}
+        onFormSubmitted={markFormSubmitted}
       />
+      
+      {/* Floating Help Button */}
+      <FloatingHelpButton onClick={openPopup} />
     </div>
   );
 };

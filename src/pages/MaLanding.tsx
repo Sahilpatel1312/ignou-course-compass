@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -6,19 +6,14 @@ import { CheckCircle, GraduationCap, Clock, IndianRupee, Users, Award, BookOpen,
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CounselingForm from "@/components/CounselingForm";
+import FloatingHelpButton from "@/components/FloatingHelpButton";
+import { useSmartPopup } from "@/hooks/useSmartPopup";
 import SEO from "@/components/SEO";
 
 const MaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
   const [preSelectedCourse, setPreSelectedCourse] = useState("Online Master of Arts (MA)");
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsCounselingOpen(true);
-    }, 10000);
-
-    return () => clearTimeout(timer);
-  }, []);
+  const { showPopup, openPopup, closePopup, markFormSubmitted } = useSmartPopup();
 
   const handleApplyNow = () => {
     setPreSelectedCourse("Online Master of Arts (MA)");
@@ -300,11 +295,24 @@ const MaLanding = () => {
 
       <Footer />
       
+      {/* Smart Popup */}
+      <CounselingForm 
+        isOpen={showPopup} 
+        onClose={closePopup}
+        preSelectedCourse="Online Master of Arts (MA)"
+        onFormSubmitted={markFormSubmitted}
+      />
+      
+      {/* Manual Counseling Form */}
       <CounselingForm 
         isOpen={isCounselingOpen} 
         onClose={() => setIsCounselingOpen(false)}
         preSelectedCourse={preSelectedCourse}
+        onFormSubmitted={markFormSubmitted}
       />
+      
+      {/* Floating Help Button */}
+      <FloatingHelpButton onClick={openPopup} />
     </div>
   );
 };

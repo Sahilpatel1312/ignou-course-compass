@@ -7,10 +7,13 @@ import { CheckCircle, GraduationCap, Clock, IndianRupee, Users, Award, BookOpen,
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CounselingForm from "@/components/CounselingForm";
+import FloatingHelpButton from "@/components/FloatingHelpButton";
+import { useSmartPopup } from "@/hooks/useSmartPopup";
 
 const McomLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
   const [preSelectedCourse, setPreSelectedCourse] = useState("Online Master of Commerce (M.Com)");
+  const { showPopup, openPopup, closePopup, markFormSubmitted } = useSmartPopup();
 
   const handleApplyNow = () => {
     setPreSelectedCourse("Online Master of Commerce (M.Com)");
@@ -279,11 +282,24 @@ const McomLanding = () => {
 
       <Footer />
       
+      {/* Smart Popup */}
+      <CounselingForm 
+        isOpen={showPopup} 
+        onClose={closePopup}
+        preSelectedCourse="Online Master of Commerce (M.Com)"
+        onFormSubmitted={markFormSubmitted}
+      />
+      
+      {/* Manual Counseling Form */}
       <CounselingForm 
         isOpen={isCounselingOpen} 
         onClose={() => setIsCounselingOpen(false)}
         preSelectedCourse={preSelectedCourse}
+        onFormSubmitted={markFormSubmitted}
       />
+      
+      {/* Floating Help Button */}
+      <FloatingHelpButton onClick={openPopup} />
     </div>
   );
 };

@@ -81,29 +81,31 @@ const CourseCard = ({ course, onApplyNow, onDownloadBrochure }: CourseCardProps)
         </div>
 
         <div className="space-y-3">
-          {/* Two buttons in a row */}
-          <div className="flex gap-2">
+          {/* Two buttons in a row - mobile responsive */}
+          <div className="flex flex-col sm:flex-row gap-2">
             <Button 
               onClick={() => onDownloadBrochure(course.name)}
-              className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold"
+              className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold text-sm py-2"
             >
               <Download className="mr-2 h-4 w-4" />
-              Download Brochure
+              <span className="hidden sm:inline">Download Brochure</span>
+              <span className="sm:hidden">Brochure</span>
             </Button>
             
             <Button 
               onClick={handleCheckDetails}
               variant="outline" 
-              className="flex-1 text-blue-600 border-blue-600 hover:bg-blue-50"
+              className="flex-1 text-blue-600 border-blue-600 hover:bg-blue-50 text-sm py-2"
             >
               <ExternalLink className="mr-2 h-4 w-4" />
-              Check Details
+              <span className="hidden sm:inline">Check Details</span>
+              <span className="sm:hidden">Details</span>
             </Button>
           </div>
           
           <Button 
             onClick={() => onApplyNow(course.name)}
-            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105"
+            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 text-sm py-2"
           >
             Apply Now
           </Button>
