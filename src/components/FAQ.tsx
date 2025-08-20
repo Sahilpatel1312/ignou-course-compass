@@ -4,7 +4,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { CounselingFormModal } from "./CounselingFormModal";
+import { useState } from "react";
+import CounselingFormModal from "./CounselingFormModal";
 
 interface FAQItem {
   question: string;
@@ -63,6 +64,8 @@ const faqData: FAQItem[] = [
 ];
 
 const FAQ = () => {
+  const [isCounselingModalOpen, setIsCounselingModalOpen] = useState(false);
+
   return (
     <section className="py-16 bg-gradient-to-br from-background via-accent/5 to-background">
       <div className="container mx-auto px-4">
@@ -98,15 +101,20 @@ const FAQ = () => {
           <p className="text-muted-foreground mb-4">
             Still have questions? Get personalized guidance from our counselors.
           </p>
-          <CounselingFormModal 
-            trigger={
-              <button className="bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
-                Contact Our Counselors
-              </button>
-            }
-          />
+          <button 
+            onClick={() => setIsCounselingModalOpen(true)}
+            className="bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+          >
+            Contact Our Counselors
+          </button>
         </div>
       </div>
+
+      {/* Counseling Modal */}
+      <CounselingFormModal 
+        isOpen={isCounselingModalOpen}
+        onClose={() => setIsCounselingModalOpen(false)}
+      />
     </section>
   );
 };

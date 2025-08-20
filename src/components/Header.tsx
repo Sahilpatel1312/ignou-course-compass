@@ -3,7 +3,7 @@ import { GraduationCap, Mail, MapPin, Search, Menu, User, Globe, ChevronDown, Ch
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
-const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
+const Header = ({ onCounselingClick }: { onCounselingClick?: () => void }) => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   const handleDropdownClick = (dropdown: string) => {
@@ -87,7 +87,7 @@ const Header = ({ onCounselingClick }: { onCounselingClick: () => void }) => {
               {/* Right Side Actions */}
               <div className="flex items-center space-x-2 sm:space-x-4 flex-shrink-0">
                 <Button 
-                  onClick={onCounselingClick}
+                  onClick={() => onCounselingClick?.()}
                   className="bg-orange-600 hover:bg-orange-700 text-white px-3 py-1 sm:px-6 sm:py-2 rounded-md font-semibold text-xs sm:text-sm"
                 >
                   <span className="hidden sm:inline">Admission 2025</span>

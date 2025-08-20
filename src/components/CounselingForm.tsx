@@ -13,6 +13,7 @@ interface CounselingFormProps {
   onClose: () => void;
   preSelectedCourse?: string;
   embedded?: boolean;
+  onFormSubmitted?: () => void;
 }
 
 const states = [
@@ -24,7 +25,7 @@ const states = [
   "Dadra and Nagar Haveli and Daman and Diu", "Lakshadweep", "Puducherry"
 ];
 
-const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }: CounselingFormProps) => {
+const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false, onFormSubmitted }: CounselingFormProps) => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -94,8 +95,8 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
         });
 
         // 🔥 Trigger Google Ads conversion tracking
-        if (typeof window !== "undefined" && typeof window.gtag === "function") {
-          window.gtag("event", "conversion", {
+        if (typeof window !== "undefined" && (window as any).gtag) {
+          (window as any).gtag("event", "conversion", {
             send_to: "AW-17409910638/bI1GCMSi6_oaEO7O2O1A",
             value: 1.0,
             currency: "INR",
@@ -109,6 +110,9 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false }
           interestedCourse: "",
           state: "",
         });
+
+        // Notify parent component that form was submitted
+        onFormSubmitted?.();
 
         if (!embedded) {
           onClose();

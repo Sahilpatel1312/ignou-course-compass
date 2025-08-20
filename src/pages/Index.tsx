@@ -1,35 +1,28 @@
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, BookOpen, Users, Award, TrendingUp, ExternalLink } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
-import CourseCard from "@/components/CourseCard";
+import CourseCard from "@/components/CourseCard";  
 import CounselingForm from "@/components/CounselingForm";
 import Footer from "@/components/Footer";
 import Slideshow from "@/components/Slideshow";
 import SEO from "@/components/SEO";
 import FAQ from "@/components/FAQ";
+import FloatingHelpButton from "@/components/FloatingHelpButton";
 import { ignouCourses, courseCategories } from "@/data/ignouCourses";
+import { useSmartPopup } from "@/hooks/useSmartPopup";
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
   const [preSelectedCourse, setPreSelectedCourse] = useState("");
-  const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate();
-
-  // Show popup after 10 seconds
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-    }, 10000);
-
-    return () => clearTimeout(timer);
-  }, []);
+  const { showPopup, openPopup, closePopup, markFormSubmitted } = useSmartPopup();
 
   const filteredCourses = ignouCourses.filter(course => {
     const matchesSearch = course.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -58,7 +51,7 @@ const Index = () => {
   };
 
   const handlePopupClose = () => {
-    setShowPopup(false);
+    closePopup();
   };
 
   return (
@@ -274,16 +267,19 @@ const Index = () => {
         isOpen={isCounselingOpen} 
         onClose={() => setIsCounselingOpen(false)}
         preSelectedCourse={preSelectedCourse}
+        onFormSubmitted={markFormSubmitted}
       />
 
-      {/* Popup Counseling Form */}
-      {showPopup && (
-        <CounselingForm 
-          isOpen={showPopup} 
-          onClose={handlePopupClose}
-          preSelectedCourse=""
-        />
-      )}
+      {/* Smart Popup Counseling Form */}
+      <CounselingForm 
+        isOpen={showPopup} 
+        onClose={handlePopupClose}
+        preSelectedCourse=""
+        onFormSubmitted={markFormSubmitted}
+      />
+
+      {/* Floating Help Button */}
+      <FloatingHelpButton onClick={openPopup} />
     </div>
   );
 };
