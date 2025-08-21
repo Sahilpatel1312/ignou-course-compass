@@ -72,8 +72,15 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Legal Links Section */}
+        {/* Disclaimer Notice */}
         <div className="border-t border-gray-800 mt-8 pt-6">
+          <div className="bg-blue-600 text-white py-3 px-4 rounded-lg text-center text-sm">
+            This site does not handle course enrollments, admissions, or fee collections. If you find any inaccuracies, please email support@ignoudistance.in for corrections. For accurate information, visit the official IGNOU website. Information provided here is solely for informational purposes.
+          </div>
+        </div>
+
+        {/* Legal Links Section */}
+        <div className="mt-6 pt-6">
           <div className="flex flex-col items-center space-y-4">
             <div className="flex flex-wrap justify-center items-center gap-4 text-sm font-medium">
               <Link to="/disclaimer" className="text-yellow-400 hover:underline transition-colors">
@@ -93,15 +100,9 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="border-t border-gray-800 mt-6 pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex justify-center items-center">
             <p className="text-sm text-gray-400">
-              © 2025 Ignou Online Courses. Not affiliated with IGNOU. All rights reserved.
-            </p>
-            <p className="text-sm text-gray-400 mt-2 md:mt-0">
-              Not affiliated with IGNOU — for official info, visit{" "}
-              <a href="https://www.ignou.ac.in" target="_blank" rel="noopener noreferrer" className="underline">
-                ignou.ac.in
-              </a>
+              © 2025 Ignou Distance. All rights reserved.
             </p>
           </div>
         </div>
