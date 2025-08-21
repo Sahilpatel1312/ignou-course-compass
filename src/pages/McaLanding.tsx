@@ -242,6 +242,80 @@ const McaLanding = () => {
         </div>
       </section>
 
+      {/* Curriculum Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
+              MCA Curriculum Structure
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+              Comprehensive 2-year program with 4 semesters covering advanced computer applications and technology.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <Card className="p-6">
+              <h3 className="text-xl font-semibold text-blue-600 mb-4">Semester I</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Design & Analysis of Algorithms</li>
+                <li>• Discrete Mathematics</li>
+                <li>• Software Engineering</li>
+                <li>• Professional Skills & Ethics</li>
+                <li>• Security & Cyber Laws</li>
+                <li>• DAA & Web Design Lab</li>
+                <li>• Software Engineering Lab</li>
+              </ul>
+            </Card>
+            <Card className="p-6">
+              <h3 className="text-xl font-semibold text-blue-600 mb-4">Semester II</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Data Communication & Computer Networks</li>
+                <li>• Object Oriented Analysis & Design</li>
+                <li>• Web Technologies</li>
+                <li>• Data Warehousing & Data Mining</li>
+                <li>• OOAD & Web Technologies Lab</li>
+                <li>• Computer Networks & Data Mining Lab</li>
+              </ul>
+            </Card>
+            <Card className="p-6">
+              <h3 className="text-xl font-semibold text-blue-600 mb-4">Semester III</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Artificial Intelligence & Machine Learning</li>
+                <li>• Accountancy & Financial Management</li>
+                <li>• Data Science & Big Data</li>
+                <li>• Cloud Computing & IoT</li>
+                <li>• AI & ML Lab</li>
+                <li>• Cloud & Data Science Lab</li>
+              </ul>
+            </Card>
+            <Card className="p-6">
+              <h3 className="text-xl font-semibold text-blue-600 mb-4">Semester IV</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Digital Image Processing & Computer Vision</li>
+                <li>• Mobile Computing</li>
+                <li>• Project Work</li>
+              </ul>
+            </Card>
+          </div>
+          <div className="mt-8">
+            <Card className="p-6 max-w-4xl mx-auto">
+              <h3 className="text-xl font-semibold text-blue-600 mb-4">Additional Bridging Courses</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="text-center">
+                  <p className="text-gray-600">Programming in C and Python</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-gray-600">Data Structures and Algorithm</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-gray-600">Basic Mathematics</p>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Key Features */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">

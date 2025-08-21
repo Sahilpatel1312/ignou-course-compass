@@ -242,6 +242,70 @@ const MbaLanding = () => {
         </div>
       </section>
 
+      {/* Curriculum Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
+              MBA Curriculum Structure
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+              Comprehensive 2-year program divided into 4 semesters with core subjects and specialization tracks.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <Card className="p-6">
+              <h3 className="text-xl font-semibold text-blue-600 mb-4">Semester I</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Management Functions & Organizational Processes</li>
+                <li>• Human Resource Management</li>
+                <li>• Business Environment</li>
+                <li>• Accounting for Managers</li>
+                <li>• Quantitative Analysis for Managerial Applications</li>
+                <li>• Marketing Management</li>
+                <li>• Business Communication</li>
+              </ul>
+            </Card>
+            <Card className="p-6">
+              <h3 className="text-xl font-semibold text-blue-600 mb-4">Semester II</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Information Systems for Managers</li>
+                <li>• Management of Machines & Materials</li>
+                <li>• Managerial Economics</li>
+                <li>• Social Processes & Behavioral Issues</li>
+                <li>• Strategic Management</li>
+                <li>• Business Laws</li>
+                <li>• Financial Management</li>
+              </ul>
+            </Card>
+            <Card className="p-6">
+              <h3 className="text-xl font-semibold text-blue-600 mb-4">Semester III</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Research Methodology for Management Decisions</li>
+                <li>• International Business Management</li>
+                <li>• Project Work</li>
+                <li>• Specialization Subject 1</li>
+                <li>• Specialization Subject 2</li>
+                <li>• Specialization Subject 3</li>
+                <li>• Specialization Subject 4</li>
+              </ul>
+            </Card>
+            <Card className="p-6">
+              <h3 className="text-xl font-semibold text-blue-600 mb-4">Semester IV</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Advanced Strategic Management</li>
+                <li>• Entrepreneurship</li>
+                <li>• Total Quality Management</li>
+                <li>• Business Ethics & CSR</li>
+                <li>• Specialization Subject 5</li>
+                <li>• Specialization Subject 6</li>
+                <li>• Specialization Subject 7</li>
+              </ul>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Key Features */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
