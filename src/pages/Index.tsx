@@ -72,7 +72,7 @@ const Index = () => {
           <div className="lg:flex lg:space-x-8">
             {/* Left side content (Embedded Counseling Form) */}
             <div className="lg:w-1/3 mb-8 lg:mb-0">
-              <div className="h-full flex items-center justify-center">
+              <div className="h-full flex items-center justify-center py-4 md:py-0"> {/* Added responsive padding here */}
                 <CounselingForm 
                   isOpen={true} 
                   onClose={() => {}} 
@@ -139,7 +139,7 @@ const Index = () => {
                 onClick={() => handleApplyNow("Online Master of Business Administration (MBA)")}
                 className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-6 py-2"
               >
-                Get counselling
+                Get Counselling
               </Button>
             </div>
           </div>
@@ -150,7 +150,7 @@ const Index = () => {
       <section className="py-12" data-section="courses">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">IGNOU Online Courses 2025 - Best Online Courses by IGNOU</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Best Online Courses by IGNOU</h2>
             <p className="text-xl text-gray-600">
               Explore IGNOU Online Degree Programs and find the perfect UGC-approved course to advance your career with IGNOU Distance Learning Programs
             </p>
