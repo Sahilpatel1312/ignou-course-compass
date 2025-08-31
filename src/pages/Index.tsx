@@ -124,7 +124,7 @@ const Index = () => {
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">IGNOU MBA Admission 2025 - Online MBA from IGNOU</h2>
             <p className="text-xl mb-6 text-blue-100 max-w-2xl mx-auto">
-              Apply for IGNOU MBA Admission 2025 - Get your Online MBA from IGNOU, a prestigious UGC-approved comprehensive postgraduate management degree
+              Know more about IGNOU MBA Admission 2025 - Get your Online MBA from IGNOU, a prestigious UGC-approved comprehensive postgraduate management degree
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button 
@@ -139,7 +139,7 @@ const Index = () => {
                 onClick={() => handleApplyNow("Online Master of Business Administration (MBA)")}
                 className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-6 py-2"
               >
-                Enquire Now
+                Get counselling
               </Button>
             </div>
           </div>
