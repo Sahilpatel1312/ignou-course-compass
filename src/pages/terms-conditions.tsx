@@ -10,7 +10,7 @@ const TermsConditions = () => {
         <h1 className="text-3xl font-bold mb-6 text-blue-700">Terms &amp; Conditions</h1>
 
         <p className="mb-4">
-          These Terms &amp; Conditions govern your use of the website <strong>www.ignoudistance.in</strong>, operated under the brand name <strong>ignoudistance.in</strong>. By using this platform, you agree to abide by the terms mentioned herein.
+          These Terms &amp; Conditions govern your use of the website <strong>www.ignoudistance.in</strong>, independently owned and operated By Avedu Pvt Ltd. By using this platform, you agree to abide by the terms mentioned herein.
         </p>
 
         <p className="mb-4">
