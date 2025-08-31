@@ -18,7 +18,7 @@ const Footer = () => {
             </div>
             <div className="text-gray-400 text-xs leading-relaxed space-y-2">
               <p className="mb-3">
-                This website is owned and operated by AVEDU and is intended solely for informational and educational purposes. We are not an official partner, representative, or affiliate of Indira Gandhi National Open University (IGNOU).
+                This website is owned and operated by Avedu Pvt Ltd and is intended solely for informational and educational purposes. We are not an official partner, representative, or affiliate of Indira Gandhi National Open University (IGNOU).
               </p>
               <p className="mb-3">
                 All information presented here (including courses, fees, eligibility, and admission details) is collected from publicly available sources or official university websites for guidance purposes only. For official and updated information, visitors should always refer directly to the official IGNOU website: <a href="https://www.ignou.ac.in" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:underline">www.ignou.ac.in</a>.
