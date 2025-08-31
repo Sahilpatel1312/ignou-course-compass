@@ -28,9 +28,9 @@ const MbaLanding = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU MBA Admission 2025 - Online MBA from IGNOU | UGC Approved Degree"
-        description="Apply for IGNOU MBA Admission 2025. Get Online MBA from IGNOU with 9 specializations. UGC-approved IGNOU Online MBA Fee Structure ₹62,000. Distance education MBA program."
-        keywords="IGNOU MBA Admission 2025, Online MBA from IGNOU, IGNOU Online MBA Fee Structure, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs, Best Online Courses by IGNOU"
+        title="IGNOU MBA Online Course 2025 - Online MBA from IGNOU | UGC Approved Degree"
+        description="Get Counselling for IGNOU MBA Online Course 2025. Get Online MBA from IGNOU with 9 specializations. UGC-approved IGNOU Online MBA Fee Structure ₹62,000. Distance education MBA program."
+        keywords="IGNOU MBA Online Course 2025, Online MBA from IGNOU, IGNOU Online MBA Fee Structure, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs, Best Online Courses by IGNOU"
         canonical="/mba"
         course={{
           name: "Master of Business Administration (MBA)",
@@ -50,10 +50,10 @@ const MbaLanding = () => {
             <div>
               <Badge className="bg-yellow-500 text-blue-900 mb-4">IGNOU Online MBA Program</Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                IGNOU MBA Admission 2025 - Online MBA from IGNOU
+                IGNOU MBA Online Course 2025 - Online MBA from IGNOU
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Apply for IGNOU MBA Admission 2025. Get your Online MBA from IGNOU - a UGC-approved comprehensive postgraduate management degree with best IGNOU Online MBA Fee Structure.
+                Get counselling for IGNOU MBA Online Course 2025. Get your Online MBA from IGNOU - a UGC-approved comprehensive postgraduate management degree with best IGNOU Online MBA Fee Structure.
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-8">
