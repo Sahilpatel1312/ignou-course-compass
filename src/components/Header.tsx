@@ -60,14 +60,14 @@ const Header = ({ onCounselingClick }: { onCounselingClick?: () => void }) => {
                 </div>
               </div>
 
-              {/* Enquire Now */}
+              {/* Enquire Now button*/}
               <div className="flex-shrink-0">
                 <Button
                   onClick={() => onCounselingClick?.()}
                   className="bg-orange-600 hover:bg-orange-700 text-white px-3 py-1 sm:px-6 sm:py-2 rounded-md font-semibold text-xs sm:text-sm"
                 >
-                  <span className="hidden sm:inline">Admission 2025</span>
-                  <span className="sm:hidden">Admission</span>
+                  <span className="hidden sm:inline">Enquire Now</span>
+                  <span className="sm:hidden">Enquire Now</span>
                 </Button>
               </div>
             </div>
