@@ -80,7 +80,7 @@ const MbaLanding = () => {
                   onClick={handleApplyNow}
                   className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-8 py-3 text-lg"
                 >
-                  Apply Now
+                  Get Counselling
                 </Button>
               </div>
             </div>
