@@ -10,7 +10,7 @@ const PrivacyPolicy = () => {
         <h1 className="text-3xl font-bold mb-6 text-blue-700">Privacy Policy</h1>
 
         <p className="mb-4">
-          <strong>ignoudistance.in</strong> is a dedicated educational platform offering counselling services to help students explore online and distance education options. We are not affiliated with IGNOU or any university and solely provide guidance to assist your academic journey.
+          <strong>ignoudistance.in</strong> is a dedicated educational platform offering counselling services to help students explore online and distance education options. We are not affiliated with IGNOU or any university and solely provide guidance to assist your academic journey, We do not act as a university or an admission authority.
         </p>
 
         <p className="mb-4">
