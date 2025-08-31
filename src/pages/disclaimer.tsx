@@ -12,7 +12,7 @@ const DisclaimerPage = () => {
         <p className="mb-4">
           This website is operated under the brand name <strong>ignoudistance.in</strong>. We are an
           independent education guidance platform and are not affiliated with Indira Gandhi National Open
-          University (IGNOU) or any other university.
+          University (IGNOU) or any other university. ignou university holds full rights to request change or removal of any non-relevant content. Images used are for illustrative purposes and do not directly represent the respective colleges or universities.  We do not act as a university or an admission authority.
         </p>
 
         <h2 className="text-xl font-semibold mt-8 mb-2">Important Notices:</h2>
