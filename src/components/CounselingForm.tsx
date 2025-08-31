@@ -4,9 +4,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import { X, User, Phone, Mail, MapPin, BookOpen } from "lucide-react";
 import { ignouCourses } from "@/data/ignouCourses";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
 
 interface CounselingFormProps {
   isOpen: boolean;
@@ -33,7 +35,8 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false, 
     interestedCourse: preSelectedCourse || "",
     state: "",
   });
-
+  
+  const [consentGiven, setConsentGiven] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -44,6 +47,15 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false, 
       toast({
         title: "Please fill all required fields",
         description: "All fields are required.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!consentGiven) {
+      toast({
+        title: "Consent Required",
+        description: "Please agree to the terms and provide consent to be contacted.",
         variant: "destructive",
       });
       return;
@@ -110,6 +122,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false, 
           interestedCourse: "",
           state: "",
         });
+        setConsentGiven(true);
 
         // Notify parent component that form was submitted
         onFormSubmitted?.();
@@ -242,6 +255,28 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false, 
           </Select>
         </div>
 
+        {/* Consent Checkbox */}
+        <div className="flex items-start space-x-3">
+          <Checkbox
+            id="consent"
+            checked={consentGiven}
+            onCheckedChange={(checked) => setConsentGiven(checked as boolean)}
+            disabled={isSubmitting}
+            className="mt-1"
+          />
+          <label htmlFor="consent" className="text-xs text-gray-600 leading-relaxed cursor-pointer">
+            I Agree to ignoudistance{" "}
+            <Link to="/disclaimer" className="text-blue-600 hover:underline" target="_blank">
+              Disclaimer
+            </Link>{" "}
+            and{" "}
+            <Link to="/privacy-policy" className="text-blue-600 hover:underline" target="_blank">
+              Privacy Policy
+            </Link>{" "}
+            and provide consent to be contacted via WhatsApp, SMS, Mail etc.
+          </label>
+        </div>
+
         <Button
           type="submit"
           className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl text-lg mt-6 transition-colors duration-200"
@@ -262,7 +297,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false, 
   }
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" onClick={onClose}>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
       <Card className="w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
         <div className="relative">
           <Button

@@ -16,9 +16,17 @@ const Footer = () => {
                 <p className="text-sm text-gray-400">Your Educational Journey Starts Here</p>
               </div>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Comprehensive guide to IGNOU courses with expert counseling services to help you choose the right educational path for your career goals.
-            </p>
+            <div className="text-gray-400 text-xs leading-relaxed space-y-2">
+              <p className="mb-3">
+                This website is owned and operated by AVEDU and is intended solely for informational and educational purposes. We are not an official partner, representative, or affiliate of Indira Gandhi National Open University (IGNOU).
+              </p>
+              <p className="mb-3">
+                All information presented here (including courses, fees, eligibility, and admission details) is collected from publicly available sources or official university websites for guidance purposes only. For official and updated information, visitors should always refer directly to the official IGNOU website: <a href="https://www.ignou.ac.in" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:underline">www.ignou.ac.in</a>.
+              </p>
+              <p className="mb-3">
+                IGNOU university holds full rights to request change or removal of any non-relevant content. Images used are for illustrative purposes and do not directly represent the respective colleges or universities. We do not act as a university or an admission authority.
+              </p>
+            </div>
             <div className="flex space-x-4">
               <Facebook className="h-5 w-5 text-gray-400 hover:text-blue-500 cursor-pointer transition-colors" />
               <Twitter className="h-5 w-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
