@@ -56,9 +56,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU Admission 2025 (July Session) – Apply Online Today"
-        description="IGNOU Admission 2025 Last Date July 31st. Apply for UGC-approved IGNOU Distance Education, Online MBA, MCA, BCA, MA, BCom programs. 200+ courses available with flexible schedules & affordable fees."
-        keywords="IGNOU Admission 2025, IGNOU Distance Education, IGNOU Online Courses, Apply for IGNOU Admission 2025 Online, UGC-approved IGNOU Online Degrees, Best Online Courses by IGNOU, IGNOU July 2025 Session"
+        title="IGNOU Online Courses 2025 (July Session) – Get Counselling Today"
+        description="IGNOU Online courses 2025 Last Date July 31st. Get Counselling for UGC-approved IGNOU Distance Education, Online MBA, MCA, BCA, MA, BCom programs. 200+ courses available with flexible schedules & affordable fees."
+        keywords="IGNOU Online courses 2025, IGNOU Distance Education, IGNOU Online Courses, Get Counselling for IGNOU Admission 2025 Online, UGC-approved IGNOU Online Degrees, Best Online Courses by IGNOU, IGNOU July 2025 Session"
         canonical="/"
       />
       <Header onCounselingClick={handleCounselingClick} />
@@ -122,7 +122,7 @@ const Index = () => {
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-12 text-white">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4">IGNOU MBA Admission 2025 - Online MBA from IGNOU</h2>
+            <h2 className="text-3xl font-bold mb-4">Explore IGNOU Online MBA Program 2025- Online MBA from IGNOU</h2>
             <p className="text-xl mb-6 text-blue-100 max-w-2xl mx-auto">
               Know more about IGNOU MBA Admission 2025 - Get your Online MBA from IGNOU, a prestigious UGC-approved comprehensive postgraduate management degree
             </p>
