@@ -67,7 +67,7 @@ const BcomLanding = () => {
                   onClick={handleApplyNow}
                   className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-8 py-3 text-lg"
                 >
-                  Apply Now
+                  Get Counselling
                 </Button>
               </div>
             </div>
@@ -275,7 +275,7 @@ const BcomLanding = () => {
             onClick={handleApplyNow}
             className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
           >
-            Apply for B.Com Now
+            Get counselling for B.Com Now
           </Button>
         </div>
       </section>
