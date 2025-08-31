@@ -64,7 +64,7 @@ const BaLanding = () => {
 
               <div className="flex flex-wrap gap-4">
                 <Button 
-                  onClick={handleApplyNow}
+                  onClick={handleNow}
                   className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-8 py-3 text-lg"
                 >
                   Get Counselling
@@ -275,7 +275,7 @@ const BaLanding = () => {
             onClick={handleApplyNow}
             className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
           >
-            Apply for BA Now
+            Get Counselling for BA Now
           </Button>
         </div>
       </section>
