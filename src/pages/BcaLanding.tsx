@@ -30,7 +30,7 @@ const BcaLanding = () => {
     <div className="min-h-screen bg-gray-50">
       <SEO
         title="IGNOU BCA Online Admission 2025 - Bachelor of Computer Applications | UGC Approved"
-        description="Apply for IGNOU BCA Online Admission 2025. Bachelor of Computer Applications with programming, web development skills. UGC-approved IGNOU Distance Education. Fee ₹36,000."
+        description="Get counselling for IGNOU BCA Online Admission 2025. Bachelor of Computer Applications with programming, web development skills. UGC-approved IGNOU Distance Education. Fee ₹36,000."
         keywords="IGNOU BCA Online Admission, IGNOU BCA Eligibility & Fees, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs, Best Online Courses by IGNOU"
         canonical="/bca"
         course={{
@@ -81,7 +81,7 @@ const BcaLanding = () => {
                   onClick={handleApplyNow}
                   className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-8 py-3 text-lg"
                 >
-                  Apply Now
+                  Get Counselling
                 </Button>
               </div>
             </div>
