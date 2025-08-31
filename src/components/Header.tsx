@@ -1,4 +1,3 @@
-
 import { GraduationCap, Mail, MapPin, Search, Menu, User, Globe, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
@@ -37,29 +36,6 @@ const Header = ({ onCounselingClick }: { onCounselingClick?: () => void }) => {
   return (
     <div>
       <header className="bg-white shadow-md">
-        {/* Government Header */}
-        <div className="bg-blue-900 text-white py-2">
-          <div className="container mx-auto px-4">
-            <div className="flex justify-between items-center">
-              <div className="flex items-center space-x-2 sm:space-x-4">
-                <img 
-                  src="/lovable-uploads/982f1493-4e50-4a70-9c06-ba13e9576910.png" 
-                  alt="IGNOU Logo" 
-                  className="h-6 w-8 sm:h-8 sm:w-10"
-                />
-                <div className="text-xs sm:text-sm">
-                  <div className="font-semibold">Government of India</div>
-                  <div className="text-xs sm:text-sm">Ministry of Education</div>
-                </div>
-              </div>
-              <div className="flex items-center space-x-2 text-xs sm:text-sm">
-                <Mail className="h-3 w-3 sm:h-4 sm:w-4" />
-                <span>support@ignoudistance.in</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Main Header */}
         <div className="bg-white border-b">
           <div className="container mx-auto px-4 py-2 sm:py-4">
@@ -67,9 +43,9 @@ const Header = ({ onCounselingClick }: { onCounselingClick?: () => void }) => {
               {/* Logo and University Name */}
               <div className="flex items-center space-x-2 sm:space-x-4 flex-1">
                 <div className="flex items-center space-x-2 sm:space-x-3">
-                  <img 
-                    src="/lovable-uploads/982f1493-4e50-4a70-9c06-ba13e9576910.png" 
-                    alt="IGNOU Logo" 
+                  <img
+                    src="/lovable-uploads/982f1493-4e50-4a70-9c06-ba13e9576910.png"
+                    alt="IGNOU Logo"
                     className="h-10 w-13 sm:h-16 sm:w-21"
                   />
                   <div className="min-w-0">
@@ -84,204 +60,84 @@ const Header = ({ onCounselingClick }: { onCounselingClick?: () => void }) => {
                 </div>
               </div>
 
-              {/* Right Side Actions */}
-              <div className="flex items-center space-x-2 sm:space-x-4 flex-shrink-0">
-                <Button 
+              {/* Admission 2025 button moved to the left side */}
+              <div className="flex-shrink-0">
+                <Button
                   onClick={() => onCounselingClick?.()}
                   className="bg-orange-600 hover:bg-orange-700 text-white px-3 py-1 sm:px-6 sm:py-2 rounded-md font-semibold text-xs sm:text-sm"
                 >
                   <span className="hidden sm:inline">Admission 2025</span>
                   <span className="sm:hidden">Admission</span>
                 </Button>
-                <div className="flex items-center space-x-1 sm:space-x-2">
-                  <Search className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600" />
-                  <User className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600" />
-                  <Menu className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600" />
-                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Navigation Menu */}
+        {/* Navigation Menu with new dropdowns */}
         <div className="bg-blue-800 text-white relative">
           <div className="container mx-auto px-4">
             <div className="flex justify-start flex-wrap gap-2 sm:gap-8 py-2 sm:py-3 w-full">
-              
-              {/* About IGNOU Dropdown */}
+
+              {/* Explore Programs Dropdown */}
               <div className="relative dropdown-container">
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    handleDropdownClick('about');
+                    handleDropdownClick('explore-programs');
                   }}
                   className="text-white hover:text-orange-300 bg-transparent hover:bg-blue-700 text-xs sm:text-sm px-2 sm:px-3 py-2 rounded flex items-center"
                 >
-                  About IGNOU
-                  {activeDropdown === 'about' ? (
+                  Explore Programs
+                  {activeDropdown === 'explore-programs' ? (
                     <ChevronUp className="ml-1 h-3 w-3" />
                   ) : (
                     <ChevronDown className="ml-1 h-3 w-3" />
                   )}
                 </button>
-                {activeDropdown === 'about' && (
+                {activeDropdown === 'explore-programs' && (
                   <div className="absolute top-full left-0 mt-1 min-w-[200px] p-4 bg-white shadow-lg rounded-md border z-50">
                     <div className="grid gap-2">
                       <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Vision & Mission
+                        Online MBA
                       </button>
                       <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        History
+                        Online MCA
                       </button>
                       <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Organization
+                        Online MA
                       </button>
                       <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Leadership
+                        Online MCOM
                       </button>
                       <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Awards & Recognition
+                        Online BBA
                       </button>
                       <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Annual Report
+                        Online BCA
                       </button>
+                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
+                        Online BCOM
+                      </button>
+                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
+                        Online BA
+                      </button>
+                      <Button onClick={handleDropdownItemClick} className="mt-2 bg-blue-600 hover:bg-blue-700 text-white rounded text-sm w-full">
+                        View all courses
+                      </Button>
                     </div>
                   </div>
                 )}
               </div>
 
-              {/* Academics Dropdown */}
-              <div className="relative dropdown-container">
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleDropdownClick('academics');
-                  }}
-                  className="text-white hover:text-orange-300 bg-transparent hover:bg-blue-700 text-xs sm:text-sm px-2 sm:px-3 py-2 rounded flex items-center"
-                >
-                  Academics
-                  {activeDropdown === 'academics' ? (
-                    <ChevronUp className="ml-1 h-3 w-3" />
-                  ) : (
-                    <ChevronDown className="ml-1 h-3 w-3" />
-                  )}
-                </button>
-                {activeDropdown === 'academics' && (
-                  <div className="absolute top-full left-0 mt-1 min-w-[200px] p-4 bg-white shadow-lg rounded-md border z-50">
-                    <div className="grid gap-2">
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Schools & Programmes
-                      </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Course Finder
-                      </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Academic Calendar
-                      </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Examination
-                      </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Result
-                      </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Convocation
-                      </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Academic Quality
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Admission Dropdown */}
-              <div className="relative dropdown-container">
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleDropdownClick('admission');
-                  }}
-                  className="text-white hover:text-orange-300 bg-transparent hover:bg-blue-700 text-xs sm:text-sm px-2 sm:px-3 py-2 rounded flex items-center"
-                >
-                  Admission
-                  {activeDropdown === 'admission' ? (
-                    <ChevronUp className="ml-1 h-3 w-3" />
-                  ) : (
-                    <ChevronDown className="ml-1 h-3 w-3" />
-                  )}
-                </button>
-                {activeDropdown === 'admission' && (
-                  <div className="absolute top-full left-0 mt-1 min-w-[200px] p-4 bg-white shadow-lg rounded-md border z-50">
-                    <div className="grid gap-2">
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Online Admission
-                      </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Admission Guidelines
-                      </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Prospectus
-                      </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Fee Structure
-                      </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Re-admission
-                      </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Credit Transfer
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Student Support Dropdown */}
-              <div className="relative dropdown-container">
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleDropdownClick('student-support');
-                  }}
-                  className="text-white hover:text-orange-300 bg-transparent hover:bg-blue-700 text-xs sm:text-sm px-2 sm:px-3 py-2 rounded flex items-center"
-                >
-                  Student Support
-                  {activeDropdown === 'student-support' ? (
-                    <ChevronUp className="ml-1 h-3 w-3" />
-                  ) : (
-                    <ChevronDown className="ml-1 h-3 w-3" />
-                  )}
-                </button>
-                {activeDropdown === 'student-support' && (
-                  <div className="absolute top-full left-0 mt-1 min-w-[200px] p-4 bg-white shadow-lg rounded-md border z-50">
-                    <div className="grid gap-2">
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Study Centers
-                      </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Student Portal
-                      </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Help & Support
-                      </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Student Grievance
-                      </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Learning Management System
-                      </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
-                        Digital Library
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              <button className="text-white hover:text-orange-300 px-2 sm:px-3 py-2 rounded hover:bg-blue-700 text-xs sm:text-sm whitespace-nowrap">
-                Alumni
+              {/* Fees Structure Button */}
+              <button
+                onClick={handleDropdownItemClick}
+                className="text-white hover:text-orange-300 px-2 sm:px-3 py-2 rounded hover:bg-blue-700 text-xs sm:text-sm whitespace-nowrap"
+              >
+                Fees Structure
               </button>
+
             </div>
           </div>
         </div>
