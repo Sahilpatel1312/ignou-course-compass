@@ -48,7 +48,13 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Globe className="h-4 w-4 text-yellow-400" />
-                <span className="text-sm">www.ignou.ac.in</span>
+                <span className="text-sm">www.ignoudistance.in</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Globe className="h-4 w-4 text-yellow-400" />
+                <a href="https://www.ignou.ac.in" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-yellow-400 transition-colors">
+                  Ignou official website - www.ignou.ac.in
+                </a>
               </div>
             </div>
           </div>

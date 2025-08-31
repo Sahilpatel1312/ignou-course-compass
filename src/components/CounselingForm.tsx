@@ -298,7 +298,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false, 
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <Card className="w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
+      <Card className="w-full max-w-md max-h-[85vh] md:max-h-none bg-white rounded-3xl shadow-2xl overflow-hidden overflow-y-auto" onClick={(e) => e.stopPropagation()}>
         <div className="relative">
           <Button
             onClick={onClose}
