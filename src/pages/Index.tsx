@@ -263,7 +263,7 @@ const Index = () => {
       {/* Call to Action Section */}
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Apply for IGNOU Admission 2025 Online?</h2>
+          <h2 className="text-3xl font-bold mb-4">Get Help with IGNOU Distance & Online Education 2025</h2>
           <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
             Get personalized guidance for IGNOU Admission 2025. Free consultation to help you choose the right IGNOU online degree program for your career goals.
           </p>
