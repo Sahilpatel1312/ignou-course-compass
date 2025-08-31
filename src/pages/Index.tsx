@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
@@ -6,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Search, BookOpen, Users, Award, TrendingUp, ExternalLink } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
-import CourseCard from "@/components/CourseCard";  
+import CourseCard from "@/components/CourseCard";
 import CounselingForm from "@/components/CounselingForm";
 import Footer from "@/components/Footer";
 //import Slideshow from "@/components/Slideshow";
@@ -26,7 +25,7 @@ const Index = () => {
 
   const filteredCourses = ignouCourses.filter(course => {
     const matchesSearch = course.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         course.description.toLowerCase().includes(searchTerm.toLowerCase());
+      course.description.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === "All Categories" || course.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
@@ -67,36 +66,51 @@ const Index = () => {
       {/* Slideshow Section */}
       {/* <Slideshow /> */}
       
-      {/* Hero Stats Section */}
+      {/* Hero Stats Section with Embedded Counseling Form */}
       <section className="bg-white py-12 border-b">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Why Choose IGNOU Distance Education 2025?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              India's largest open university offering UGC-approved IGNOU online degrees with world-class distance learning programs, flexibility and affordability
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl">
-              <Users className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-blue-600">40+ Lakh</h3>
-              <p className="text-gray-600">Students Enrolled</p>
+          <div className="lg:flex lg:space-x-8">
+            {/* Left side content (Headings and Stats) */}
+            <div className="lg:w-2/3">
+              <div className="text-center lg:text-left mb-8">
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">Why Choose IGNOU Distance Education 2025?</h2>
+                <p className="text-xl text-gray-600 max-w-3xl lg:mx-0 mx-auto">
+                  India's largest open university offering UGC-approved IGNOU online degrees with world-class distance learning programs, flexibility and affordability
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
+                <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl">
+                  <Users className="h-10 w-10 text-blue-600 mx-auto mb-2" />
+                  <h3 className="text-lg font-bold text-blue-600">40+ Lakh</h3>
+                  <p className="text-sm text-gray-600">Students Enrolled</p>
+                </div>
+                <div className="text-center p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl">
+                  <BookOpen className="h-10 w-10 text-green-600 mx-auto mb-2" />
+                  <h3 className="text-lg font-bold text-green-600">200+</h3>
+                  <p className="text-sm text-gray-600">Courses Available</p>
+                </div>
+                <div className="text-center p-4 bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl">
+                  <Award className="h-10 w-10 text-yellow-600 mx-auto mb-2" />
+                  <h3 className="text-lg font-bold text-yellow-600">UGC</h3>
+                  <p className="text-sm text-gray-600">Approved & Recognized</p>
+                </div>
+                <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl">
+                  <TrendingUp className="h-10 w-10 text-purple-600 mx-auto mb-2" />
+                  <h3 className="text-lg font-bold text-purple-600">25+ Years</h3>
+                  <p className="text-sm text-gray-600">Educational Excellence</p>
+                </div>
+              </div>
             </div>
-            <div className="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl">
-              <BookOpen className="h-12 w-12 text-green-600 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-green-600">200+</h3>
-              <p className="text-gray-600">Courses Available</p>
-            </div>
-            <div className="text-center p-6 bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl">
-              <Award className="h-12 w-12 text-yellow-600 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-yellow-600">UGC</h3>
-              <p className="text-gray-600">Approved & Recognized</p>
-            </div>
-            <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl">
-              <TrendingUp className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-purple-600">25+ Years</h3>
-              <p className="text-gray-600">Educational Excellence</p>
+
+            {/* Right side content (Embedded Counseling Form) */}
+            <div className="lg:w-1/3 mt-8 lg:mt-0">
+              <CounselingForm 
+                isOpen={true} 
+                onClose={() => {}} 
+                preSelectedCourse="Online Bachelor of Business Administration (BBA)"
+                embedded={true}
+              />
             </div>
           </div>
         </div>
@@ -251,7 +265,7 @@ const Index = () => {
           <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
             Get personalized guidance for IGNOU Admission 2025. Free consultation to help you choose the right IGNOU online degree program for your career goals.
           </p>
-          <button 
+          <button
             onClick={handleCounselingClick}
             className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
           >
@@ -263,16 +277,16 @@ const Index = () => {
       <Footer />
       
       {/* Regular Counseling Form */}
-      <CounselingForm 
-        isOpen={isCounselingOpen} 
+      <CounselingForm
+        isOpen={isCounselingOpen}
         onClose={() => setIsCounselingOpen(false)}
         preSelectedCourse={preSelectedCourse}
         onFormSubmitted={markFormSubmitted}
       />
 
       {/* Smart Popup Counseling Form */}
-      <CounselingForm 
-        isOpen={showPopup} 
+      <CounselingForm
+        isOpen={showPopup}
         onClose={handlePopupClose}
         preSelectedCourse=""
         onFormSubmitted={markFormSubmitted}
