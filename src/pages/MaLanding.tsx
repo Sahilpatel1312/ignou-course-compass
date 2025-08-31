@@ -29,8 +29,8 @@ const MaLanding = () => {
     <div className="min-h-screen bg-gray-50">
       <SEO
         title="IGNOU MA Online Programs 2025 - Master of Arts Distance Education"
-        description="Apply for IGNOU MA Online Programs 2025. IGNOU MA in Political Science Online, IGNOU MA in English Admission. UGC-approved distance learning programs. Low fees."
-        keywords="IGNOU MA Online Programs, IGNOU MA in Political Science Online, IGNOU MA in English Admission, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs"
+        description="Get Counselling for IGNOU MA Online Programs 2025. IGNOU MA in Political Science Online, IGNOU MA in English Online Course. UGC-approved distance learning programs. Low fees."
+        keywords="IGNOU MA Online Programs, IGNOU MA in Political Science Online, IGNOU MA in English Online Course, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs"
         canonical="/ma"
         course={{
           name: "Master of Arts (MA)",
