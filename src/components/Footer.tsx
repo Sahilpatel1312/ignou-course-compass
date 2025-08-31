@@ -24,7 +24,7 @@ const Footer = () => {
                 All information presented here (including courses, fees, eligibility, and admission details) is collected from publicly available sources or official university websites for guidance purposes only. For official and updated information, visitors should always refer directly to the official IGNOU website: <a href="https://www.ignou.ac.in" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:underline">www.ignou.ac.in</a>.
               </p>
               <p className="mb-3">
-                IGNOU university holds full rights to request change or removal of any non-relevant content. Images used are for illustrative purposes and do not directly represent the respective colleges or universities. We do not act as a university or an admission authority.
+                IGNOU university holds full rights to request change or removal of any non-relevant content. Images used are for illustrative purposes and do not directly represent the respective colleges or universities. We do not act as a university or an admission authority. We do not act as a university or an admission authority.
               </p>
             </div>
             <div className="flex space-x-4">
