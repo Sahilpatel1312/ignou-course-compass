@@ -60,7 +60,7 @@ const Header = ({ onCounselingClick }: { onCounselingClick?: () => void }) => {
                 </div>
               </div>
 
-              {/* Admission 2025 button moved to the left side */}
+              {/* Enquire Now */}
               <div className="flex-shrink-0">
                 <Button
                   onClick={() => onCounselingClick?.()}
@@ -74,10 +74,10 @@ const Header = ({ onCounselingClick }: { onCounselingClick?: () => void }) => {
           </div>
         </div>
 
-        {/* Navigation Menu with new dropdowns */}
+        {/* Navigation Menu with new dropdowns, now centered */}
         <div className="bg-blue-800 text-white relative">
           <div className="container mx-auto px-4">
-            <div className="flex justify-start flex-wrap gap-2 sm:gap-8 py-2 sm:py-3 w-full">
+            <div className="flex justify-center flex-wrap gap-2 sm:gap-8 py-2 sm:py-3 w-full">
 
               {/* Explore Programs Dropdown */}
               <div className="relative dropdown-container">
