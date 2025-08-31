@@ -58,7 +58,7 @@ const Index = () => {
       <SEO
         title="IGNOU Online Courses 2025 (July Session) – Get Counselling Today"
         description="IGNOU Online courses 2025 Last Date July 31st. Get Counselling for UGC-approved IGNOU Distance Education, Online MBA, MCA, BCA, MA, BCom programs. 200+ courses available with flexible schedules & affordable fees."
-        keywords="IGNOU Online courses 2025, IGNOU Distance Education, IGNOU Online Courses, Get Counselling for IGNOU Admission 2025 Online, UGC-approved IGNOU Online Degrees, Best Online Courses by IGNOU, IGNOU July 2025 Session"
+        keywords="IGNOU Online courses 2025, IGNOU Distance Education, IGNOU Online Courses, Get Counselling for IGNOU Online Course 2025 Online, UGC-approved IGNOU Online Degrees, Best Online Courses by IGNOU, IGNOU July 2025 Session"
         canonical="/"
       />
       <Header onCounselingClick={handleCounselingClick} />
@@ -124,7 +124,7 @@ const Index = () => {
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">Explore IGNOU Online MBA Program 2025- Online MBA from IGNOU</h2>
             <p className="text-xl mb-6 text-blue-100 max-w-2xl mx-auto">
-              Know more about IGNOU MBA Admission 2025 - Get your Online MBA from IGNOU, a prestigious UGC-approved comprehensive postgraduate management degree
+              Know more about IGNOU MBA Online Course 2025 - Get your Online MBA from IGNOU, a prestigious UGC-approved comprehensive postgraduate management degree
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button 
@@ -250,8 +250,8 @@ const Index = () => {
               <p className="text-gray-600">Join millions of successful IGNOU graduates working in top companies and government positions worldwide.</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold text-teal-600 mb-3">Multiple Admission Cycles</h3>
-              <p className="text-gray-600">Two admission cycles per year (January & July) provide flexibility to start your educational journey when convenient.</p>
+              <h3 className="text-xl font-semibold text-teal-600 mb-3">Multiple Online Course Cycles</h3>
+              <p className="text-gray-600">Two Online Course cycles per year (January & July) provide flexibility to start your educational journey when convenient.</p>
             </div>
           </div>
         </div>
@@ -265,7 +265,7 @@ const Index = () => {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Get Help with IGNOU Distance & Online Education 2025</h2>
           <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
-            Get personalized guidance for IGNOU Admission 2025. Free consultation to help you choose the right IGNOU online degree program for your career goals.
+            Get personalized guidance for IGNOU Online Course 2025. Free consultation to help you choose the right IGNOU online degree program for your career goals.
           </p>
           <button
             onClick={handleCounselingClick}
