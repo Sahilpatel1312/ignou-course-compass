@@ -153,14 +153,14 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false, 
 
   const formContent = (
     <>
-      <div className="text-center mb-8">
+      <div className="text-center mb-4">
         <h2 className="text-2xl font-bold text-gray-800 mb-2">Get 100% Free Counselling</h2>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-4">
         {/* Full Name */}
         <div>
-          <div className="flex items-center mb-2">
+          <div className="flex items-center mb-1">
             <User className="h-4 w-4 text-blue-600 mr-2" />
             <label className="text-sm font-semibold text-gray-700">Full Name</label>
           </div>
@@ -171,12 +171,13 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false, 
             onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
             required
             disabled={isSubmitting}
+            className="border-gray-300"
           />
         </div>
 
         {/* Email */}
         <div>
-          <div className="flex items-center mb-2">
+          <div className="flex items-center mb-1">
             <Mail className="h-4 w-4 text-blue-600 mr-2" />
             <label className="text-sm font-semibold text-gray-700">Email Address</label>
           </div>
@@ -187,12 +188,13 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false, 
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             required
             disabled={isSubmitting}
+            className="border-gray-300"
           />
         </div>
 
         {/* Phone */}
         <div>
-          <div className="flex items-center mb-2">
+          <div className="flex items-center mb-1">
             <Phone className="h-4 w-4 text-blue-600 mr-2" />
             <label className="text-sm font-semibold text-gray-700">Phone Number</label>
           </div>
@@ -204,12 +206,13 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false, 
             maxLength={10}
             required
             disabled={isSubmitting}
+            className="border-gray-300"
           />
         </div>
 
         {/* Interested Course */}
         <div>
-          <div className="flex items-center mb-2">
+          <div className="flex items-center mb-1">
             <BookOpen className="h-4 w-4 text-blue-600 mr-2" />
             <label className="text-sm font-semibold text-gray-700">Interested Course</label>
           </div>
@@ -233,7 +236,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false, 
 
         {/* State */}
         <div>
-          <div className="flex items-center mb-2">
+          <div className="flex items-center mb-1">
             <MapPin className="h-4 w-4 text-blue-600 mr-2" />
             <label className="text-sm font-semibold text-gray-700">State</label>
           </div>
@@ -279,7 +282,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false, 
 
         <Button
           type="submit"
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl text-lg mt-6 transition-colors duration-200"
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl text-lg mt-4 transition-colors duration-200"
           disabled={isSubmitting}
         >
           {isSubmitting ? "Submitting..." : "Submit"}
@@ -309,7 +312,7 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false, 
           >
             <X className="h-5 w-5" />
           </Button>
-          <CardContent className="p-8">{formContent}</CardContent>
+          <CardContent className="p-6">{formContent}</CardContent>
         </div>
       </Card>
     </div>
