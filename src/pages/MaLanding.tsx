@@ -53,7 +53,7 @@ const MaLanding = () => {
                 IGNOU MA Online Programs 2025 - UGC Approved Degrees
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Apply for IGNOU MA Online Programs 2025. Choose from IGNOU MA in Political Science Online, English and more - UGC-approved IGNOU Distance Learning Programs.
+                Get Counselling for IGNOU MA Online Programs 2025. Choose from IGNOU MA in Political Science Online, English and more - UGC-approved IGNOU Distance Learning Programs.
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-8">
@@ -80,7 +80,7 @@ const MaLanding = () => {
                   onClick={handleApplyNow}
                   className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-8 py-3 text-lg"
                 >
-                  Apply Now
+                  Get Counselling
                 </Button>
               </div>
             </div>
@@ -288,7 +288,7 @@ const MaLanding = () => {
             onClick={handleApplyNow}
             className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
           >
-            Apply for MA Now
+            Get Counselling for MA Now
           </Button>
         </div>
       </section>
