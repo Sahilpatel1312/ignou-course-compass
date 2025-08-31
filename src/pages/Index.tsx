@@ -9,7 +9,7 @@ import Header from "@/components/Header";
 import CourseCard from "@/components/CourseCard";  
 import CounselingForm from "@/components/CounselingForm";
 import Footer from "@/components/Footer";
-import Slideshow from "@/components/Slideshow";
+//import Slideshow from "@/components/Slideshow";
 import SEO from "@/components/SEO";
 import FAQ from "@/components/FAQ";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
@@ -65,7 +65,7 @@ const Index = () => {
       <Header onCounselingClick={handleCounselingClick} />
       
       {/* Slideshow Section */}
-      <Slideshow />
+      {/* <Slideshow /> */}
       
       {/* Hero Stats Section */}
       <section className="bg-white py-12 border-b">
