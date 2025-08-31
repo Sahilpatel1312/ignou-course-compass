@@ -55,7 +55,6 @@ const Header = ({ onCounselingClick }: { onCounselingClick?: () => void }) => {
                     <p className="text-orange-600 font-semibold text-xs sm:text-sm hidden sm:block">
                       (A Central University established by an Act of Parliament in 1985)
                     </p>
-                    <p className="text-gray-600 text-xs sm:text-sm">New Delhi - 110068</p>
                   </div>
                 </div>
               </div>
