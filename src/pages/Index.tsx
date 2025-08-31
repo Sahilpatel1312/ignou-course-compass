@@ -72,7 +72,7 @@ const Index = () => {
           <div className="lg:flex lg:space-x-8">
             {/* Left side content (Embedded Counseling Form) */}
             <div className="lg:w-1/3 mb-8 lg:mb-0">
-              <div className="h-full flex items-center justify-center py-4 md:py-0"> {/* Added responsive padding here */}
+              <div className="h-full flex items-center justify-center py-2 md:py-0">
                 <CounselingForm 
                   isOpen={true} 
                   onClose={() => {}} 
