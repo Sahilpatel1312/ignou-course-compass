@@ -29,9 +29,9 @@ const BcaLanding = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU BCA Online Admission 2025 - Bachelor of Computer Applications | UGC Approved"
-        description="Get counselling for IGNOU BCA Online Admission 2025. Bachelor of Computer Applications with programming, web development skills. UGC-approved IGNOU Distance Education. Fee ₹36,000."
-        keywords="IGNOU BCA Online Admission, IGNOU BCA Eligibility & Fees, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs, Best Online Courses by IGNOU"
+        title="IGNOU BCA Online Course 2025 - Bachelor of Computer Applications | UGC Approved"
+        description="Get counselling for IGNOU BCA Online Course 2025. Bachelor of Computer Applications with programming, web development skills. UGC-approved IGNOU Distance Education. Fee ₹36,000."
+        keywords="IGNOU BCA Online Course, IGNOU BCA Eligibility & Fees, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs, Best Online Courses by IGNOU"
         canonical="/bca"
         course={{
           name: "Bachelor of Computer Applications (BCA)",
@@ -51,10 +51,10 @@ const BcaLanding = () => {
             <div>
               <Badge className="bg-yellow-500 text-blue-900 mb-4">IGNOU Online BCA Program</Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                IGNOU BCA Online Admission 2025 - UGC Approved Degree
+                IGNOU BCA Online Course 2025 - UGC Approved Degree
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Apply for IGNOU BCA Online Admission 2025. Launch your IT career with UGC-approved IGNOU Distance Education program designed for aspiring computer professionals.
+                Get Counselling for IGNOU BCA Online Course 2025. Launch your IT career with UGC-approved IGNOU Distance Education program designed for aspiring computer professionals.
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-8">
@@ -289,7 +289,7 @@ const BcaLanding = () => {
             onClick={handleApplyNow}
             className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
           >
-            Apply for BCA Now
+            Get Counselling for BCA Now
           </Button>
         </div>
       </section>
