@@ -107,7 +107,7 @@ const CourseCard = ({ course, onApplyNow, onDownloadBrochure }: CourseCardProps)
             onClick={() => onApplyNow(course.name)}
             className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 text-sm py-2"
           >
-            Apply Now
+            Enquire Now
           </Button>
         </div>
       </CardContent>
