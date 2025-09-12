@@ -9,6 +9,23 @@ const NotFound = () => {
       "404 Error: User attempted to access non-existent route:",
       location.pathname
     );
+
+    // Ensure 404 pages are not indexed (avoid soft 404s)
+    const updateMetaTag = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('name', name);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    document.title = "404 - Page not found | IGNOU Distance";
+    updateMetaTag('robots', 'noindex, follow');
+
+    // Remove any structured data on 404 to avoid confusion
+    document.querySelectorAll('script[type="application/ld+json"]').forEach((el) => el.parentElement?.removeChild(el));
   }, [location.pathname]);
 
   return (

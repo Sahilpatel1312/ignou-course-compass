@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import CounselingForm from "@/components/CounselingForm";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
 import { useSmartPopup } from "@/hooks/useSmartPopup";
+import SEO from "@/components/SEO";
 
 const BcomLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -27,6 +28,19 @@ const BcomLanding = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="IGNOU BCom Online 2025 – Bachelor of Commerce Distance"
+        description="Get Counselling for IGNOU BCom Online 2025. UGC-approved B.Com distance education. 3-year program, total fee ₹10,800. Flexible learning."
+        keywords="IGNOU BCom Online 2025, IGNOU B.Com distance education, UGC-approved BCom IGNOU, BCom admission IGNOU"
+        canonical="/bcom"
+        course={{
+          name: "Bachelor of Commerce (B.Com)",
+          description: "Undergraduate commerce program for careers in business and finance",
+          duration: "3 Years",
+          fee: "₹10,800",
+          eligibility: "12th pass from recognized board"
+        }}
+      />
       <Header onCounselingClick={handleCounselingClick} />
       
       {/* Hero Section */}

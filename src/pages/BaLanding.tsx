@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import CounselingForm from "@/components/CounselingForm";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
 import { useSmartPopup } from "@/hooks/useSmartPopup";
+import SEO from "@/components/SEO";
 
 const BaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -27,6 +28,19 @@ const BaLanding = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="IGNOU BA Online 2025 – Bachelor of Arts Distance"
+        description="Get Counselling for IGNOU BA Online 2025. UGC-approved BA distance education. 3-year program, total fee ₹8,700. Flexible learning."
+        keywords="IGNOU BA Online 2025, IGNOU BA distance education, UGC-approved BA IGNOU, BA admission IGNOU"
+        canonical="/ba"
+        course={{
+          name: "Bachelor of Arts (BA)",
+          description: "Undergraduate program in humanities and social sciences",
+          duration: "3 Years",
+          fee: "₹8,700",
+          eligibility: "12th pass from recognized board"
+        }}
+      />
       <Header onCounselingClick={handleCounselingClick} />
       
       {/* Hero Section */}
@@ -64,7 +78,7 @@ const BaLanding = () => {
 
               <div className="flex flex-wrap gap-4">
                 <Button 
-                  onClick={handleNow}
+                  onClick={handleApplyNow}
                   className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-8 py-3 text-lg"
                 >
                   Get Counselling
