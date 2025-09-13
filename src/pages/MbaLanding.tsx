@@ -28,13 +28,13 @@ const MbaLanding = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU MBA Online Course 2025 - Online MBA from IGNOU | UGC Approved Degree"
-        description="Get Counselling for IGNOU MBA Online Course 2025. Get Online MBA from IGNOU with 9 specializations. UGC-approved IGNOU Online MBA Fee Structure ₹62,000. Distance education MBA program."
-        keywords="IGNOU MBA Online Course 2025, Online MBA from IGNOU, IGNOU Online MBA Fee Structure, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs, Best Online Courses by IGNOU"
+        title="IGNOU MBA Online Course 2025 - Distance Learning MBA | UGC Approved Degree ₹62,000"
+        description="✅ Get Counselling for IGNOU MBA Online 2025 ✅ 9 Specializations Available ✅ UGC-Approved MBA Distance Education ✅ Fee ₹62,000 ✅ 2-Year Program ✅ No Entrance Exam ✅ Study from Home"
+        keywords="IGNOU MBA Online 2025, IGNOU MBA distance education, MBA from IGNOU fees, UGC approved MBA online, IGNOU MBA specializations, distance learning MBA India, online MBA without entrance exam, IGNOU MBA eligibility, MBA degree online India, best distance MBA program"
         canonical="/mba"
         course={{
           name: "Master of Business Administration (MBA)",
-          description: "Comprehensive postgraduate management degree for aspiring business leaders",
+          description: "Comprehensive postgraduate management degree for aspiring business leaders with 9 specialization options including HR, Marketing, Finance, Operations, IT Management, International Business, Rural & Agribusiness, Banking, and Public Policy",
           duration: "2 Years",
           fee: "₹62,000",
           eligibility: "Bachelor's degree with 50% marks from recognized university"
@@ -306,66 +306,92 @@ const MbaLanding = () => {
         </div>
       </section>
 
-      {/* Curriculum Section */}
-      <section className="py-20 bg-background">
+      {/* MBA Blogs Section */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              MBA Curriculum Structure
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Comprehensive 2-year program divided into 4 semesters with core subjects and specialization tracks.
-            </p>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">MBA Career Insights & Updates</h2>
+            <p className="text-xl text-gray-600">Stay updated with latest MBA trends, career tips, and success stories</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold text-blue-600 mb-4">Semester I</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Management Functions & Organizational Processes</li>
-                <li>• Human Resource Management</li>
-                <li>• Business Environment</li>
-                <li>• Accounting for Managers</li>
-                <li>• Quantitative Analysis for Managerial Applications</li>
-                <li>• Marketing Management</li>
-                <li>• Business Communication</li>
-              </ul>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="p-4 hover:shadow-lg transition-shadow cursor-pointer">
+              <div className="aspect-video bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg mb-3 flex items-center justify-center">
+                <TrendingUp className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="font-semibold text-sm mb-2">Top MBA Career Paths in 2025</h3>
+              <p className="text-xs text-gray-600 mb-3">Explore the most promising career opportunities for MBA graduates in the current market...</p>
+              <Badge variant="secondary" className="text-xs">Career Guide</Badge>
             </Card>
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold text-blue-600 mb-4">Semester II</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Information Systems for Managers</li>
-                <li>• Management of Machines & Materials</li>
-                <li>• Managerial Economics</li>
-                <li>• Social Processes & Behavioral Issues</li>
-                <li>• Strategic Management</li>
-                <li>• Business Laws</li>
-                <li>• Financial Management</li>
-              </ul>
+
+            <Card className="p-4 hover:shadow-lg transition-shadow cursor-pointer">
+              <div className="aspect-video bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg mb-3 flex items-center justify-center">
+                <BookOpen className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="font-semibold text-sm mb-2">MBA vs. PGDM: Which is Better?</h3>
+              <p className="text-xs text-gray-600 mb-3">Understanding the key differences between MBA and PGDM programs to make the right choice...</p>
+              <Badge variant="secondary" className="text-xs">Education</Badge>
             </Card>
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold text-blue-600 mb-4">Semester III</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Research Methodology for Management Decisions</li>
-                <li>• International Business Management</li>
-                <li>• Project Work</li>
-                <li>• Specialization Subject 1</li>
-                <li>• Specialization Subject 2</li>
-                <li>• Specialization Subject 3</li>
-                <li>• Specialization Subject 4</li>
-              </ul>
+
+            <Card className="p-4 hover:shadow-lg transition-shadow cursor-pointer">
+              <div className="aspect-video bg-gradient-to-br from-purple-500 to-violet-600 rounded-lg mb-3 flex items-center justify-center">
+                <Users className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="font-semibold text-sm mb-2">Distance MBA Success Stories</h3>
+              <p className="text-xs text-gray-600 mb-3">Real stories from IGNOU MBA alumni who transformed their careers through distance learning...</p>
+              <Badge variant="secondary" className="text-xs">Success Stories</Badge>
             </Card>
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold text-blue-600 mb-4">Semester IV</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Advanced Strategic Management</li>
-                <li>• Entrepreneurship</li>
-                <li>• Total Quality Management</li>
-                <li>• Business Ethics & CSR</li>
-                <li>• Specialization Subject 5</li>
-                <li>• Specialization Subject 6</li>
-                <li>• Specialization Subject 7</li>
-              </ul>
+
+            <Card className="p-4 hover:shadow-lg transition-shadow cursor-pointer">
+              <div className="aspect-video bg-gradient-to-br from-orange-500 to-red-600 rounded-lg mb-3 flex items-center justify-center">
+                <Award className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="font-semibold text-sm mb-2">MBA Specialization Guide</h3>
+              <p className="text-xs text-gray-600 mb-3">Complete guide to choosing the right MBA specialization based on your career goals...</p>
+              <Badge variant="secondary" className="text-xs">Specializations</Badge>
             </Card>
+
+            <Card className="p-4 hover:shadow-lg transition-shadow cursor-pointer">
+              <div className="aspect-video bg-gradient-to-br from-teal-500 to-cyan-600 rounded-lg mb-3 flex items-center justify-center">
+                <IndianRupee className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="font-semibold text-sm mb-2">MBA ROI Calculator</h3>
+              <p className="text-xs text-gray-600 mb-3">Calculate the return on investment for your MBA program and plan your career growth...</p>
+              <Badge variant="secondary" className="text-xs">Finance</Badge>
+            </Card>
+
+            <Card className="p-4 hover:shadow-lg transition-shadow cursor-pointer">
+              <div className="aspect-video bg-gradient-to-br from-pink-500 to-rose-600 rounded-lg mb-3 flex items-center justify-center">
+                <GraduationCap className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="font-semibold text-sm mb-2">Study Tips for Distance MBA</h3>
+              <p className="text-xs text-gray-600 mb-3">Effective study strategies for working professionals pursuing distance MBA programs...</p>
+              <Badge variant="secondary" className="text-xs">Study Tips</Badge>
+            </Card>
+
+            <Card className="p-4 hover:shadow-lg transition-shadow cursor-pointer">
+              <div className="aspect-video bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg mb-3 flex items-center justify-center">
+                <Clock className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="font-semibold text-sm mb-2">Time Management for MBA</h3>
+              <p className="text-xs text-gray-600 mb-3">Master time management techniques to balance work, study, and personal life during MBA...</p>
+              <Badge variant="secondary" className="text-xs">Productivity</Badge>
+            </Card>
+
+            <Card className="p-4 hover:shadow-lg transition-shadow cursor-pointer">
+              <div className="aspect-video bg-gradient-to-br from-indigo-500 to-blue-600 rounded-lg mb-3 flex items-center justify-center">
+                <Star className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="font-semibold text-sm mb-2">MBA Interview Preparation</h3>
+              <p className="text-xs text-gray-600 mb-3">Complete guide to ace MBA program interviews and admission processes...</p>
+              <Badge variant="secondary" className="text-xs">Interview Tips</Badge>
+            </Card>
+          </div>
+
+          <div className="text-center mt-8">
+            <Button variant="outline" className="hover:bg-blue-50">
+              View All Articles
+            </Button>
           </div>
         </div>
       </section>
