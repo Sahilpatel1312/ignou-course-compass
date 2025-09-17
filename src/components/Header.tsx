@@ -1,12 +1,19 @@
 import { GraduationCap, Mail, MapPin, Search, Menu, User, Globe, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Header = ({ onCounselingClick }: { onCounselingClick?: () => void }) => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   const handleDropdownClick = (dropdown: string) => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
+  };
+
+  const handleCourseClick = (coursePath: string) => {
+    navigate(coursePath);
+    setActiveDropdown(null);
   };
 
   const handleDropdownItemClick = () => {
@@ -16,6 +23,10 @@ const Header = ({ onCounselingClick }: { onCounselingClick?: () => void }) => {
       coursesSection.scrollIntoView({ behavior: 'smooth' });
     }
     setActiveDropdown(null);
+  };
+
+  const handleLogoClick = () => {
+    navigate('/');
   };
 
   // Auto-close dropdown when clicking outside
@@ -42,7 +53,7 @@ const Header = ({ onCounselingClick }: { onCounselingClick?: () => void }) => {
             <div className="flex items-center justify-between">
               {/* Logo and University Name */}
               <div className="flex items-center space-x-2 sm:space-x-4 flex-1">
-                <div className="flex items-center space-x-2 sm:space-x-3">
+                <button onClick={handleLogoClick} className="flex items-center space-x-2 sm:space-x-3 hover:opacity-80 transition-opacity">
                   <img
                     src="/lovable-uploads/982f1493-4e50-4a70-9c06-ba13e9576910.png"
                     alt="IGNOU Logo"
@@ -56,7 +67,7 @@ const Header = ({ onCounselingClick }: { onCounselingClick?: () => void }) => {
                       (A Central University established by an Act of Parliament in 1985)
                     </p>
                   </div>
-                </div>
+                </button>
               </div>
 
               {/* Enquire Now button*/}
@@ -97,28 +108,28 @@ const Header = ({ onCounselingClick }: { onCounselingClick?: () => void }) => {
                 {activeDropdown === 'explore-programs' && (
                   <div className="absolute top-full left-0 mt-1 min-w-[200px] p-4 bg-white shadow-lg rounded-md border z-50">
                     <div className="grid gap-2">
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
+                      <button onClick={() => handleCourseClick('/mba')} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
                         Online MBA
                       </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
+                      <button onClick={() => handleCourseClick('/mca')} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
                         Online MCA
                       </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
+                      <button onClick={() => handleCourseClick('/ma')} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
                         Online MA
                       </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
+                      <button onClick={() => handleCourseClick('/mcom')} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
                         Online MCOM
                       </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
+                      <button onClick={() => handleCourseClick('/bba')} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
                         Online BBA
                       </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
+                      <button onClick={() => handleCourseClick('/bca')} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
                         Online BCA
                       </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
+                      <button onClick={() => handleCourseClick('/bcom')} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
                         Online BCOM
                       </button>
-                      <button onClick={handleDropdownItemClick} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
+                      <button onClick={() => handleCourseClick('/ba')} className="block p-2 hover:bg-gray-100 rounded text-gray-700 hover:text-gray-900 text-left">
                         Online BA
                       </button>
                       <Button onClick={handleDropdownItemClick} className="mt-2 bg-blue-600 hover:bg-blue-700 text-white rounded text-sm w-full">
