@@ -53,6 +53,37 @@ const Index = () => {
     closePopup();
   };
 
+  // WebSite + Organization structured data for rich search results
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "IGNOU Distance",
+        "url": "https://www.ignoudistance.in",
+        "description": "IGNOU Online Courses 2026 – Admission Open for July Session. Free counselling for 200+ UGC-approved programs.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.ignoudistance.in/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "IGNOU Distance",
+        "url": "https://www.ignoudistance.in",
+        "logo": "https://www.ignoudistance.in/lovable-uploads/logo.png",
+        "description": "Free counselling & guidance for IGNOU distance & online education programs. UGC approved, NAAC A++ accredited.",
+        "sameAs": ["https://www.facebook.com/ignoudistance", "https://www.youtube.com/ignoudistance"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Admissions",
+          "availableLanguage": ["English", "Hindi"]
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
@@ -61,6 +92,8 @@ const Index = () => {
         keywords="IGNOU Online Courses 2026, IGNOU July 2026 Session, IGNOU Admission 2026, IGNOU Distance Education 2026, Online MBA IGNOU 2026, IGNOU Online Degree, UGC Approved Online Courses, IGNOU Free Counselling, IGNOU MCA Online, IGNOU BCA Online, Best Online University India, IGNOU July Session Last Date"
         canonical="/"
       />
+      {/* WebSite structured data for sitelinks search box */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       <Header onCounselingClick={handleCounselingClick} />
       
       {/* Slideshow Section */}
