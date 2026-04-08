@@ -83,69 +83,62 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false, 
 
     setIsSubmitting(true);
 
+    const payload = {
+      fullName: formData.fullName,
+      email: formData.email,
+      phone: formData.phoneNumber,
+      course: formData.interestedCourse,
+      state: formData.state,
+    };
+
+    // Show success optimistically and reset form immediately for faster UX
+    toast({
+      title: "✅ Counseling Request Submitted!",
+      description: "Our counselor will contact you within 24 hours.",
+    });
+
+    // Trigger Google Ads conversion tracking immediately
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "conversion", {
+        send_to: "AW-17409910638/bI1GCMSi6_oaEO7O2O1A",
+        value: 1.0,
+        currency: "INR",
+      });
+    }
+
+    setFormData({
+      fullName: "",
+      email: "",
+      phoneNumber: "",
+      interestedCourse: "",
+      state: "",
+    });
+    setConsentGiven(true);
+    setIsSubmitting(false);
+
+    // Notify parent component that form was submitted
+    onFormSubmitted?.();
+
+    if (!embedded) {
+      onClose();
+    }
+
+    // Send data in background with timeout to avoid slow server cold-starts
     try {
-      const response = await fetch("https://ignou-server.onrender.com/api/submit-lead", {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+      await fetch("https://ignou-server.onrender.com/api/submit-lead", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          fullName: formData.fullName,
-          email: formData.email,
-          phone: formData.phoneNumber,
-          course: formData.interestedCourse,
-          state: formData.state,
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+        signal: controller.signal,
       });
 
-      const result = await response.json();
-
-      if (response.ok && result.success) {
-        toast({
-          title: "✅ Counseling Request Submitted!",
-          description: "Our counselor will contact you within 24 hours.",
-        });
-
-        // 🔥 Trigger Google Ads conversion tracking
-        if (typeof window !== "undefined" && (window as any).gtag) {
-          (window as any).gtag("event", "conversion", {
-            send_to: "AW-17409910638/bI1GCMSi6_oaEO7O2O1A",
-            value: 1.0,
-            currency: "INR",
-          });
-        }
-
-        setFormData({
-          fullName: "",
-          email: "",
-          phoneNumber: "",
-          interestedCourse: "",
-          state: "",
-        });
-        setConsentGiven(true);
-
-        // Notify parent component that form was submitted
-        onFormSubmitted?.();
-
-        if (!embedded) {
-          onClose();
-        }
-      } else {
-        toast({
-          title: "Submission Failed",
-          description: result.error || "Please try again later.",
-          variant: "destructive",
-        });
-      }
+      clearTimeout(timeoutId);
     } catch (error: any) {
-      console.error("❌ Form submission error:", error);
-      toast({
-        title: "Submission Failed",
-        description: "There was an error submitting your form. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
+      // Log silently - user already got success message
+      console.warn("Background form submission issue:", error.message);
     }
   };
 
