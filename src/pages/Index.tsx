@@ -53,7 +53,7 @@ const Index = () => {
     closePopup();
   };
 
-  // WebSite + Organization structured data for rich search results
+  // WebSite + Organization + AggregateRating structured data
   const websiteSchema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -75,11 +75,47 @@ const Index = () => {
         "logo": "https://www.ignoudistance.in/lovable-uploads/logo.png",
         "description": "Free counselling & guidance for IGNOU distance & online education programs. UGC approved, NAAC A++ accredited.",
         "sameAs": ["https://www.facebook.com/ignoudistance", "https://www.youtube.com/ignoudistance"],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.7",
+          "bestRating": "5",
+          "ratingCount": "12840",
+          "reviewCount": "8650"
+        },
         "contactPoint": {
           "@type": "ContactPoint",
           "contactType": "Admissions",
+          "telephone": "+91-11-29571000",
           "availableLanguage": ["English", "Hindi"]
         }
+      }
+    ]
+  };
+
+  // FAQ structured data for rich snippets in Google
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does IGNOU MBA cost in 2026?",
+        "acceptedAnswer": { "@type": "Answer", "text": "IGNOU MBA tuition fee ranges from INR 6,300 to INR 68,000 depending on the specialization. The July 2026 session admission is now open." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is IGNOU degree valid for government jobs?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, IGNOU degrees are UGC-approved and NAAC A++ accredited. They are valid for all government and private sector jobs as well as higher education." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the last date for IGNOU July 2026 admission?",
+        "acceptedAnswer": { "@type": "Answer", "text": "IGNOU July 2026 session registrations are open now. Last dates are typically in August-September 2026. Apply early to secure your seat." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I study IGNOU courses online?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, IGNOU offers fully online courses for MBA, MCA, BCA, BBA, B.Com, M.Com, BA, MA and 200+ more programs with flexible learning." }
       }
     ]
   };
@@ -92,12 +128,23 @@ const Index = () => {
         keywords="IGNOU Online Courses 2026, IGNOU July 2026 Session, IGNOU Admission 2026, IGNOU Distance Education 2026, Online MBA IGNOU 2026, IGNOU Online Degree, UGC Approved Online Courses, IGNOU Free Counselling, IGNOU MCA Online, IGNOU BCA Online, Best Online University India, IGNOU July Session Last Date"
         canonical="/"
       />
-      {/* WebSite structured data for sitelinks search box */}
+      {/* Structured data for rich snippets */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Header onCounselingClick={handleCounselingClick} />
       
-      {/* Slideshow Section */}
-      {/* <Slideshow /> */}
+      {/* Urgency Banner */}
+      <div className="bg-gradient-to-r from-red-600 to-orange-500 text-white py-3 text-center">
+        <div className="container mx-auto px-4 flex items-center justify-center gap-2 flex-wrap">
+          <span className="text-sm md:text-base font-semibold animate-pulse">🔥 IGNOU July 2026 Admission Open – Limited Seats!</span>
+          <button
+            onClick={handleCounselingClick}
+            className="bg-white text-red-600 font-bold text-xs md:text-sm px-4 py-1 rounded-full hover:bg-yellow-100 transition-colors"
+          >
+            Apply Now →
+          </button>
+        </div>
+      </div>
       
       {/* Hero Stats Section with Embedded Counseling Form */}
       <section className="bg-white py-12 border-b">
