@@ -122,9 +122,9 @@ const Index = () => {
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-12 text-white">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4">Explore IGNOU Online MBA Program 2025</h2>
+            <h2 className="text-3xl font-bold mb-4">Explore IGNOU Online MBA Program 2026 – July Session</h2>
             <p className="text-xl mb-6 text-blue-100 max-w-2xl mx-auto">
-              Know more about IGNOU MBA Online Course 2025 - Get your Online MBA from IGNOU, a prestigious UGC-approved comprehensive postgraduate management degree
+              IGNOU MBA Online Admission 2026 Open Now – Get your UGC-approved Online MBA degree from India's #1 Open University. Limited seats for July 2026 session!
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button 
