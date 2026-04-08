@@ -23,7 +23,7 @@ const faqData: FAQItem[] = [
   },
   {
     question: "Does IGNOU provide online classes? What are the admission dates for B.Com?",
-    answer: "Yes, IGNOU offers online classes for its B.Com program. The current admission date for the July 2025 session is open."
+    answer: "Yes, IGNOU offers online classes for its B.Com program. The current admission date for the July 2026 session is open."
   },
   {
     question: "May I fill the registration form online in IGNOU?",

@@ -53,14 +53,47 @@ const Index = () => {
     closePopup();
   };
 
+  // WebSite + Organization structured data for rich search results
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "IGNOU Distance",
+        "url": "https://www.ignoudistance.in",
+        "description": "IGNOU Online Courses 2026 – Admission Open for July Session. Free counselling for 200+ UGC-approved programs.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.ignoudistance.in/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "IGNOU Distance",
+        "url": "https://www.ignoudistance.in",
+        "logo": "https://www.ignoudistance.in/lovable-uploads/logo.png",
+        "description": "Free counselling & guidance for IGNOU distance & online education programs. UGC approved, NAAC A++ accredited.",
+        "sameAs": ["https://www.facebook.com/ignoudistance", "https://www.youtube.com/ignoudistance"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Admissions",
+          "availableLanguage": ["English", "Hindi"]
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU Online Courses 2025 (July Session) – Get Counselling Today"
-        description="IGNOU Online courses 2025 Last Date July 31st. Get Counselling for UGC-approved IGNOU Distance Education, Online MBA, MCA, BCA, MA, BCom programs. 200+ courses available with flexible schedules & affordable fees."
-        keywords="IGNOU Online courses 2025, IGNOU Distance Education, IGNOU Online Courses, Get Counselling for IGNOU Online Course 2025 Online, UGC-approved IGNOU Online Degrees, Best Online Courses by IGNOU, IGNOU July 2025 Session"
+        title="IGNOU Online Courses 2026 (July Session) – Admission Open | Free Counselling"
+        description="IGNOU Online Courses July 2026 Session – Admission Open Now! Get free counselling for UGC-approved Online MBA, MCA, BCA, MA, B.Com, BA & 200+ programs. Affordable fees, flexible learning & NAAC A++ accredited degrees."
+        keywords="IGNOU Online Courses 2026, IGNOU July 2026 Session, IGNOU Admission 2026, IGNOU Distance Education 2026, Online MBA IGNOU 2026, IGNOU Online Degree, UGC Approved Online Courses, IGNOU Free Counselling, IGNOU MCA Online, IGNOU BCA Online, Best Online University India, IGNOU July Session Last Date"
         canonical="/"
       />
+      {/* WebSite structured data for sitelinks search box */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       <Header onCounselingClick={handleCounselingClick} />
       
       {/* Slideshow Section */}
@@ -85,7 +118,7 @@ const Index = () => {
             {/* Right side content (Headings and Stats) */}
             <div className="lg:w-2/3">
               <div className="text-center lg:text-left mb-8">
-                <h2 className="text-3xl font-bold text-gray-800 mb-4">Why Choose IGNOU Distance Education 2025?</h2>
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">Why Choose IGNOU Distance Education 2026?</h2>
                 <p className="text-xl text-gray-600 max-w-3xl lg:mx-0 mx-auto">
                   India's largest open university offering UGC-approved IGNOU online degrees with world-class distance learning programs, flexibility and affordability
                 </p>
@@ -122,9 +155,9 @@ const Index = () => {
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-12 text-white">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4">Explore IGNOU Online MBA Program 2025</h2>
+            <h2 className="text-3xl font-bold mb-4">Explore IGNOU Online MBA Program 2026 – July Session</h2>
             <p className="text-xl mb-6 text-blue-100 max-w-2xl mx-auto">
-              Know more about IGNOU MBA Online Course 2025 - Get your Online MBA from IGNOU, a prestigious UGC-approved comprehensive postgraduate management degree
+              IGNOU MBA Online Admission 2026 Open Now – Get your UGC-approved Online MBA degree from India's #1 Open University. Limited seats for July 2026 session!
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button 
@@ -263,9 +296,9 @@ const Index = () => {
       {/* Call to Action Section */}
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Get Help with IGNOU Distance & Online Education 2025</h2>
+          <h2 className="text-3xl font-bold mb-4">IGNOU July 2026 Session – Admission Open Now!</h2>
           <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
-            Get personalized guidance for IGNOU Online Course 2025. Free consultation to help you choose the right IGNOU online degree program for your career goals.
+            Get free personalized counselling for IGNOU Online Courses 2026. Expert guidance to choose the right UGC-approved degree program for your career goals.
           </p>
           <button
             onClick={handleCounselingClick}
