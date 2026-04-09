@@ -14,6 +14,8 @@ import BcaLanding from "./pages/BcaLanding";
 import BbaLanding from "./pages/BbaLanding";
 import BaLanding from "./pages/BaLanding";
 import BcomLanding from "./pages/BcomLanding";
+import BlogList from "./pages/BlogList";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 
 import Disclaimer from "./pages/disclaimer";
@@ -49,6 +51,10 @@ const App = () => (
           <Route path="/bba" element={<BbaLanding />} />
           <Route path="/ba" element={<BaLanding />} />
           <Route path="/bcom" element={<BcomLanding />} />
+
+          {/* ✅ Blog Pages */}
+          <Route path="/blog" element={<BlogList />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
 
           {/* ✅ Legal Pages */}
           <Route path="/disclaimer" element={<Disclaimer />} />

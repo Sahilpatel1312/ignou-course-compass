@@ -141,7 +141,7 @@ const Index = () => {
             onClick={handleCounselingClick}
             className="bg-white text-red-600 font-bold text-xs md:text-sm px-4 py-1 rounded-full hover:bg-yellow-100 transition-colors"
           >
-            Apply Now →
+            Enquire Now →
           </button>
         </div>
       </div>
