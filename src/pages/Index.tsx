@@ -59,7 +59,7 @@ const Index = () => {
     "@graph": [
       {
         "@type": "WebSite",
-        "name": "IGNOU Distance",
+        "name": "IGNOU Distance – Online Courses July 2026",
         "url": "https://www.ignoudistance.in",
         "description": "IGNOU Online Courses 2026 – Admission Open for July Session. Free counselling for 200+ UGC-approved programs.",
         "potentialAction": {
