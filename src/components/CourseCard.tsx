@@ -46,7 +46,10 @@ const CourseCard = ({ course, onApplyNow, onDownloadBrochure }: CourseCardProps)
             {course.category}
           </Badge>
         </div>
-        <CardTitle className="text-xl group-hover:text-blue-600 transition-colors">
+        <CardTitle 
+          className="text-xl group-hover:text-blue-600 transition-colors cursor-pointer hover:underline"
+          onClick={handleCheckDetails}
+        >
           {course.name}
         </CardTitle>
         <div className="flex items-center text-gray-600 text-sm">

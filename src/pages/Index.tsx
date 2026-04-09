@@ -141,7 +141,7 @@ const Index = () => {
             onClick={handleCounselingClick}
             className="bg-white text-red-600 font-bold text-xs md:text-sm px-4 py-1 rounded-full hover:bg-yellow-100 transition-colors"
           >
-            Apply Now →
+            Enquire Now →
           </button>
         </div>
       </div>
@@ -333,6 +333,34 @@ const Index = () => {
               <h3 className="text-xl font-semibold text-teal-600 mb-3">Multiple Online Course Cycles</h3>
               <p className="text-gray-600">Two Online Course cycles per year (January & July) provide flexibility to start your educational journey when convenient.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-800 mb-3">Latest from Our Blog</h2>
+            <p className="text-gray-600">Stay updated with IGNOU news, admission guides, and career tips</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            {[
+              { title: "Does IGNOU Degree Have Any Value in 2026?", slug: "does-ignou-degree-have-value-in-2026", category: "Career Guidance" },
+              { title: "Best IGNOU Distance Courses After 12th", slug: "best-ignou-distance-courses-after-12th", category: "Course Guide" },
+              { title: "IGNOU Degree & New UGC Guidelines 2026", slug: "ignou-degree-validity-new-ugc-guidelines-2026", category: "News & Updates" },
+              { title: "IGNOU Admission 2026 – Complete Guide", slug: "ignou-admission-2026-complete-guide-courses-fees", category: "Admission Guide" },
+            ].map((post) => (
+              <button key={post.slug} onClick={() => navigate(`/blog/${post.slug}`)} className="text-left p-4 bg-gray-50 rounded-lg hover:bg-blue-50 hover:shadow transition-all border border-gray-100">
+                <span className="text-xs text-blue-600 font-semibold">{post.category}</span>
+                <h3 className="text-sm font-bold text-gray-800 mt-1 hover:text-blue-600">{post.title}</h3>
+              </button>
+            ))}
+          </div>
+          <div className="text-center mt-6">
+            <Button onClick={() => navigate('/blog')} variant="outline" className="text-blue-600 border-blue-600">
+              View All Blog Posts →
+            </Button>
           </div>
         </div>
       </section>

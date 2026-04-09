@@ -148,6 +148,14 @@ const Header = ({ onCounselingClick }: { onCounselingClick?: () => void }) => {
                 Fees Structure
               </button>
 
+              {/* Blog Button */}
+              <button
+                onClick={() => { navigate('/blog'); setActiveDropdown(null); }}
+                className="text-white hover:text-orange-300 px-2 sm:px-3 py-2 rounded hover:bg-blue-700 text-xs sm:text-sm whitespace-nowrap"
+              >
+                Blog
+              </button>
+
             </div>
           </div>
         </div>
