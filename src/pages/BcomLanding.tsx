@@ -10,6 +10,7 @@ import CounselingForm from "@/components/CounselingForm";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
 import { useSmartPopup } from "@/hooks/useSmartPopup";
 import SEO from "@/components/SEO";
+import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 
 const BcomLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -294,6 +295,7 @@ const BcomLanding = () => {
         </div>
       </section>
 
+      <RelatedBlogPosts courseKeywords={["b.com", "commerce", "accounting", "banking", "after 12th"]} />
       <Footer />
       
       {/* Smart Popup */}

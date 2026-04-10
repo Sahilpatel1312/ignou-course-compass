@@ -9,6 +9,7 @@ import CounselingForm from "@/components/CounselingForm";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
 import { useSmartPopup } from "@/hooks/useSmartPopup";
 import SEO from "@/components/SEO";
+import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 
 const MaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -293,6 +294,7 @@ const MaLanding = () => {
         </div>
       </section>
 
+      <RelatedBlogPosts courseKeywords={["ma", "master of arts", "humanities", "upsc", "postgraduate"]} />
       <Footer />
       
       {/* Smart Popup */}

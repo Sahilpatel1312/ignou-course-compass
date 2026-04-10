@@ -576,5 +576,326 @@ Follow these rules strictly to avoid rejection:
 
 > **Need help with your IGNOU assignments?** Our counselling team can guide you on assignment preparation and study strategies.
     `
+  },
+  {
+    id: "9",
+    slug: "ignou-distance-education-courses-complete-list-2026",
+    title: "IGNOU Distance Education Courses 2026 – Complete List with Fees & Eligibility",
+    excerpt: "Explore the full list of IGNOU distance education courses available for 2026. From undergraduate to postgraduate programs — find fees, duration, and eligibility for every course.",
+    date: "2026-04-09",
+    author: "IGNOU Distance Team",
+    category: "Course Guide",
+    readTime: "10 min read",
+    content: `
+## IGNOU Distance Education Courses – Full List for 2026
+
+**Indira Gandhi National Open University (IGNOU)** is India's premier distance education institution, offering over 200 programs across multiple disciplines. Whether you're looking for an IGNOU online degree, a diploma, or a certificate course — this comprehensive guide covers it all.
+
+### Why Choose IGNOU Distance Education?
+
+IGNOU distance education has been transforming lives since 1985. Here's why over 40 lakh students trust IGNOU:
+
+- **Central University** established by an Act of Parliament
+- **NAAC A++ Accredited** — highest quality rating
+- **UGC & DEB Approved** — degrees valid for all government and private jobs
+- **3,000+ Study Centers** across India and 36 overseas centers
+- **Affordable Fees** — starting from just ₹3,600 per year
+
+### Popular IGNOU Online Degree Courses
+
+#### Undergraduate Programs (Bachelor's Degree)
+
+| Course | Duration | Total Fee | Eligibility |
+|---|---|---|---|
+| **BA (Bachelor of Arts)** | 3 years | ₹10,800 | 12th Pass |
+| **B.Com (Bachelor of Commerce)** | 3 years | ₹13,500 | 12th Pass |
+| **BCA (Computer Applications)** | 3 years | ₹35,000 | 12th Pass |
+| **BBA (Business Administration)** | 3 years | ₹30,000 | 12th Pass |
+| **B.Sc (General)** | 3 years | ₹15,000 | 12th Pass (Science) |
+| **BSW (Social Work)** | 3 years | ₹16,200 | 12th Pass |
+
+#### Postgraduate Programs (Master's Degree)
+
+| Course | Duration | Total Fee | Eligibility |
+|---|---|---|---|
+| **MBA** | 2 years | ₹62,000 | Graduation + OPENMAT |
+| **MCA** | 2 years | ₹55,000 | BCA/Graduation with Math |
+| **MA (Various Subjects)** | 2 years | ₹12,000 | Graduation |
+| **M.Com** | 2 years | ₹15,000 | B.Com or equivalent |
+| **MSW (Social Work)** | 2 years | ₹18,000 | Graduation |
+| **MEd** | 2 years | ₹25,000 | B.Ed |
+
+### IGNOU Online Bachelor Courses – Detailed Overview
+
+The IGNOU online bachelor courses are perfect for students who want a recognized degree without attending a physical college. All bachelor programs follow a flexible semester system with study materials delivered to your doorstep.
+
+**Key advantages of IGNOU bachelor courses:**
+- No attendance requirement — study from home
+- Study materials in English and Hindi
+- Access to eGyankosh digital library
+- Practical sessions at regional centers (for applicable courses)
+
+### IGNOU University Distance Education — How It Works
+
+1. **Apply Online** through the IGNOU Samarth portal
+2. **Receive study materials** by post + digital access
+3. **Attend optional counseling** at your nearest study center
+4. **Submit assignments** as part of internal assessment
+5. **Appear for exams** at designated exam centers (June/December)
+
+### Is IGNOU Distance Degree Valid?
+
+**Absolutely yes.** IGNOU is a Central University — its degrees carry the same weight as any regular university degree. Whether you're applying for:
+- Government jobs (UPSC, SSC, Banking, Railways)
+- Private sector employment
+- Higher education (M.Tech, PhD, MBA entrance)
+- Competitive exams
+
+Your IGNOU degree is 100% valid and accepted everywhere.
+
+> **Need help choosing the right IGNOU distance course?** Get free counselling from our experts — we'll guide you based on your career goals and eligibility.
+    `
+  },
+  {
+    id: "10",
+    slug: "ignou-pg-admission-2026-postgraduate-courses",
+    title: "IGNOU PG Admission 2026 – Best Postgraduate Courses, Fees & How to Apply",
+    excerpt: "Looking for IGNOU PG admission in 2026? Explore the best postgraduate programs including MBA, MCA, MA, and M.Com with complete details on fees, eligibility, and the application process.",
+    date: "2026-04-10",
+    author: "IGNOU Distance Team",
+    category: "Admission Guide",
+    readTime: "9 min read",
+    content: `
+## IGNOU PG Admission 2026 – Your Complete Guide
+
+The **IGNOU PG Admission 2026** for the July session is now open. If you're a graduate looking to pursue a postgraduate degree through distance education, IGNOU offers the most affordable and flexible PG programs in India.
+
+### Why Pursue PG from IGNOU?
+
+- **Save 80-90% on fees** compared to private universities
+- **Study while working** — no need to quit your job
+- **UGC-DEB Approved** — valid for government and private jobs
+- **NAAC A++ Accreditation** — highest quality assurance
+- **No relocation needed** — study from your city
+
+### Best IGNOU PG Courses for 2026
+
+#### 1. Online MBA (Master of Business Administration)
+- **Duration**: 2 years (4 semesters)
+- **Fee**: ₹62,000 total
+- **Eligibility**: Graduation with 50% + OPENMAT score
+- **Specializations**: Marketing, Finance, HR, Operations, IT, International Business
+- **Career Scope**: Management roles with ₹4-15 LPA salary range
+
+#### 2. Online MCA (Master of Computer Applications)
+- **Duration**: 2 years (4 semesters)
+- **Fee**: ₹55,000 total
+- **Eligibility**: BCA/B.Sc (CS) or Graduation with Mathematics
+- **Career Scope**: Software Developer, Data Analyst, IT Manager — ₹5-18 LPA
+
+#### 3. Online MA (Master of Arts)
+- **Duration**: 2 years (4 semesters)
+- **Fee**: ₹12,000 total
+- **Eligibility**: Graduation in any stream
+- **Subjects**: English, Hindi, Political Science, History, Sociology, Psychology, Economics, Public Administration
+- **Career Scope**: Teaching, Civil Services, Content Writing, Research
+
+#### 4. Online M.Com (Master of Commerce)
+- **Duration**: 2 years (4 semesters)
+- **Fee**: ₹15,000 total
+- **Eligibility**: B.Com or equivalent degree
+- **Career Scope**: Accounting, Banking, Finance, CA preparation
+
+### IGNOU PG Admission Process – Step by Step
+
+1. Visit the IGNOU Samarth Admission Portal
+2. Register with email and mobile number
+3. Select your PG program
+4. Fill personal and educational details
+5. Upload required documents (graduation marksheet, photo, signature)
+6. Pay the semester fee online
+7. Download admission confirmation
+
+### Important Dates for July 2026 PG Admission
+
+| Event | Date |
+|---|---|
+| Admission Opens | April 2026 |
+| Last Date (No Late Fee) | July 31, 2026 |
+| Last Date (With Late Fee) | September 2026 |
+| Session Starts | July 2026 |
+
+### IGNOU PG vs Regular PG — Key Differences
+
+| Factor | IGNOU PG | Regular PG |
+|---|---|---|
+| **Fees** | ₹12,000 – ₹62,000 | ₹1-15 Lakh |
+| **Flexibility** | 100% flexible | Fixed schedule |
+| **Work + Study** | ✅ Possible | ❌ Difficult |
+| **Recognition** | UGC Approved | UGC Approved |
+| **Campus** | No campus required | Mandatory attendance |
+
+> **Ready for your PG journey?** Get free counselling from our IGNOU experts to choose the right postgraduate program.
+    `
+  },
+  {
+    id: "11",
+    slug: "ignou-online-degree-courses-recognition-career-scope",
+    title: "IGNOU Online Degree Courses 2026 – Recognition, Career Scope & Complete Guide",
+    excerpt: "Everything you need to know about IGNOU online degree courses in 2026 — from UGC recognition and NAAC accreditation to career opportunities and how to enroll.",
+    date: "2026-04-08",
+    author: "IGNOU Distance Team",
+    category: "Career Guidance",
+    readTime: "8 min read",
+    content: `
+## IGNOU Online Degree Courses – Are They Worth It in 2026?
+
+If you're searching for **IGNOU online degree courses**, you're not alone. Thousands of students across India are choosing IGNOU for affordable, flexible, and recognized higher education.
+
+### What Makes IGNOU Online Degrees Special?
+
+IGNOU isn't just any university — it's a **Central University** established by the Parliament of India. Here's what sets it apart:
+
+- **Largest University in the World** by enrollment (40+ lakh students)
+- **NAAC A++ Grade** — the highest accreditation possible
+- **UGC-DEB Approved** — every degree is legally valid
+- **UNESCO Recognition** — accepted internationally
+- **3,000+ Study Centers** — support network across India
+
+### Complete List of IGNOU Online Degree Programs
+
+#### Bachelor's Degrees (UG)
+- BA, B.Com, BCA, BBA, B.Sc, BSW, BTS
+
+#### Master's Degrees (PG)
+- MBA, MCA, MA, M.Com, MSW, MEd, M.Sc
+
+#### Diploma Programs
+- PGDM, PGDHRM, PGDFM, PGDIBO
+
+### IGNOU Courses for Working Professionals
+
+The biggest advantage of IGNOU online courses is the ability to **work and study simultaneously**. Popular choices among working professionals:
+
+1. **MBA** — For career advancement in management
+2. **MCA** — For IT professionals wanting a master's degree
+3. **MA** — For UPSC aspirants and teaching career seekers
+4. **BBA/BCA** — For those wanting a bachelor's degree while working
+
+### How Employers View IGNOU Degrees
+
+Major employers across India accept IGNOU degrees:
+- **Government**: UPSC, SSC, Banking, Railways, State PSCs
+- **IT Sector**: TCS, Infosys, Wipro, HCL accept IGNOU degrees
+- **Banking**: SBI, PNB, HDFC, ICICI — all accept
+- **Education**: Valid for B.Ed, M.Ed, NET, and teaching positions
+
+### IGNOU vs Other Distance Universities
+
+| Parameter | IGNOU | Other Distance Universities |
+|---|---|---|
+| **Established By** | Act of Parliament | State/Private |
+| **NAAC Grade** | A++ | Varies (B to A) |
+| **Fee Range** | ₹3,600 – ₹62,000 | ₹50,000 – ₹3,00,000 |
+| **Global Presence** | 36 countries | Limited |
+| **Student Base** | 40+ Lakh | Much smaller |
+
+### How to Get Started with IGNOU
+
+1. **Choose your program** based on your career goals
+2. **Check eligibility** for your desired course
+3. **Apply online** through the IGNOU Samarth portal
+4. **Pay fees** semester-wise (very affordable)
+5. **Start learning** at your own pace
+
+> **Confused about which IGNOU online degree to choose?** Our counselling team will help you pick the perfect course based on your career goals and background.
+    `
+  },
+  {
+    id: "12",
+    slug: "indira-gandhi-national-open-university-complete-guide",
+    title: "Indira Gandhi National Open University (IGNOU) – Complete Guide for 2026 Students",
+    excerpt: "A comprehensive guide to Indira Gandhi National Open University — history, courses, fees, admission process, study centers, and why IGNOU is India's top choice for distance education.",
+    date: "2026-04-03",
+    author: "IGNOU Distance Team",
+    category: "University Guide",
+    readTime: "12 min read",
+    content: `
+## Indira Gandhi National Open University – Everything You Need to Know
+
+**Indira Gandhi National Open University (IGNOU)** is India's largest and most respected open university. Founded in 1985 by an Act of Parliament, IGNOU has revolutionized education in India by making quality higher education accessible to everyone, regardless of location or financial background.
+
+### History & Legacy
+
+IGNOU was named after India's first woman Prime Minister, **Smt. Indira Gandhi**. The university was established with a vision to democratize education and bridge the gap between urban and rural India.
+
+**Key milestones:**
+- **1985**: Established by Parliament through IGNOU Act
+- **1987**: First batch of students enrolled
+- **2006**: Awarded NAAC 'A' grade
+- **2019**: Upgraded to NAAC 'A++' — highest possible grade
+- **2026**: Over 40 lakh active students worldwide
+
+### IGNOU by the Numbers
+
+| Metric | Data |
+|---|---|
+| **Students** | 40+ Lakh |
+| **Programs** | 200+ |
+| **Study Centers** | 3,000+ |
+| **Regional Centers** | 67 |
+| **Overseas Centers** | 36 countries |
+| **Faculty** | 500+ |
+| **Awards** | UNESCO, COL Excellence Award |
+
+### Why IGNOU is India's #1 Distance University
+
+1. **Central University Status**: Unlike private distance universities, IGNOU is backed by the Government of India
+2. **NAAC A++ Accreditation**: Only a handful of universities in India have this rating
+3. **Most Affordable**: Fees start from ₹3,600 — making education accessible to all
+4. **Pan-India Reach**: Study centers in every state and union territory
+5. **International Presence**: Centers in 36 countries including UAE, Kuwait, Saudi Arabia, UK
+6. **Flexible System**: No age limit, no attendance requirement, study at your own pace
+
+### IGNOU Study Centers – Your Local Support System
+
+IGNOU has **3,000+ study centers** across India. Each center provides:
+- Weekend counseling sessions with expert faculty
+- Library access with study materials
+- Assignment submission facility
+- Exam center allocation
+- Student support services
+
+### How IGNOU's Distance Education System Works
+
+Unlike traditional universities, IGNOU follows a **self-learning model**:
+
+1. **Study Materials**: Comprehensive printed books + digital access via eGyankosh
+2. **Audio-Video Lectures**: Available on Gyandarshan TV channel and YouTube
+3. **Online Classes**: Interactive sessions through the IGNOU LMS
+4. **Counseling Sessions**: Optional weekend classes at study centers
+5. **Assignments**: Internal assessment through Tutor-Marked Assignments (TMAs)
+6. **Exams**: Term-End Examinations held in June and December
+
+### IGNOU for Government Job Aspirants
+
+If you're preparing for government exams, IGNOU is the ideal choice:
+- **UPSC Civil Services**: IGNOU degrees fully accepted
+- **SSC CGL/CHSL**: Valid educational qualification
+- **Banking (IBPS/SBI)**: Accepted for all posts
+- **Railways**: Valid for all RRB/RRC exams
+- **State PSCs**: Accepted by all state public service commissions
+
+### IGNOU Courses for Every Career Path
+
+**For Business & Management**: MBA, BBA, PGDM
+**For IT & Technology**: MCA, BCA
+**For Humanities & Social Sciences**: BA, MA, BSW, MSW
+**For Commerce & Finance**: B.Com, M.Com, CA Foundation prep
+**For Education**: B.Ed, M.Ed, PGDE
+**For Health**: PGDMCH, PGDHM
+
+> **Start your journey with Indira Gandhi National Open University today.** Get free counselling from our experts to find the perfect program for your career goals.
+    `
   }
 ];
