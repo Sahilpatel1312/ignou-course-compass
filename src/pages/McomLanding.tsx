@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import CounselingForm from "@/components/CounselingForm";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
 import { useSmartPopup } from "@/hooks/useSmartPopup";
+import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 
 const McomLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);

@@ -9,6 +9,7 @@ import CounselingForm from "@/components/CounselingForm";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
 import { useSmartPopup } from "@/hooks/useSmartPopup";
 import SEO from "@/components/SEO";
+import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 
 const McaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
