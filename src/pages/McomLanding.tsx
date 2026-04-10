@@ -332,6 +332,7 @@ const McomLanding = () => {
         </div>
       </section>
 
+      <RelatedBlogPosts courseKeywords={["m.com", "commerce", "accounting", "finance", "postgraduate"]} />
       <Footer />
       
       {/* Smart Popup */}

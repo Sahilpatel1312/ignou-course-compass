@@ -344,6 +344,7 @@ const BbaLanding = () => {
         </div>
       </section>
 
+      <RelatedBlogPosts courseKeywords={["bba", "business administration", "management", "bachelor", "after 12th"]} />
       <Footer />
       
       {/* Smart Popup */}

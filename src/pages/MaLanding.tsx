@@ -294,6 +294,7 @@ const MaLanding = () => {
         </div>
       </section>
 
+      <RelatedBlogPosts courseKeywords={["ma", "master of arts", "humanities", "upsc", "postgraduate"]} />
       <Footer />
       
       {/* Smart Popup */}

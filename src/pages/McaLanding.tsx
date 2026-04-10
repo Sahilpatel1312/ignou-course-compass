@@ -368,6 +368,7 @@ const McaLanding = () => {
         </div>
       </section>
 
+      <RelatedBlogPosts courseKeywords={["mca", "computer applications", "software", "it career", "programming"]} />
       <Footer />
       
       {/* Smart Popup */}

@@ -295,6 +295,7 @@ const BcomLanding = () => {
         </div>
       </section>
 
+      <RelatedBlogPosts courseKeywords={["b.com", "commerce", "accounting", "banking", "after 12th"]} />
       <Footer />
       
       {/* Smart Popup */}
