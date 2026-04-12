@@ -297,6 +297,8 @@ const BcomLanding = () => {
         </div>
       </section>
 
+      <CourseContentSections data={bcomContentData} onEnquireClick={handleApplyNow} />
+
       <RelatedBlogPosts courseKeywords={["b.com", "commerce", "accounting", "banking", "after 12th"]} />
       <Footer />
       

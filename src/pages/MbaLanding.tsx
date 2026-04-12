@@ -450,6 +450,8 @@ const MbaLanding = () => {
         </div>
       </section>
 
+      <CourseContentSections data={mbaContentData} onEnquireClick={handleApplyNow} />
+
       <RelatedBlogPosts courseKeywords={["mba", "management", "business administration", "mba admission", "mba fees"]} />
 
       <Footer />

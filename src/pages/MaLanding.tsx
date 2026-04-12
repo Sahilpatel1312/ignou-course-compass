@@ -296,6 +296,8 @@ const MaLanding = () => {
         </div>
       </section>
 
+      <CourseContentSections data={maContentData} onEnquireClick={handleApplyNow} />
+
       <RelatedBlogPosts courseKeywords={["ma", "master of arts", "humanities", "upsc", "postgraduate"]} />
       <Footer />
       

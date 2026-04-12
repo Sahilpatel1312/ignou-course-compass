@@ -334,6 +334,8 @@ const McomLanding = () => {
         </div>
       </section>
 
+      <CourseContentSections data={mcomContentData} onEnquireClick={handleApplyNow} />
+
       <RelatedBlogPosts courseKeywords={["m.com", "commerce", "accounting", "finance", "postgraduate"]} />
       <Footer />
       

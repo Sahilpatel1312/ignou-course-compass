@@ -346,6 +346,8 @@ const BbaLanding = () => {
         </div>
       </section>
 
+      <CourseContentSections data={bbaContentData} onEnquireClick={handleApplyNow} />
+
       <RelatedBlogPosts courseKeywords={["bba", "business administration", "management", "bachelor", "after 12th"]} />
       <Footer />
       
