@@ -370,6 +370,8 @@ const McaLanding = () => {
         </div>
       </section>
 
+      <CourseContentSections data={mcaContentData} onEnquireClick={handleApplyNow} />
+
       <RelatedBlogPosts courseKeywords={["mca", "computer applications", "software", "it career", "programming"]} />
       <Footer />
       
