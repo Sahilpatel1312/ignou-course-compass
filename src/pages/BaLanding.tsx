@@ -11,6 +11,8 @@ import FloatingHelpButton from "@/components/FloatingHelpButton";
 import { useSmartPopup } from "@/hooks/useSmartPopup";
 import SEO from "@/components/SEO";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
+import CourseContentSections from "@/components/CourseContentSections";
+import { baContentData } from "@/data/courseContentData";
 
 const BaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
