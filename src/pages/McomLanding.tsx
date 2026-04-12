@@ -10,6 +10,8 @@ import CounselingForm from "@/components/CounselingForm";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
 import { useSmartPopup } from "@/hooks/useSmartPopup";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
+import CourseContentSections from "@/components/CourseContentSections";
+import { mcomContentData } from "@/data/courseContentData";
 
 const McomLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -331,6 +333,8 @@ const McomLanding = () => {
           </Button>
         </div>
       </section>
+
+      <CourseContentSections data={mcomContentData} onEnquireClick={handleApplyNow} />
 
       <RelatedBlogPosts courseKeywords={["m.com", "commerce", "accounting", "finance", "postgraduate"]} />
       <Footer />

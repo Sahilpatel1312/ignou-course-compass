@@ -10,6 +10,8 @@ import FloatingHelpButton from "@/components/FloatingHelpButton";
 import { useSmartPopup } from "@/hooks/useSmartPopup";
 import SEO from "@/components/SEO";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
+import CourseContentSections from "@/components/CourseContentSections";
+import { maContentData } from "@/data/courseContentData";
 
 const MaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -293,6 +295,8 @@ const MaLanding = () => {
           </Button>
         </div>
       </section>
+
+      <CourseContentSections data={maContentData} onEnquireClick={handleApplyNow} />
 
       <RelatedBlogPosts courseKeywords={["ma", "master of arts", "humanities", "upsc", "postgraduate"]} />
       <Footer />
