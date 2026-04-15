@@ -91,13 +91,47 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false, 
       state: formData.state,
     };
 
-    // Show success optimistically and reset form immediately for faster UX
+    // Fire the API request BEFORE closing/unmounting to prevent request loss
+    const submitPayload = JSON.stringify(payload);
+    
+    const sendLead = async (retryCount = 0) => {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 15000);
+
+        const response = await fetch("https://ignou-server.onrender.com/api/submit-lead", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: submitPayload,
+          signal: controller.signal,
+        });
+
+        clearTimeout(timeoutId);
+        
+        if (!response.ok && retryCount < 2) {
+          console.warn(`Lead submission attempt ${retryCount + 1} failed, retrying...`);
+          setTimeout(() => sendLead(retryCount + 1), 2000);
+        }
+      } catch (error: any) {
+        if (retryCount < 2) {
+          console.warn(`Lead submission attempt ${retryCount + 1} error, retrying...`, error.message);
+          setTimeout(() => sendLead(retryCount + 1), 2000);
+        } else {
+          console.warn("All lead submission attempts failed:", error.message);
+        }
+      }
+    };
+
+    // Start the request immediately (fire-and-forget, won't be affected by unmount)
+    sendLead();
+
+    // Show success optimistically
     toast({
       title: "✅ Counseling Request Submitted!",
       description: "Our counselor will contact you within 24 hours.",
     });
 
-    // Trigger Google Ads conversion tracking immediately
+    // Trigger Google Ads conversion tracking
     if (typeof window !== "undefined" && (window as any).gtag) {
       (window as any).gtag("event", "conversion", {
         send_to: "AW-17409910638/bI1GCMSi6_oaEO7O2O1A",
@@ -116,29 +150,11 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false, 
     setConsentGiven(true);
     setIsSubmitting(false);
 
-    // Notify parent component that form was submitted
+    // Notify parent and close AFTER the fetch has been initiated
     onFormSubmitted?.();
 
     if (!embedded) {
       onClose();
-    }
-
-    // Send data in background with timeout to avoid slow server cold-starts
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 10000);
-
-      await fetch("https://ignou-server.onrender.com/api/submit-lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-        signal: controller.signal,
-      });
-
-      clearTimeout(timeoutId);
-    } catch (error: any) {
-      // Log silently - user already got success message
-      console.warn("Background form submission issue:", error.message);
     }
   };
 
