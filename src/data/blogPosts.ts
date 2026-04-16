@@ -1293,7 +1293,7 @@ IGNOU offers **admission to online courses** twice a year, and the BA program re
 
 | Session | Application Opens | Last Date to Apply |
 |---------|-------------------|-------------------|
-| **January 2026** | November 2025 | March 2026 (Extended) |
+| **January 2026** | November 2026 | March 2026 (Extended) |
 | **July 2026** | April 2026 | September 2026 |
 
 *Note: IGNOU frequently extends deadlines, so check the official website for the latest dates.*

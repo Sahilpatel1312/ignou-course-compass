@@ -32,8 +32,8 @@ const BbaLanding = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU Online BBA/BCA Programs 2025 - Bachelor of Business Administration"
-        description="Get Counseling for IGNOU Online BBA/BCA Programs 2025. Bachelor of Business Administration distance learning. UGC-approved IGNOU Online Degree Programs. Fee ₹32,400."
+        title="IGNOU Online BBA/BCA Programs 2026 - Bachelor of Business Administration"
+        description="Get Counseling for IGNOU Online BBA/BCA Programs 2026. Bachelor of Business Administration distance learning. UGC-approved IGNOU Online Degree Programs. Fee ₹32,400."
         keywords="IGNOU Online BBA/BCA Programs, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs, Best Online Courses by IGNOU"
         canonical="/bba"
         course={{
@@ -54,10 +54,10 @@ const BbaLanding = () => {
             <div>
               <Badge className="bg-yellow-500 text-blue-900 mb-4">IGNOU Online BBA Program</Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                IGNOU Online BBA/BCA Programs 2025 - UGC Approved
+                IGNOU Online BBA/BCA Programs 2026 - UGC Approved
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Apply for IGNOU Online BBA/BCA Programs 2025. Build your business foundation with UGC-approved IGNOU Distance Learning Programs for future leaders.
+                Apply for IGNOU Online BBA/BCA Programs 2026. Build your business foundation with UGC-approved IGNOU Distance Learning Programs for future leaders.
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-8">

@@ -29,13 +29,13 @@ const App = () => (
     <TooltipProvider>
       {/* ✅ Hidden SEO Headings to Improve Keyword Indexing */}
       <h1 style={{ display: "none" }}>
-        IGNOU Admission 2025 (July Session) – Apply Online Today
+        IGNOU Admission 2026 (July Session) – Apply Online Today
       </h1>
       <h1 style={{ display: "none" }}>
-        Apply for IGNOU MBA Admission 2025 – Distance & Online Mode
+        Apply for IGNOU MBA Admission 2026 – Distance & Online Mode
       </h1>
       <h1 style={{ display: "none" }}>
-        Indira Gandhi National Open University (IGNOU) Admission 2025–26 Open Now
+        Indira Gandhi National Open University (IGNOU) Admission 2026–26 Open Now
       </h1>
 
       <Toaster />

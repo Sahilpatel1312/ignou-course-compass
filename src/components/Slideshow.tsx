@@ -24,7 +24,7 @@ const Slideshow = () => {
     },
     {
       src: "/lovable-uploads/fe5a0ed1-72a3-4d9d-b809-4277e2eb58ad.png",
-      alt: "IGNOU UG New Admission for January 2025 session"
+      alt: "IGNOU UG New Admission for January 2026 session"
     }
   ];
 

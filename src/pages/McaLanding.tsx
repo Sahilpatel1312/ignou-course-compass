@@ -31,9 +31,9 @@ const McaLanding = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU MCA Online Course 2025 - Online MCA IGNOU | UGC Approved Degree"
-        description="Get Counselling for IGNOU MCA Online Course 2025. Online MCA IGNOU with advanced programming and IT skills. UGC-approved IGNOU Distance Education. Fee ₹58,500."
-        keywords="IGNOU MCA Online Course 2025, Online MCA IGNOU, IGNOU MCA Distance Education, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs"
+        title="IGNOU MCA Online Course 2026 - Online MCA IGNOU | UGC Approved Degree"
+        description="Get Counselling for IGNOU MCA Online Course 2026. Online MCA IGNOU with advanced programming and IT skills. UGC-approved IGNOU Distance Education. Fee ₹58,500."
+        keywords="IGNOU MCA Online Course 2026, Online MCA IGNOU, IGNOU MCA Distance Education, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs"
         canonical="/mca"
         course={{
           name: "Master of Computer Applications (MCA)",
@@ -53,10 +53,10 @@ const McaLanding = () => {
             <div>
               <Badge className="bg-yellow-500 text-blue-900 mb-4">IGNOU Online MCA Program</Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                IGNOU MCA Online Course 2025 - Online MCA IGNOU
+                IGNOU MCA Online Course 2026 - Online MCA IGNOU
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Get Counselling for IGNOU MCA Online Course 2025. Master advanced programming with Online MCA IGNOU - UGC-approved IGNOU Distance Education program for aspiring IT professionals.
+                Get Counselling for IGNOU MCA Online Course 2026. Master advanced programming with Online MCA IGNOU - UGC-approved IGNOU Distance Education program for aspiring IT professionals.
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-8">
