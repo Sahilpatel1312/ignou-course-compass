@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 interface SmartPopupState {
   shouldShow: boolean;
@@ -13,11 +13,7 @@ const SCROLL_TRIGGER = 0.5; // 50% scroll
 
 export const useSmartPopup = () => {
   const [showPopup, setShowPopup] = useState(false);
-  const [hasTriggered, setHasTriggered] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout>();
-  const exitIntentRef = useRef(false);
-  const scrollTriggeredRef = useRef(false);
-  const timeTriggeredRef = useRef(false);
+  const hasTriggeredRef = useRef(false);
 
   // Get stored state
   const getStoredState = (): SmartPopupState => {
@@ -53,92 +49,70 @@ export const useSmartPopup = () => {
     const state = getStoredState();
     const now = Date.now();
     
-    // Don't show if form was submitted
     if (state.isFormSubmitted) return false;
-    
-    // Don't show if recently shown (within 5 minutes)
-    if (state.lastShownTime && (now - state.lastShownTime) < SHOW_DELAY) {
-      return false;
-    }
+    if (state.lastShownTime && (now - state.lastShownTime) < SHOW_DELAY) return false;
     
     return state.shouldShow;
   };
 
-  // Trigger popup if conditions are met
-  const triggerPopup = () => {
-    if (!hasTriggered && canShowPopup()) {
+  // Trigger popup - uses ref to avoid stale closure issues
+  const triggerPopup = useCallback(() => {
+    if (!hasTriggeredRef.current && canShowPopup()) {
+      hasTriggeredRef.current = true;
       setShowPopup(true);
-      setHasTriggered(true);
       saveState({ lastShownTime: Date.now() });
     }
-  };
+  }, []);
+
+  // Time delay trigger
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      triggerPopup();
+    }, TIME_TRIGGER);
+
+    return () => clearTimeout(timeoutId);
+  }, [triggerPopup]);
 
   // Exit intent detection
   useEffect(() => {
     const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !exitIntentRef.current) {
-        exitIntentRef.current = true;
+      if (e.clientY <= 0) {
         triggerPopup();
       }
     };
 
     document.addEventListener('mouseleave', handleMouseLeave);
     return () => document.removeEventListener('mouseleave', handleMouseLeave);
-  }, [hasTriggered]);
+  }, [triggerPopup]);
 
   // Scroll depth detection
   useEffect(() => {
+    let scrollTriggered = false;
+
     const handleScroll = () => {
-      if (scrollTriggeredRef.current) return;
+      if (scrollTriggered) return;
       
       const scrollHeight = document.documentElement.scrollHeight;
       const viewportHeight = window.innerHeight;
       const scrollTop = window.scrollY;
       
-      // Ensure we have valid scroll dimensions
       if (scrollHeight <= viewportHeight) return;
       
       const scrollPercent = scrollTop / (scrollHeight - viewportHeight);
       
       if (scrollPercent >= SCROLL_TRIGGER) {
-        scrollTriggeredRef.current = true;
+        scrollTriggered = true;
         triggerPopup();
       }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [hasTriggered]);
+  }, [triggerPopup]);
 
-  // Time delay trigger
-  useEffect(() => {
-    if (hasTriggered) return;
-    
-    timeoutRef.current = setTimeout(() => {
-      if (!timeTriggeredRef.current && canShowPopup()) {
-        timeTriggeredRef.current = true;
-        triggerPopup();
-      }
-    }, TIME_TRIGGER);
+  const openPopup = () => setShowPopup(true);
+  const closePopup = () => setShowPopup(false);
 
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, []);
-
-  // Manual popup trigger
-  const openPopup = () => {
-    setShowPopup(true);
-  };
-
-  // Close popup
-  const closePopup = () => {
-    setShowPopup(false);
-  };
-
-  // Mark form as submitted
   const markFormSubmitted = () => {
     saveState({ isFormSubmitted: true });
     setShowPopup(false);
