@@ -1,10 +1,30 @@
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Clock, BookOpen, CheckCircle, ExternalLink, Download } from "lucide-react";
+import { Clock, BookOpen, CheckCircle, ExternalLink, Download, GraduationCap } from "lucide-react";
 import { Course } from "@/data/ignouCourses";
 import { useNavigate } from "react-router-dom";
+
+import gradMba from "@/assets/grad-mba.jpg";
+import gradMca from "@/assets/grad-mca.jpg";
+import gradMa from "@/assets/grad-ma.jpg";
+import gradMcom from "@/assets/grad-mcom.jpg";
+import gradBca from "@/assets/grad-bca.jpg";
+import gradBba from "@/assets/grad-bba.jpg";
+import gradBa from "@/assets/grad-ba.jpg";
+import gradBcom from "@/assets/grad-bcom.jpg";
+
+const courseImageMap: Record<string, string> = {
+  "Online Master of Business Administration (MBA)": gradMba,
+  "Online Master of Computer Applications (MCA)": gradMca,
+  "Online Master of Arts (MA)": gradMa,
+  "Online Master of Commerce (M.Com)": gradMcom,
+  "Online Bachelor of Computer Applications (BCA)": gradBca,
+  "Online Bachelor of Business Administration (BBA)": gradBba,
+  "Online Bachelor of Arts (BA)": gradBa,
+  "Online Bachelor of Commerce (B.Com)": gradBcom,
+};
 
 interface CourseCardProps {
   course: Course;
@@ -18,7 +38,7 @@ const CourseCard = ({ course, onApplyNow, onDownloadBrochure }: CourseCardProps)
   const handleCheckDetails = () => {
     const routeMap: { [key: string]: string } = {
       "Online Master of Business Administration (MBA)": "/mba",
-      "Online Master of Computer Applications (MCA)": "/mca", 
+      "Online Master of Computer Applications (MCA)": "/mca",
       "Online Master of Arts (MA)": "/ma",
       "Online Master of Commerce (M.Com)": "/mcom",
       "Online Bachelor of Computer Applications (BCA)": "/bca",
@@ -29,87 +49,104 @@ const CourseCard = ({ course, onApplyNow, onDownloadBrochure }: CourseCardProps)
 
     const route = routeMap[course.name];
     if (route) {
-      // Navigate to the route and scroll to top
       navigate(route);
-      // Use setTimeout to ensure navigation completes before scrolling
       setTimeout(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }, 100);
     }
   };
 
+  const courseImage = courseImageMap[course.name];
+
   return (
-    <Card className="h-full hover:shadow-xl transition-all duration-300 border-l-4 border-l-blue-500 group hover:border-l-yellow-500">
-      <CardHeader className="pb-4">
-        <div className="flex justify-between items-start mb-2">
-          <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+    <Card className="h-full overflow-hidden hover:shadow-2xl transition-all duration-300 group border-0 shadow-lg bg-white">
+      {/* Image Section */}
+      <div className="relative h-48 overflow-hidden cursor-pointer" onClick={handleCheckDetails}>
+        {courseImage ? (
+          <img
+            src={courseImage}
+            alt={`${course.name} student`}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            loading="lazy"
+            width={640}
+            height={512}
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+            <GraduationCap className="h-16 w-16 text-white/80" />
+          </div>
+        )}
+        {/* Overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        {/* Badge on image */}
+        <div className="absolute top-3 left-3">
+          <Badge className="bg-white/90 text-blue-700 border-0 font-semibold text-xs backdrop-blur-sm">
             {course.category}
           </Badge>
         </div>
-        <CardTitle 
-          className="text-xl group-hover:text-blue-600 transition-colors cursor-pointer hover:underline"
+        {/* Duration on image */}
+        <div className="absolute bottom-3 left-3 flex items-center text-white text-sm font-medium">
+          <Clock className="h-4 w-4 mr-1.5" />
+          {course.duration}
+        </div>
+      </div>
+
+      <CardContent className="p-5 space-y-3">
+        {/* Title */}
+        <h3
+          className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors cursor-pointer line-clamp-2 leading-tight"
           onClick={handleCheckDetails}
         >
           {course.name}
-        </CardTitle>
-        <div className="flex items-center text-gray-600 text-sm">
-          <Clock className="h-4 w-4 mr-2" />
-          Duration: {course.duration}
-        </div>
-      </CardHeader>
-      
-      <CardContent className="space-y-4">
-        <p className="text-gray-700 text-sm leading-relaxed">
+        </h3>
+
+        {/* Description */}
+        <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
           {course.description}
         </p>
-        
-        <div>
-          <h4 className="font-semibold text-sm mb-2 flex items-center">
-            <BookOpen className="h-4 w-4 mr-2 text-blue-600" />
-            Eligibility
-          </h4>
-          <p className="text-gray-600 text-sm">{course.eligibility}</p>
+
+        {/* Eligibility */}
+        <div className="flex items-start gap-2 bg-blue-50 rounded-lg p-2.5">
+          <BookOpen className="h-4 w-4 text-blue-600 mt-0.5 flex-shrink-0" />
+          <p className="text-xs text-gray-700"><span className="font-semibold text-blue-700">Eligibility:</span> {course.eligibility}</p>
         </div>
 
-        <div>
-          <h4 className="font-semibold text-sm mb-2">Course Highlights</h4>
-          <div className="space-y-1">
-            {course.highlights.slice(0, 3).map((highlight, index) => (
-              <div key={index} className="flex items-center text-sm text-gray-600">
-                <CheckCircle className="h-3 w-3 mr-2 text-green-500 flex-shrink-0" />
-                {highlight}
-              </div>
-            ))}
-          </div>
+        {/* Highlights */}
+        <div className="space-y-1.5">
+          {course.highlights.slice(0, 3).map((highlight, index) => (
+            <div key={index} className="flex items-center text-xs text-gray-600">
+              <CheckCircle className="h-3.5 w-3.5 mr-2 text-emerald-500 flex-shrink-0" />
+              {highlight}
+            </div>
+          ))}
         </div>
 
-        <div className="space-y-3">
-          {/* Two buttons in a row - mobile responsive */}
-          <div className="flex flex-col sm:flex-row gap-2">
-            <Button 
+        {/* Buttons */}
+        <div className="pt-2 space-y-2">
+          <div className="flex gap-2">
+            <Button
               onClick={() => onDownloadBrochure(course.name)}
-              className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold text-sm py-2"
+              size="sm"
+              className="flex-1 bg-amber-500 hover:bg-amber-600 text-black font-semibold text-xs"
             >
-              <Download className="mr-2 h-4 w-4" />
-              <span className="hidden sm:inline">Download Brochure</span>
-              <span className="sm:hidden">Brochure</span>
+              <Download className="mr-1.5 h-3.5 w-3.5" />
+              Brochure
             </Button>
-            
-            <Button 
+            <Button
               onClick={handleCheckDetails}
-              variant="outline" 
-              className="flex-1 text-blue-600 border-blue-600 hover:bg-blue-50 text-sm py-2"
+              variant="outline"
+              size="sm"
+              className="flex-1 text-blue-600 border-blue-200 hover:bg-blue-50 text-xs"
             >
-              <ExternalLink className="mr-2 h-4 w-4" />
-              <span className="hidden sm:inline">Check Details</span>
-              <span className="sm:hidden">Details</span>
+              <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
+              Details
             </Button>
           </div>
-          
-          <Button 
+          <Button
             onClick={() => onApplyNow(course.name)}
-            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 text-sm py-2"
+            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-[1.02] text-sm font-semibold"
           >
+            <GraduationCap className="mr-2 h-4 w-4" />
             Get Counselling
           </Button>
         </div>
