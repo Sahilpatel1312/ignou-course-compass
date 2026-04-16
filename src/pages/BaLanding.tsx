@@ -32,9 +32,9 @@ const BaLanding = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU BA Online 2025 – Bachelor of Arts Distance"
-        description="Get Counselling for IGNOU BA Online 2025. UGC-approved BA distance education. 3-year program, total fee ₹8,700. Flexible learning."
-        keywords="IGNOU BA Online 2025, IGNOU BA distance education, UGC-approved BA IGNOU, BA admission IGNOU"
+        title="IGNOU BA Online 2026 – Bachelor of Arts Distance"
+        description="Get Counselling for IGNOU BA Online 2026. UGC-approved BA distance education. 3-year program, total fee ₹8,700. Flexible learning."
+        keywords="IGNOU BA Online 2026, IGNOU BA distance education, UGC-approved BA IGNOU, BA admission IGNOU"
         canonical="/ba"
         course={{
           name: "Bachelor of Arts (BA)",

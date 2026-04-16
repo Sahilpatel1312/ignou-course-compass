@@ -31,9 +31,9 @@ const MbaLanding = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU MBA Online Course 2025 - Distance Learning MBA | UGC Approved Degree ₹62,000"
-        description="✅ Get Counselling for IGNOU MBA Online 2025 ✅ 9 Specializations Available ✅ UGC-Approved MBA Distance Education ✅ Fee ₹62,000 ✅ 2-Year Program ✅ No Entrance Exam ✅ Study from Home"
-        keywords="IGNOU MBA Online 2025, IGNOU MBA distance education, MBA from IGNOU fees, UGC approved MBA online, IGNOU MBA specializations, distance learning MBA India, online MBA without entrance exam, IGNOU MBA eligibility, MBA degree online India, best distance MBA program"
+        title="IGNOU MBA Online Course 2026 - Distance Learning MBA | UGC Approved Degree ₹62,000"
+        description="✅ Get Counselling for IGNOU MBA Online 2026 ✅ 9 Specializations Available ✅ UGC-Approved MBA Distance Education ✅ Fee ₹62,000 ✅ 2-Year Program ✅ No Entrance Exam ✅ Study from Home"
+        keywords="IGNOU MBA Online 2026, IGNOU MBA distance education, MBA from IGNOU fees, UGC approved MBA online, IGNOU MBA specializations, distance learning MBA India, online MBA without entrance exam, IGNOU MBA eligibility, MBA degree online India, best distance MBA program"
         canonical="/mba"
         course={{
           name: "Master of Business Administration (MBA)",
@@ -53,10 +53,10 @@ const MbaLanding = () => {
             <div>
               <Badge className="bg-yellow-500 text-blue-900 mb-4">IGNOU Online MBA Program</Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                IGNOU MBA Online Course 2025 - Online MBA from IGNOU
+                IGNOU MBA Online Course 2026 - Online MBA from IGNOU
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Get counselling for IGNOU MBA Online Course 2025. Get your Online MBA from IGNOU - a UGC-approved comprehensive postgraduate management degree with best IGNOU Online MBA Fee Structure.
+                Get counselling for IGNOU MBA Online Course 2026. Get your Online MBA from IGNOU - a UGC-approved comprehensive postgraduate management degree with best IGNOU Online MBA Fee Structure.
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-8">
@@ -322,7 +322,7 @@ const MbaLanding = () => {
               <div className="aspect-video bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg mb-3 flex items-center justify-center">
                 <TrendingUp className="h-8 w-8 text-white" />
               </div>
-              <h3 className="font-semibold text-sm mb-2">Top MBA Career Paths in 2025</h3>
+              <h3 className="font-semibold text-sm mb-2">Top MBA Career Paths in 2026</h3>
               <p className="text-xs text-gray-600 mb-3">Explore the most promising career opportunities for MBA graduates in the current market...</p>
               <Badge variant="secondary" className="text-xs">Career Guide</Badge>
             </Card>

@@ -31,8 +31,8 @@ const MaLanding = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU MA Online Programs 2025 - Master of Arts Distance Education"
-        description="Get Counselling for IGNOU MA Online Programs 2025. IGNOU MA in Political Science Online, IGNOU MA in English Online Course. UGC-approved distance learning programs. Low fees."
+        title="IGNOU MA Online Programs 2026 - Master of Arts Distance Education"
+        description="Get Counselling for IGNOU MA Online Programs 2026. IGNOU MA in Political Science Online, IGNOU MA in English Online Course. UGC-approved distance learning programs. Low fees."
         keywords="IGNOU MA Online Programs, IGNOU MA in Political Science Online, IGNOU MA in English Online Course, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs"
         canonical="/ma"
         course={{
@@ -53,10 +53,10 @@ const MaLanding = () => {
             <div>
               <Badge className="bg-yellow-500 text-blue-900 mb-4">IGNOU Online MA Program</Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                IGNOU MA Online Programs 2025 - UGC Approved Degrees
+                IGNOU MA Online Programs 2026 - UGC Approved Degrees
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Get Counselling for IGNOU MA Online Programs 2025. Choose from IGNOU MA in Political Science Online, English and more - UGC-approved IGNOU Distance Learning Programs.
+                Get Counselling for IGNOU MA Online Programs 2026. Choose from IGNOU MA in Political Science Online, English and more - UGC-approved IGNOU Distance Learning Programs.
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-8">

@@ -116,7 +116,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-6 pt-6">
           <div className="flex justify-center items-center">
             <p className="text-sm text-gray-400">
-              © 2025 Ignou Distance. All rights reserved.
+              © 2026 Ignou Distance. All rights reserved.
             </p>
           </div>
         </div>

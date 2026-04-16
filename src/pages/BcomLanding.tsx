@@ -32,9 +32,9 @@ const BcomLanding = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU BCom Online 2025 – Bachelor of Commerce Distance"
-        description="Get Counselling for IGNOU BCom Online 2025. UGC-approved B.Com distance education. 3-year program, total fee ₹10,800. Flexible learning."
-        keywords="IGNOU BCom Online 2025, IGNOU B.Com distance education, UGC-approved BCom IGNOU, BCom admission IGNOU"
+        title="IGNOU BCom Online 2026 – Bachelor of Commerce Distance"
+        description="Get Counselling for IGNOU BCom Online 2026. UGC-approved B.Com distance education. 3-year program, total fee ₹10,800. Flexible learning."
+        keywords="IGNOU BCom Online 2026, IGNOU B.Com distance education, UGC-approved BCom IGNOU, BCom admission IGNOU"
         canonical="/bcom"
         course={{
           name: "Bachelor of Commerce (B.Com)",

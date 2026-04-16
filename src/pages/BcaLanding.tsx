@@ -32,8 +32,8 @@ const BcaLanding = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU BCA Online Course 2025 - Bachelor of Computer Applications | UGC Approved"
-        description="Get counselling for IGNOU BCA Online Course 2025. Bachelor of Computer Applications with programming, web development skills. UGC-approved IGNOU Distance Education. Fee ₹36,000."
+        title="IGNOU BCA Online Course 2026 - Bachelor of Computer Applications | UGC Approved"
+        description="Get counselling for IGNOU BCA Online Course 2026. Bachelor of Computer Applications with programming, web development skills. UGC-approved IGNOU Distance Education. Fee ₹36,000."
         keywords="IGNOU BCA Online Course, IGNOU BCA Eligibility & Fees, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs, Best Online Courses by IGNOU"
         canonical="/bca"
         course={{
@@ -54,10 +54,10 @@ const BcaLanding = () => {
             <div>
               <Badge className="bg-yellow-500 text-blue-900 mb-4">IGNOU Online BCA Program</Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                IGNOU BCA Online Course 2025 - UGC Approved Degree
+                IGNOU BCA Online Course 2026 - UGC Approved Degree
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Get Counselling for IGNOU BCA Online Course 2025. Launch your IT career with UGC-approved IGNOU Distance Education program designed for aspiring computer professionals.
+                Get Counselling for IGNOU BCA Online Course 2026. Launch your IT career with UGC-approved IGNOU Distance Education program designed for aspiring computer professionals.
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-8">
