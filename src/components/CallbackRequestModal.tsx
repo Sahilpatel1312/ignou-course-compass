@@ -32,10 +32,12 @@ const CallbackRequestModal = ({ isOpen, onClose, preSelectedCourse = "" }: Callb
 
     setSubmitting(true);
 
+    // Server requires email — use a placeholder so callback leads still hit the sheet
+    const safeEmail = `callback+${phone}@ignoudistance.in`;
     const payload = JSON.stringify({
       fullName: name,
       phone,
-      email: "",
+      email: safeEmail,
       course: preSelectedCourse || "Callback Request",
       state: "Callback Request - Within 30 mins",
     });

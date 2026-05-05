@@ -6,9 +6,10 @@ const DEFAULT_MESSAGE = "Hi, I want free counselling for IGNOU July 2026 admissi
 interface WhatsAppButtonProps {
   message?: string;
   className?: string;
+  showLabel?: boolean;
 }
 
-const WhatsAppButton = ({ message = DEFAULT_MESSAGE, className = "" }: WhatsAppButtonProps) => {
+const WhatsAppButton = ({ message = DEFAULT_MESSAGE, className = "", showLabel = false }: WhatsAppButtonProps) => {
   const href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
   return (
     <a
@@ -19,7 +20,9 @@ const WhatsAppButton = ({ message = DEFAULT_MESSAGE, className = "" }: WhatsAppB
       className={`fixed bottom-6 left-6 z-40 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white rounded-full px-4 py-3 shadow-lg hover:shadow-xl transition-all duration-300 ${className}`}
     >
       <MessageCircle className="h-6 w-6" />
-      <span className="hidden sm:inline font-semibold">Chat on WhatsApp</span>
+      <span className={`${showLabel ? "inline" : "hidden"} sm:inline font-semibold whitespace-nowrap`}>
+        Chat on WhatsApp
+      </span>
     </a>
   );
 };
