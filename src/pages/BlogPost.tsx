@@ -125,20 +125,58 @@ const BlogPost = () => {
             <span className="flex items-center gap-1"><Clock className="h-4 w-4" />{post.readTime}</span>
           </div>
 
+          {/* Top CTA banner */}
+          <div className="mb-6 bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200 rounded-lg p-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p className="text-sm text-gray-800 font-medium">
+              🎓 IGNOU July 2026 admissions are open. Get free expert counselling now.
+            </p>
+            <div className="flex gap-2">
+              <Button
+                onClick={() => setIsCounselingOpen(true)}
+                className="bg-blue-600 hover:bg-blue-700 text-white text-sm"
+                size="sm"
+              >
+                Get Free Counselling
+              </Button>
+              <a
+                href="tel:+917975877374"
+                className="inline-flex items-center px-3 py-2 rounded-md bg-green-500 hover:bg-green-600 text-white text-sm font-semibold"
+              >
+                📞 Call
+              </a>
+            </div>
+          </div>
+
           <div className="prose max-w-none">
             {renderContent(post.content)}
           </div>
 
-          {/* CTA */}
+          {/* Bottom CTA */}
           <div className="mt-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-6 text-center text-white">
             <h3 className="text-xl font-bold mb-2">Need Help with IGNOU Admission?</h3>
             <p className="text-blue-100 mb-4">Get free expert counselling for IGNOU July 2026 session</p>
-            <Button
-              onClick={() => setIsCounselingOpen(true)}
-              className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-6"
-            >
-              Get Free Counselling
-            </Button>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Button
+                onClick={() => setIsCounselingOpen(true)}
+                className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-6"
+              >
+                Get Free Counselling
+              </Button>
+              <a
+                href="tel:+917975877374"
+                className="inline-flex items-center px-5 py-2 rounded-md bg-white text-blue-700 font-bold hover:bg-blue-50"
+              >
+                📞 Call Now
+              </a>
+              <a
+                href="https://wa.me/917975877374?text=Hi%2C%20I%20need%20IGNOU%20July%202026%20counselling."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-5 py-2 rounded-md bg-green-500 hover:bg-green-600 text-white font-bold"
+              >
+                💬 WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </article>
