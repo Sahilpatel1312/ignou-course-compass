@@ -21,6 +21,7 @@ import NotFound from "./pages/NotFound";
 import Disclaimer from "./pages/disclaimer";
 import Terms from "./pages/terms-conditions";
 import PrivacyPolicy from "./pages/privacy-policy";
+import FloatingActions from "./components/FloatingActions";
 
 const queryClient = new QueryClient();
 
@@ -64,6 +65,7 @@ const App = () => (
           {/* ❗ 404 Route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <FloatingActions />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

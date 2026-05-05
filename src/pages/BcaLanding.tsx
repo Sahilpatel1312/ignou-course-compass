@@ -86,6 +86,12 @@ const BcaLanding = () => {
                 >
                   Get Counselling
                 </Button>
+                <a
+                  href="tel:+917975877374"
+                  className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3 text-lg rounded-md transition-colors"
+                >
+                  📞 Call Now
+                </a>
               </div>
             </div>
 
