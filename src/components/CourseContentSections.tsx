@@ -97,11 +97,11 @@ const CourseContentSections = ({ data, onEnquireClick }: CourseContentSectionsPr
       </section>
 
       {/* Career Opportunities */}
-      <section className="py-16 bg-gray-50">
+      <section id="career-opportunities" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Career Opportunities After IGNOU {data.courseName}</h2>
           <p className="text-gray-600 mb-8 max-w-3xl">Graduates from IGNOU's {data.courseName} program find opportunities across diverse sectors. Here are some popular job roles and their expected salary ranges:</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl">
             {data.careerOpportunities.map((career, i) => (
               <Card key={i} className="p-4">
                 <div className="flex items-center gap-3">
