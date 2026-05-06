@@ -50,7 +50,6 @@ const MaLanding = () => {
         sections={[
           { id: "highlights", label: "Highlights" },
           { id: "eligibility", label: "Eligibility & Fees" },
-          { id: "curriculum", label: "Curriculum" },
           { id: "specializations", label: "Specializations" },
           { id: "career-opportunities", label: "Careers" },
           { id: "faqs", label: "FAQs" },

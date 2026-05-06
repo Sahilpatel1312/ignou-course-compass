@@ -265,7 +265,7 @@ const BbaLanding = () => {
       </section>
 
       {/* Curriculum Section */}
-      <section className="py-20 bg-background">
+      <section id="curriculum" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-foreground mb-4">
@@ -275,41 +275,13 @@ const BbaLanding = () => {
               Comprehensive 3-year undergraduate program with year-wise progression in business administration.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold text-blue-600 mb-4">First Year</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Overview of Retailing</li>
-                <li>• Retail Management Perspectives and Communication</li>
-                <li>• Retail Marketing and Communication</li>
-                <li>• Customer Service Management</li>
-                <li>• Internship and Viva-Voce</li>
-              </ul>
-            </Card>
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold text-blue-600 mb-4">Second Year</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Buying and Merchandising-I</li>
-                <li>• Human Resources</li>
-                <li>• Business Communication and Entrepreneurship</li>
-                <li>• Store Operations-I</li>
-                <li>• Business Organization</li>
-                <li>• Marketing</li>
-                <li>• On the Job Training and Viva-Voce</li>
-              </ul>
-            </Card>
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold text-blue-600 mb-4">Third Year</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Buying and Merchandising II</li>
-                <li>• Customer Value Management</li>
-                <li>• IT Application in Retail</li>
-                <li>• Retail Operations and Store Management II</li>
-                <li>• Visual Merchandising and Store Management</li>
-                <li>• On the Job Training (OJT) and Viva Voce</li>
-              </ul>
-            </Card>
-          </div>
+          <SemesterCurriculum
+            semesters={[
+              { title: "First Year", subjects: ["Overview of Retailing","Retail Management Perspectives and Communication","Retail Marketing and Communication","Customer Service Management","Internship and Viva-Voce"] },
+              { title: "Second Year", subjects: ["Buying and Merchandising-I","Human Resources","Business Communication and Entrepreneurship","Store Operations-I","Business Organization","Marketing","On the Job Training and Viva-Voce"] },
+              { title: "Third Year", subjects: ["Buying and Merchandising II","Customer Value Management","IT Application in Retail","Retail Operations and Store Management II","Visual Merchandising and Store Management","On the Job Training (OJT) and Viva Voce"] },
+            ]}
+          />
         </div>
       </section>
 
