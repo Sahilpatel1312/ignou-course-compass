@@ -12,6 +12,8 @@ import SEO from "@/components/SEO";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 import CourseContentSections from "@/components/CourseContentSections";
 import { mbaContentData } from "@/data/courseContentData";
+import SectionNav from "@/components/SectionNav";
+import SemesterCurriculum from "@/components/SemesterCurriculum";
 
 const MbaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
