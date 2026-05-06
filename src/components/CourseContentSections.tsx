@@ -118,7 +118,7 @@ const CourseContentSections = ({ data, onEnquireClick }: CourseContentSectionsPr
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-white">
+      <section id="faqs" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-gray-800 mb-8">Frequently Asked Questions – IGNOU {data.courseName}</h2>
           <div className="max-w-3xl space-y-3">
