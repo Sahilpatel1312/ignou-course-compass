@@ -12,6 +12,8 @@ import { useSmartPopup } from "@/hooks/useSmartPopup";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 import CourseContentSections from "@/components/CourseContentSections";
 import { mcomContentData } from "@/data/courseContentData";
+import SectionNav from "@/components/SectionNav";
+import SemesterCurriculum from "@/components/SemesterCurriculum";
 
 const McomLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -31,7 +33,17 @@ const McomLanding = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header onCounselingClick={handleCounselingClick} />
-      
+      <SectionNav
+        sections={[
+          { id: "highlights", label: "Highlights" },
+          { id: "eligibility", label: "Eligibility & Fees" },
+          { id: "curriculum", label: "Curriculum" },
+          { id: "specializations", label: "Specializations" },
+          { id: "career-opportunities", label: "Careers" },
+          { id: "faqs", label: "FAQs" },
+        ]}
+      />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">
         <div className="container mx-auto px-4">
@@ -115,14 +127,14 @@ const McomLanding = () => {
       </section>
 
       {/* Program Highlights */}
-      <section className="py-16 bg-gray-50">
+      <section id="highlights" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Program Highlights</h2>
             <p className="text-xl text-gray-600">Why choose IGNOU M.Com?</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             <Card className="text-center p-6">
               <BookOpen className="h-12 w-12 text-blue-600 mx-auto mb-4" />
               <h3 className="font-bold text-lg mb-2">Advanced Commerce</h3>
@@ -151,7 +163,7 @@ const McomLanding = () => {
       </section>
 
       {/* Eligibility & Fee Structure */}
-      <section className="py-16 bg-white">
+      <section id="eligibility" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <Card className="p-8">
@@ -205,14 +217,14 @@ const McomLanding = () => {
       </section>
 
       {/* Specializations */}
-      <section className="py-16 bg-gray-50">
+      <section id="specializations" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">M.Com Specializations Available</h2>
             <p className="text-xl text-gray-600">Choose your area of expertise from our comprehensive specialization options</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
             {[
               { name: "Financial Management", description: "Corporate finance, investment analysis, and financial planning" },
               { name: "Cost and Management Accounting", description: "Advanced cost accounting and management control systems" },
@@ -239,7 +251,7 @@ const McomLanding = () => {
       </section>
 
       {/* Curriculum Section */}
-      <section className="py-20 bg-background">
+      <section id="curriculum" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-foreground mb-4">
@@ -249,43 +261,14 @@ const McomLanding = () => {
               Advanced 2-year postgraduate program with 4 semesters focusing on commerce and business management.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold text-blue-600 mb-4">Semester I</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Organization Theory and Behavior</li>
-                <li>• Business Environment</li>
-                <li>• Accounting for Managerial Decisions</li>
-                <li>• Managerial Economics</li>
-              </ul>
-            </Card>
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold text-blue-600 mb-4">Semester II</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Marketing Management</li>
-                <li>• Quantitative Analysis for Managerial Applications</li>
-                <li>• Strategic Management</li>
-                <li>• Business Ethics & CSR</li>
-              </ul>
-            </Card>
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold text-blue-600 mb-4">Semester III</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Research Methodology & Statistical Analysis</li>
-                <li>• Financial Management</li>
-                <li>• International Marketing Management</li>
-                <li>• India's Foreign Trade & Investment</li>
-              </ul>
-            </Card>
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold text-blue-600 mb-4">Semester IV</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• International Business Environment</li>
-                <li>• International Business Finance</li>
-                <li>• Project Work</li>
-              </ul>
-            </Card>
-          </div>
+          <SemesterCurriculum
+            semesters={[
+              { title: "Semester I", subjects: ["Organization Theory and Behavior","Business Environment","Accounting for Managerial Decisions","Managerial Economics"] },
+              { title: "Semester II", subjects: ["Marketing Management","Quantitative Analysis for Managerial Applications","Strategic Management","Business Ethics & CSR"] },
+              { title: "Semester III", subjects: ["Research Methodology & Statistical Analysis","Financial Management","International Marketing Management","India\'s Foreign Trade & Investment"] },
+              { title: "Semester IV", subjects: ["International Business Environment","International Business Finance","Project Work"] },
+            ]}
+          />
         </div>
       </section>
 

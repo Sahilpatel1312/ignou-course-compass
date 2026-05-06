@@ -12,6 +12,8 @@ import SEO from "@/components/SEO";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 import CourseContentSections from "@/components/CourseContentSections";
 import { maContentData } from "@/data/courseContentData";
+import SectionNav from "@/components/SectionNav";
+import SemesterCurriculum from "@/components/SemesterCurriculum";
 
 const MaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -44,7 +46,16 @@ const MaLanding = () => {
         }}
       />
       <Header onCounselingClick={handleCounselingClick} />
-      
+      <SectionNav
+        sections={[
+          { id: "highlights", label: "Highlights" },
+          { id: "eligibility", label: "Eligibility & Fees" },
+          { id: "specializations", label: "Specializations" },
+          { id: "career-opportunities", label: "Careers" },
+          { id: "faqs", label: "FAQs" },
+        ]}
+      />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">
         <div className="container mx-auto px-4">
@@ -128,14 +139,14 @@ const MaLanding = () => {
       </section>
 
       {/* Program Highlights */}
-      <section className="py-16 bg-gray-50">
+      <section id="highlights" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Program Highlights</h2>
             <p className="text-xl text-gray-600">Why choose IGNOU MA?</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             <Card className="text-center p-6">
               <BookOpen className="h-12 w-12 text-blue-600 mx-auto mb-4" />
               <h3 className="font-bold text-lg mb-2">Comprehensive Curriculum</h3>
@@ -164,7 +175,7 @@ const MaLanding = () => {
       </section>
 
       {/* Eligibility & Fee Structure */}
-      <section className="py-16 bg-white">
+      <section id="eligibility" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <Card className="p-8">
@@ -218,14 +229,14 @@ const MaLanding = () => {
       </section>
 
       {/* Specializations */}
-      <section className="py-16 bg-gray-50">
+      <section id="specializations" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">MA Specializations Available</h2>
             <p className="text-xl text-gray-600">Choose your area of expertise from our comprehensive specialization options</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
             {[
               { name: "English Literature", description: "Study classical and contemporary literature, literary criticism, and writing" },
               { name: "Hindi Literature", description: "Comprehensive study of Hindi literature, poetry, and language" },

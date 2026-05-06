@@ -12,6 +12,8 @@ import SEO from "@/components/SEO";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 import CourseContentSections from "@/components/CourseContentSections";
 import { mcaContentData } from "@/data/courseContentData";
+import SectionNav from "@/components/SectionNav";
+import SemesterCurriculum from "@/components/SemesterCurriculum";
 
 const McaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -44,7 +46,17 @@ const McaLanding = () => {
         }}
       />
       <Header onCounselingClick={handleCounselingClick} />
-      
+      <SectionNav
+        sections={[
+          { id: "highlights", label: "Highlights" },
+          { id: "eligibility", label: "Eligibility & Fees" },
+          { id: "curriculum", label: "Curriculum" },
+          { id: "specializations", label: "Specializations" },
+          { id: "career-opportunities", label: "Careers" },
+          { id: "faqs", label: "FAQs" },
+        ]}
+      />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">
         <div className="container mx-auto px-4">
@@ -128,14 +140,14 @@ const McaLanding = () => {
       </section>
 
       {/* Program Highlights */}
-      <section className="py-16 bg-gray-50">
+      <section id="highlights" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Program Highlights</h2>
             <p className="text-xl text-gray-600">Why choose IGNOU MCA?</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             <Card className="text-center p-6">
               <BookOpen className="h-12 w-12 text-blue-600 mx-auto mb-4" />
               <h3 className="font-bold text-lg mb-2">Advanced Programming</h3>
@@ -164,7 +176,7 @@ const McaLanding = () => {
       </section>
 
       {/* Eligibility & Fee Structure */}
-      <section className="py-16 bg-white">
+      <section id="eligibility" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <Card className="p-8">
@@ -218,14 +230,14 @@ const McaLanding = () => {
       </section>
 
       {/* Specializations */}
-      <section className="py-16 bg-gray-50">
+      <section id="specializations" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">MCA Specializations Available</h2>
             <p className="text-xl text-gray-600">Choose your area of expertise from our comprehensive specialization options</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
             {[
               { name: "Software Engineering", description: "Master software development lifecycle, testing, and project management" },
               { name: "Database Management", description: "Learn advanced database design, administration, and data analytics" },
@@ -252,7 +264,7 @@ const McaLanding = () => {
       </section>
 
       {/* Curriculum Section */}
-      <section className="py-20 bg-background">
+      <section id="curriculum" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-foreground mb-4">
@@ -262,50 +274,14 @@ const McaLanding = () => {
               Comprehensive 2-year program with 4 semesters covering advanced computer applications and technology.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold text-blue-600 mb-4">Semester I</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Design & Analysis of Algorithms</li>
-                <li>• Discrete Mathematics</li>
-                <li>• Software Engineering</li>
-                <li>• Professional Skills & Ethics</li>
-                <li>• Security & Cyber Laws</li>
-                <li>• DAA & Web Design Lab</li>
-                <li>• Software Engineering Lab</li>
-              </ul>
-            </Card>
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold text-blue-600 mb-4">Semester II</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Data Communication & Computer Networks</li>
-                <li>• Object Oriented Analysis & Design</li>
-                <li>• Web Technologies</li>
-                <li>• Data Warehousing & Data Mining</li>
-                <li>• OOAD & Web Technologies Lab</li>
-                <li>• Computer Networks & Data Mining Lab</li>
-              </ul>
-            </Card>
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold text-blue-600 mb-4">Semester III</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Artificial Intelligence & Machine Learning</li>
-                <li>• Accountancy & Financial Management</li>
-                <li>• Data Science & Big Data</li>
-                <li>• Cloud Computing & IoT</li>
-                <li>• AI & ML Lab</li>
-                <li>• Cloud & Data Science Lab</li>
-              </ul>
-            </Card>
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold text-blue-600 mb-4">Semester IV</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Digital Image Processing & Computer Vision</li>
-                <li>• Mobile Computing</li>
-                <li>• Project Work</li>
-              </ul>
-            </Card>
-          </div>
+          <SemesterCurriculum
+            semesters={[
+              { title: "Semester I", subjects: ["Design & Analysis of Algorithms","Discrete Mathematics","Software Engineering","Professional Skills & Ethics","Security & Cyber Laws","DAA & Web Design Lab","Software Engineering Lab"] },
+              { title: "Semester II", subjects: ["Data Communication & Computer Networks","Object Oriented Analysis & Design","Web Technologies","Data Warehousing & Data Mining","OOAD & Web Technologies Lab","Computer Networks & Data Mining Lab"] },
+              { title: "Semester III", subjects: ["Artificial Intelligence & Machine Learning","Accountancy & Financial Management","Data Science & Big Data","Cloud Computing & IoT","AI & ML Lab","Cloud & Data Science Lab"] },
+              { title: "Semester IV", subjects: ["Digital Image Processing & Computer Vision","Mobile Computing","Project Work"] },
+            ]}
+          />
           <div className="mt-8">
             <Card className="p-6 max-w-4xl mx-auto">
               <h3 className="text-xl font-semibold text-blue-600 mb-4">Additional Bridging Courses</h3>
