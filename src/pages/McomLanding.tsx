@@ -122,7 +122,7 @@ const McomLanding = () => {
             <p className="text-xl text-gray-600">Why choose IGNOU M.Com?</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             <Card className="text-center p-6">
               <BookOpen className="h-12 w-12 text-blue-600 mx-auto mb-4" />
               <h3 className="font-bold text-lg mb-2">Advanced Commerce</h3>
@@ -212,7 +212,7 @@ const McomLanding = () => {
             <p className="text-xl text-gray-600">Choose your area of expertise from our comprehensive specialization options</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
             {[
               { name: "Financial Management", description: "Corporate finance, investment analysis, and financial planning" },
               { name: "Cost and Management Accounting", description: "Advanced cost accounting and management control systems" },

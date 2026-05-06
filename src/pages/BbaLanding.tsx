@@ -136,7 +136,7 @@ const BbaLanding = () => {
             <p className="text-xl text-gray-600">Why choose IGNOU BBA?</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             <Card className="text-center p-6">
               <BookOpen className="h-12 w-12 text-blue-600 mx-auto mb-4" />
               <h3 className="font-bold text-lg mb-2">Business Fundamentals</h3>
@@ -226,7 +226,7 @@ const BbaLanding = () => {
             <p className="text-xl text-gray-600">Comprehensive business curriculum for future leaders</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
             {[
               { name: "Business Organization", description: "Fundamentals of business structures and management" },
               { name: "Marketing Management", description: "Marketing principles, strategies, and consumer behavior" },

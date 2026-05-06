@@ -136,7 +136,7 @@ const BaLanding = () => {
             <p className="text-xl text-gray-600">Why choose IGNOU BA?</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             <Card className="text-center p-6">
               <BookOpen className="h-12 w-12 text-blue-600 mx-auto mb-4" />
               <h3 className="font-bold text-lg mb-2">Liberal Arts Education</h3>
@@ -226,7 +226,7 @@ const BaLanding = () => {
             <p className="text-xl text-gray-600">Choose from diverse subject combinations to match your interests</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
             {[
               { name: "English Literature", description: "Study of literary works, criticism, and language skills" },
               { name: "Hindi Literature", description: "Comprehensive study of Hindi literature and language" },
