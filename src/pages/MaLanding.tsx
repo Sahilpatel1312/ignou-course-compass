@@ -12,6 +12,8 @@ import SEO from "@/components/SEO";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 import CourseContentSections from "@/components/CourseContentSections";
 import { maContentData } from "@/data/courseContentData";
+import SectionNav from "@/components/SectionNav";
+import SemesterCurriculum from "@/components/SemesterCurriculum";
 
 const MaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -44,7 +46,17 @@ const MaLanding = () => {
         }}
       />
       <Header onCounselingClick={handleCounselingClick} />
-      
+      <SectionNav
+        sections={[
+          { id: "highlights", label: "Highlights" },
+          { id: "eligibility", label: "Eligibility & Fees" },
+          { id: "curriculum", label: "Curriculum" },
+          { id: "specializations", label: "Specializations" },
+          { id: "career-opportunities", label: "Careers" },
+          { id: "faqs", label: "FAQs" },
+        ]}
+      />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">
         <div className="container mx-auto px-4">
@@ -128,7 +140,7 @@ const MaLanding = () => {
       </section>
 
       {/* Program Highlights */}
-      <section className="py-16 bg-gray-50">
+      <section id="highlights" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Program Highlights</h2>
@@ -164,7 +176,7 @@ const MaLanding = () => {
       </section>
 
       {/* Eligibility & Fee Structure */}
-      <section className="py-16 bg-white">
+      <section id="eligibility" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <Card className="p-8">
@@ -218,7 +230,7 @@ const MaLanding = () => {
       </section>
 
       {/* Specializations */}
-      <section className="py-16 bg-gray-50">
+      <section id="specializations" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">MA Specializations Available</h2>
