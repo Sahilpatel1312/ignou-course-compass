@@ -1,8 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Briefcase, FileText, Shield, HelpCircle, ChevronDown, ChevronUp } from "lucide-react";
+import { CheckCircle, Briefcase, FileText, HelpCircle, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import logoUgc from "@/assets/logo-ugc.png";
+import logoNaac from "@/assets/logo-naac.png";
+import logoNirf from "@/assets/logo-nirf.png";
 
 export interface CourseContentData {
   courseName: string;
