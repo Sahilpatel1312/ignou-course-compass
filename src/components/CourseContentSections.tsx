@@ -1,8 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Briefcase, FileText, Shield, HelpCircle, ChevronDown, ChevronUp } from "lucide-react";
+import { CheckCircle, Briefcase, FileText, HelpCircle, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import logoUgc from "@/assets/logo-ugc.png";
+import logoNaac from "@/assets/logo-naac.png";
+import logoNirf from "@/assets/logo-nirf.png";
 
 export interface CourseContentData {
   courseName: string;
@@ -31,21 +34,21 @@ const CourseContentSections = ({ data, onEnquireClick }: CourseContentSectionsPr
             <p className="text-gray-700 leading-relaxed text-lg mb-6">{data.about}</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="flex items-center gap-3 bg-blue-50 p-4 rounded-lg">
-                <Shield className="h-8 w-8 text-blue-600 flex-shrink-0" />
+                <img src={logoUgc} alt="UGC Logo" className="h-12 w-12 object-contain flex-shrink-0" />
                 <div>
                   <p className="font-semibold text-sm">UGC-DEB Approved</p>
                   <p className="text-xs text-gray-600">Government recognized</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-green-50 p-4 rounded-lg">
-                <Shield className="h-8 w-8 text-green-600 flex-shrink-0" />
+                <img src={logoNaac} alt="NAAC A++ Logo" className="h-12 w-12 object-contain flex-shrink-0" />
                 <div>
                   <p className="font-semibold text-sm">NAAC A++ Accredited</p>
                   <p className="text-xs text-gray-600">Highest quality grade</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-purple-50 p-4 rounded-lg">
-                <Shield className="h-8 w-8 text-purple-600 flex-shrink-0" />
+                <img src={logoNirf} alt="NIRF Logo" className="h-12 w-12 object-contain flex-shrink-0" />
                 <div>
                   <p className="font-semibold text-sm">NIRF Rank #1</p>
                   <p className="text-xs text-gray-600">Open university category</p>
