@@ -100,25 +100,18 @@ const CourseCard = ({ course, onApplyNow, onDownloadBrochure }: CourseCardProps)
           {course.name}
         </h3>
 
-        {/* Description */}
-        <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
-          {course.description}
-        </p>
-
         {/* Eligibility */}
         <div className="flex items-start gap-2 bg-blue-50 rounded-lg p-2.5">
           <BookOpen className="h-4 w-4 text-blue-600 mt-0.5 flex-shrink-0" />
           <p className="text-xs text-gray-700"><span className="font-semibold text-blue-700">Eligibility:</span> {course.eligibility}</p>
         </div>
 
-        {/* Highlights */}
-        <div className="space-y-1.5">
-          {course.highlights.slice(0, 3).map((highlight, index) => (
-            <div key={index} className="flex items-center text-xs text-gray-600">
-              <CheckCircle className="h-3.5 w-3.5 mr-2 text-emerald-500 flex-shrink-0" />
-              {highlight}
-            </div>
-          ))}
+        {/* Fee Structure */}
+        <div className="flex items-start gap-2 bg-amber-50 rounded-lg p-2.5">
+          <CheckCircle className="h-4 w-4 text-amber-600 mt-0.5 flex-shrink-0" />
+          <p className="text-xs text-gray-700">
+            <span className="font-semibold text-amber-700">Fee Structure:</span> ₹{course.fee.toLocaleString('en-IN')} <span className="text-gray-500">(total / {course.duration})</span>
+          </p>
         </div>
 
         {/* Buttons */}
