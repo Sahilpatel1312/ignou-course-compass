@@ -46,7 +46,7 @@ const SocialProofNotifications = () => {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-24 left-4 z-30 max-w-xs animate-in slide-in-from-left-5 fade-in duration-500">
+    <div className="hidden sm:block fixed bottom-24 left-4 z-30 max-w-xs animate-in slide-in-from-left-5 fade-in duration-500">
       <div className="bg-white border border-gray-200 shadow-xl rounded-xl p-3 flex items-start gap-3">
         <div className="bg-green-100 rounded-full p-2 flex-shrink-0">
           <CheckCircle2 className="h-5 w-5 text-green-600" />
