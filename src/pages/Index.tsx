@@ -14,6 +14,7 @@ import FAQ from "@/components/FAQ";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
 import { ignouCourses, courseCategories } from "@/data/ignouCourses";
 import { useSmartPopup } from "@/hooks/useSmartPopup";
+import logoUgc from "@/assets/logo-ugc.png";
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -183,7 +184,7 @@ const Index = () => {
                   <p className="text-sm text-gray-600">Courses Available</p>
                 </div>
                 <div className="text-center p-4 bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl flex flex-col items-center justify-center">
-                  <img src="/src/assets/logo-ugc.png" alt="UGC Approved" className="h-10 w-auto mb-2" loading="lazy" />
+                  <img src={logoUgc} alt="UGC Approved" className="h-10 w-auto mb-2" loading="lazy" />
                   <h3 className="text-lg font-bold text-yellow-700">UGC</h3>
                   <p className="text-sm text-gray-600">Approved & Recognized</p>
                 </div>
