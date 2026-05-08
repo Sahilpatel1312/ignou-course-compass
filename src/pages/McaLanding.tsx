@@ -10,6 +10,7 @@ import FloatingHelpButton from "@/components/FloatingHelpButton";
 import { useSmartPopup } from "@/hooks/useSmartPopup";
 import SEO from "@/components/SEO";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
+import TestimonialsReviews from "@/components/TestimonialsReviews";
 import CourseContentSections from "@/components/CourseContentSections";
 import { mcaContentData } from "@/data/courseContentData";
 import SectionNav from "@/components/SectionNav";
@@ -355,6 +356,7 @@ const McaLanding = () => {
       <CourseContentSections data={mcaContentData} onEnquireClick={handleApplyNow} />
 
       <RelatedBlogPosts courseKeywords={["mca", "computer applications", "software", "it career", "programming"]} />
+      <TestimonialsReviews />
       <Footer />
       
       {/* Smart Popup */}

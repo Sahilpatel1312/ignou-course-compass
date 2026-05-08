@@ -11,6 +11,7 @@ import FloatingHelpButton from "@/components/FloatingHelpButton";
 import { useSmartPopup } from "@/hooks/useSmartPopup";
 import SEO from "@/components/SEO";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
+import TestimonialsReviews from "@/components/TestimonialsReviews";
 import CourseContentSections from "@/components/CourseContentSections";
 import { baContentData } from "@/data/courseContentData";
 import SectionNav from "@/components/SectionNav";
@@ -317,6 +318,7 @@ const BaLanding = () => {
       <CourseContentSections data={baContentData} onEnquireClick={handleApplyNow} />
 
       <RelatedBlogPosts courseKeywords={["ba", "bachelor of arts", "humanities", "upsc", "after 12th"]} />
+      <TestimonialsReviews />
       <Footer />
       
       {/* Smart Popup */}

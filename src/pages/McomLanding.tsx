@@ -10,6 +10,7 @@ import CounselingForm from "@/components/CounselingForm";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
 import { useSmartPopup } from "@/hooks/useSmartPopup";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
+import TestimonialsReviews from "@/components/TestimonialsReviews";
 import CourseContentSections from "@/components/CourseContentSections";
 import { mcomContentData } from "@/data/courseContentData";
 import SectionNav from "@/components/SectionNav";
@@ -326,6 +327,7 @@ const McomLanding = () => {
       <CourseContentSections data={mcomContentData} onEnquireClick={handleApplyNow} />
 
       <RelatedBlogPosts courseKeywords={["m.com", "commerce", "accounting", "finance", "postgraduate"]} />
+      <TestimonialsReviews />
       <Footer />
       
       {/* Smart Popup */}

@@ -15,6 +15,7 @@ import BbaLanding from "./pages/BbaLanding";
 import BaLanding from "./pages/BaLanding";
 import BcomLanding from "./pages/BcomLanding";
 import BlogList from "./pages/BlogList";
+import FeesStructure from "./pages/FeesStructure";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 
@@ -54,6 +55,7 @@ const App = () => (
           <Route path="/bcom" element={<BcomLanding />} />
 
           {/* ✅ Blog Pages */}
+          <Route path="/fees" element={<FeesStructure />} />
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
 
