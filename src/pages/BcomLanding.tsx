@@ -11,6 +11,7 @@ import FloatingHelpButton from "@/components/FloatingHelpButton";
 import { useSmartPopup } from "@/hooks/useSmartPopup";
 import SEO from "@/components/SEO";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
+import TestimonialsReviews from "@/components/TestimonialsReviews";
 import CourseContentSections from "@/components/CourseContentSections";
 import { bcomContentData } from "@/data/courseContentData";
 import SectionNav from "@/components/SectionNav";
@@ -317,6 +318,7 @@ const BcomLanding = () => {
       <CourseContentSections data={bcomContentData} onEnquireClick={handleApplyNow} />
 
       <RelatedBlogPosts courseKeywords={["b.com", "commerce", "accounting", "banking", "after 12th"]} />
+      <TestimonialsReviews />
       <Footer />
       
       {/* Smart Popup */}

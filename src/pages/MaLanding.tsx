@@ -10,6 +10,7 @@ import FloatingHelpButton from "@/components/FloatingHelpButton";
 import { useSmartPopup } from "@/hooks/useSmartPopup";
 import SEO from "@/components/SEO";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
+import TestimonialsReviews from "@/components/TestimonialsReviews";
 import CourseContentSections from "@/components/CourseContentSections";
 import { maContentData } from "@/data/courseContentData";
 import SectionNav from "@/components/SectionNav";
@@ -316,6 +317,7 @@ const MaLanding = () => {
       <CourseContentSections data={maContentData} onEnquireClick={handleApplyNow} />
 
       <RelatedBlogPosts courseKeywords={["ma", "master of arts", "humanities", "upsc", "postgraduate"]} />
+      <TestimonialsReviews />
       <Footer />
       
       {/* Smart Popup */}

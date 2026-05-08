@@ -10,6 +10,7 @@ import FloatingHelpButton from "@/components/FloatingHelpButton";
 import { useSmartPopup } from "@/hooks/useSmartPopup";
 import SEO from "@/components/SEO";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
+import TestimonialsReviews from "@/components/TestimonialsReviews";
 import CourseContentSections from "@/components/CourseContentSections";
 import { mbaContentData } from "@/data/courseContentData";
 import SectionNav from "@/components/SectionNav";
@@ -342,6 +343,7 @@ const MbaLanding = () => {
 
       <RelatedBlogPosts courseKeywords={["mba", "management", "business administration", "mba admission", "mba fees"]} />
 
+      <TestimonialsReviews />
       <Footer />
       
       {/* Smart Popup */}
