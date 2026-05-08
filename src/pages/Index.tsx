@@ -2,19 +2,19 @@ import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Search, BookOpen, Users, Award, TrendingUp, ExternalLink } from "lucide-react";
+import { Search, BookOpen, ExternalLink } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import CourseCard from "@/components/CourseCard";
 import CounselingForm from "@/components/CounselingForm";
 import Footer from "@/components/Footer";
-//import Slideshow from "@/components/Slideshow";
 import SEO from "@/components/SEO";
 import FAQ from "@/components/FAQ";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
+import TestimonialsReviews from "@/components/TestimonialsReviews";
 import { ignouCourses, courseCategories } from "@/data/ignouCourses";
 import { useSmartPopup } from "@/hooks/useSmartPopup";
-import logoUgc from "@/assets/logo-ugc.png";
+import eduBadge from "@/assets/edu-badge.png";
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -173,23 +173,23 @@ const Index = () => {
               </div>
               
               <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
-                <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl">
-                  <Users className="h-10 w-10 text-blue-600 mx-auto mb-2" />
+                <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl flex flex-col items-center justify-center">
+                  <img src={eduBadge} alt="Students enrolled" className="h-12 w-12 mb-2 object-contain" loading="lazy" width={48} height={48} />
                   <h3 className="text-lg font-bold text-blue-600">40+ Lakh</h3>
                   <p className="text-sm text-gray-600">Students Enrolled</p>
                 </div>
-                <div className="text-center p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl">
-                  <BookOpen className="h-10 w-10 text-green-600 mx-auto mb-2" />
+                <div className="text-center p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl flex flex-col items-center justify-center">
+                  <img src={eduBadge} alt="Courses" className="h-12 w-12 mb-2 object-contain" loading="lazy" width={48} height={48} />
                   <h3 className="text-lg font-bold text-green-600">200+</h3>
                   <p className="text-sm text-gray-600">Courses Available</p>
                 </div>
                 <div className="text-center p-4 bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl flex flex-col items-center justify-center">
-                  <img src={logoUgc} alt="UGC Approved" className="h-10 w-auto mb-2" loading="lazy" />
+                  <img src={eduBadge} alt="UGC Approved" className="h-12 w-12 mb-2 object-contain" loading="lazy" width={48} height={48} />
                   <h3 className="text-lg font-bold text-yellow-700">UGC</h3>
                   <p className="text-sm text-gray-600">Approved & Recognized</p>
                 </div>
-                <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl">
-                  <TrendingUp className="h-10 w-10 text-purple-600 mx-auto mb-2" />
+                <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl flex flex-col items-center justify-center">
+                  <img src={eduBadge} alt="Years of excellence" className="h-12 w-12 mb-2 object-contain" loading="lazy" width={48} height={48} />
                   <h3 className="text-lg font-bold text-purple-600">25+ Years</h3>
                   <p className="text-sm text-gray-600">Educational Excellence</p>
                 </div>
@@ -310,29 +310,29 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Why IGNOU is the Best Choice for Distance Education</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold text-blue-600 mb-3">UGC Approved & NAAC A++ Accredited</h3>
-              <p className="text-gray-600">All IGNOU degrees are UGC-approved and widely accepted by employers and institutions for jobs and higher education.</p>
+            <div className="bg-gradient-to-br from-blue-500 to-indigo-600 text-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-3">UGC Approved & NAAC A++ Accredited</h3>
+              <p className="text-blue-50">All IGNOU degrees are UGC-approved and widely accepted by employers and institutions for jobs and higher education.</p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold text-green-600 mb-3">Affordable Fee Structure</h3>
-              <p className="text-gray-600">Quality education at pocket-friendly fees, making higher education accessible to students from all economic backgrounds.</p>
+            <div className="bg-gradient-to-br from-emerald-500 to-green-600 text-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-3">Affordable Fee Structure</h3>
+              <p className="text-emerald-50">Quality education at pocket-friendly fees, making higher education accessible to students from all economic backgrounds.</p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold text-purple-600 mb-3">Flexible Learning Options</h3>
-              <p className="text-gray-600">Study at your own pace with online and distance learning modes, perfect for working professionals and homemakers.</p>
+            <div className="bg-gradient-to-br from-purple-500 to-fuchsia-600 text-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-3">Flexible Learning Options</h3>
+              <p className="text-purple-50">Study at your own pace with online and distance learning modes, perfect for working professionals and homemakers.</p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold text-orange-600 mb-3">Comprehensive Study Materials</h3>
-              <p className="text-gray-600">High-quality printed books, online resources, video lectures, and digital library access for complete learning support.</p>
+            <div className="bg-gradient-to-br from-orange-500 to-amber-600 text-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-3">Comprehensive Study Materials</h3>
+              <p className="text-orange-50">High-quality printed books, online resources, video lectures, and digital library access for complete learning support.</p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold text-red-600 mb-3">Strong Alumni Network</h3>
-              <p className="text-gray-600">Join millions of successful IGNOU graduates working in top companies and government positions worldwide.</p>
+            <div className="bg-gradient-to-br from-rose-500 to-red-600 text-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-3">Strong Alumni Network</h3>
+              <p className="text-rose-50">Join millions of successful IGNOU graduates working in top companies and government positions worldwide.</p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold text-teal-600 mb-3">Multiple Online Course Cycles</h3>
-              <p className="text-gray-600">Two Online Course cycles per year (January & July) provide flexibility to start your educational journey when convenient.</p>
+            <div className="bg-gradient-to-br from-teal-500 to-cyan-600 text-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-3">Multiple Online Course Cycles</h3>
+              <p className="text-teal-50">Two Online Course cycles per year (January & July) provide flexibility to start your educational journey when convenient.</p>
             </div>
           </div>
         </div>
