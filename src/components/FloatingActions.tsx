@@ -28,11 +28,13 @@ const FloatingActions = () => {
 
   return (
     <>
-      {/* WhatsApp - bottom-left */}
-      <WhatsAppButton showLabel={activeLabel === 1} />
+      {/* WhatsApp - bottom-left (desktop/tablet only; mobile uses MobileBottomCTA) */}
+      <div className="hidden sm:block">
+        <WhatsAppButton showLabel={activeLabel === 1} />
+      </div>
 
-      {/* Right column: Call Now + Callback */}
-      <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3 items-end">
+      {/* Right column: Call Now + Callback (desktop/tablet only) */}
+      <div className="fixed bottom-6 right-6 z-40 hidden sm:flex flex-col gap-3 items-end">
         <a
           href={`tel:${PHONE}`}
           aria-label="Call now"

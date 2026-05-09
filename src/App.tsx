@@ -23,6 +23,7 @@ import Disclaimer from "./pages/disclaimer";
 import Terms from "./pages/terms-conditions";
 import PrivacyPolicy from "./pages/privacy-policy";
 import FloatingActions from "./components/FloatingActions";
+import MobileBottomCTA from "./components/MobileBottomCTA";
 
 const queryClient = new QueryClient();
 
@@ -68,6 +69,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <FloatingActions />
+        <MobileBottomCTA />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

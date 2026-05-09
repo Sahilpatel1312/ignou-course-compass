@@ -12,6 +12,7 @@ import SEO from "@/components/SEO";
 import FAQ from "@/components/FAQ";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
 import TestimonialsReviews from "@/components/TestimonialsReviews";
+import InlineEnquiryStrip from "@/components/InlineEnquiryStrip";
 import { ignouCourses, courseCategories } from "@/data/ignouCourses";
 import { useSmartPopup } from "@/hooks/useSmartPopup";
 import eduBadge from "@/assets/edu-badge.png";
@@ -147,7 +148,10 @@ const Index = () => {
           </button>
         </div>
       </div>
-      
+
+      {/* Inline Quick-Enquiry Strip — captures phone+course in 30 sec */}
+      <InlineEnquiryStrip />
+
       {/* Hero Stats Section with Embedded Counseling Form */}
       <section className="bg-white py-12 border-b">
         <div className="container mx-auto px-4">
