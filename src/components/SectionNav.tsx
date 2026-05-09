@@ -7,9 +7,10 @@ export interface NavSection {
 
 interface Props {
   sections: NavSection[];
+  onEnquireClick?: () => void;
 }
 
-const SectionNav = ({ sections }: Props) => {
+const SectionNav = ({ sections, onEnquireClick }: Props) => {
   const [visible, setVisible] = useState(false);
   const [active, setActive] = useState<string>(sections[0]?.id ?? "");
 
@@ -49,8 +50,8 @@ const SectionNav = ({ sections }: Props) => {
       }`}
     >
       <div className="bg-blue-600/80 backdrop-blur-md border-b border-blue-400/40 shadow-sm">
-        <div className="container mx-auto px-2">
-          <ul className="flex gap-1 sm:gap-2 overflow-x-auto no-scrollbar py-2">
+        <div className="container mx-auto px-2 flex items-center gap-2">
+          <ul className="flex-1 flex gap-1 sm:gap-2 overflow-x-auto no-scrollbar py-2">
             {sections.map((s) => (
               <li key={s.id} className="flex-shrink-0">
                 <a
@@ -67,6 +68,14 @@ const SectionNav = ({ sections }: Props) => {
               </li>
             ))}
           </ul>
+          {onEnquireClick && (
+            <button
+              onClick={onEnquireClick}
+              className="flex-shrink-0 bg-orange-500 hover:bg-orange-600 text-white text-xs sm:text-sm font-bold px-3 sm:px-4 py-1.5 rounded-full shadow-sm whitespace-nowrap"
+            >
+              Enquire Now
+            </button>
+          )}
         </div>
       </div>
     </nav>
