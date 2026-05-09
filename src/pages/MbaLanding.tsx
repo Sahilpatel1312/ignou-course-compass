@@ -14,6 +14,7 @@ import TestimonialsReviews from "@/components/TestimonialsReviews";
 import CourseContentSections from "@/components/CourseContentSections";
 import { mbaContentData } from "@/data/courseContentData";
 import SectionNav from "@/components/SectionNav";
+import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
 
 const MbaLanding = () => {
@@ -56,7 +57,9 @@ const MbaLanding = () => {
           { id: "career-opportunities", label: "Careers" },
           { id: "faqs", label: "FAQs" },
         ]}
+        onEnquireClick={handleApplyNow}
       />
+      <CourseQuickFacts fee="₹62,000" duration="2 Years" eligibility="Bachelor's degree (50%)" />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">

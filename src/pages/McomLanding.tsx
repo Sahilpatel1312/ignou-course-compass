@@ -14,6 +14,7 @@ import TestimonialsReviews from "@/components/TestimonialsReviews";
 import CourseContentSections from "@/components/CourseContentSections";
 import { mcomContentData } from "@/data/courseContentData";
 import SectionNav from "@/components/SectionNav";
+import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
 
 const McomLanding = () => {
@@ -43,7 +44,9 @@ const McomLanding = () => {
           { id: "career-opportunities", label: "Careers" },
           { id: "faqs", label: "FAQs" },
         ]}
+        onEnquireClick={handleApplyNow}
       />
+      <CourseQuickFacts fee="₹15,500" duration="2 Years" eligibility="Bachelor's (B.Com pref.)" />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">

@@ -14,6 +14,7 @@ import TestimonialsReviews from "@/components/TestimonialsReviews";
 import CourseContentSections from "@/components/CourseContentSections";
 import { mcaContentData } from "@/data/courseContentData";
 import SectionNav from "@/components/SectionNav";
+import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
 
 const McaLanding = () => {
@@ -56,7 +57,9 @@ const McaLanding = () => {
           { id: "career-opportunities", label: "Careers" },
           { id: "faqs", label: "FAQs" },
         ]}
+        onEnquireClick={handleApplyNow}
       />
+      <CourseQuickFacts fee="₹58,500" duration="3 Years" eligibility="Bachelor's with Maths" />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">

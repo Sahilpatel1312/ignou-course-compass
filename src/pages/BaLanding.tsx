@@ -15,6 +15,7 @@ import TestimonialsReviews from "@/components/TestimonialsReviews";
 import CourseContentSections from "@/components/CourseContentSections";
 import { baContentData } from "@/data/courseContentData";
 import SectionNav from "@/components/SectionNav";
+import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
 
 const BaLanding = () => {
@@ -56,7 +57,9 @@ const BaLanding = () => {
           { id: "career-opportunities", label: "Careers" },
           { id: "faqs", label: "FAQs" },
         ]}
+        onEnquireClick={handleApplyNow}
       />
+      <CourseQuickFacts fee="₹8,700" duration="3 Years" eligibility="12th pass" />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">
