@@ -148,6 +148,15 @@ const Header = ({ onCounselingClick }: { onCounselingClick?: () => void }) => {
                 Fees Structure
               </button>
 
+              {/* Compare Button - animated shimmer */}
+              <button
+                onClick={() => { navigate('/compare'); setActiveDropdown(null); }}
+                className="header-compare-btn relative overflow-hidden text-white font-semibold px-2 sm:px-3 py-2 rounded text-xs sm:text-sm whitespace-nowrap bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 shadow-md"
+              >
+                <span className="relative z-10">⚖️ Compare</span>
+                <span className="header-compare-shine" aria-hidden="true" />
+              </button>
+
               {/* Blog Button */}
               <button
                 onClick={() => { navigate('/blog'); setActiveDropdown(null); }}
