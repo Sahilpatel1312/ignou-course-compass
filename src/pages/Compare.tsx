@@ -19,6 +19,7 @@ const Compare = () => {
       <SEO
         title="Compare IGNOU Courses 2026 – BBA vs BCA vs B.Com, MBA vs MCA"
         description="Compare IGNOU online courses side-by-side. Check fees, duration, eligibility, job scope & salary for BBA, BCA, B.Com, BA, MBA, MCA, M.Com & MA. July 2026 admissions open."
+        keywords="compare ignou courses, bba vs bca, mba vs mca, ignou course comparison, ignou fees comparison 2026"
         canonical="https://ignoudistance.in/compare"
       />
       <Header onCounselingClick={() => setIsCounselingOpen(true)} />
@@ -44,7 +45,7 @@ const Compare = () => {
       <CounselingForm
         isOpen={isCounselingOpen}
         onClose={() => setIsCounselingOpen(false)}
-        preselectedCourse={preselectedCourse}
+        preSelectedCourse={preselectedCourse}
       />
     </div>
   );
