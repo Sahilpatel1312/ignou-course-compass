@@ -13,6 +13,7 @@ import FAQ from "@/components/FAQ";
 import FloatingHelpButton from "@/components/FloatingHelpButton";
 import TestimonialsReviews from "@/components/TestimonialsReviews";
 import InlineEnquiryStrip from "@/components/InlineEnquiryStrip";
+import CourseComparison from "@/components/CourseComparison";
 import { ignouCourses, courseCategories } from "@/data/ignouCourses";
 import { useSmartPopup } from "@/hooks/useSmartPopup";
 import eduBadge from "@/assets/edu-badge.png";
@@ -289,6 +290,9 @@ const Index = () => {
           )}
         </div>
       </section>
+
+      {/* Course Comparison Tool */}
+      <CourseComparison onEnquire={handleApplyNow} />
 
       {/* About IGNOU Section */}
       <section className="py-16 bg-white">
