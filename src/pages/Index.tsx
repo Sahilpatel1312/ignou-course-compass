@@ -126,8 +126,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU Online Courses 2026 (July Session) – Admission Open | Free Counselling"
-        description="IGNOU Online Courses July 2026 Session – Admission Open Now! Get free counselling for UGC-approved Online MBA, MCA, BCA, MA, B.Com, BA & 200+ programs. Affordable fees, flexible learning & NAAC A++ accredited degrees."
+        title="IGNOU Online (Courses, Fees, Admission Last Date 2026)"
+        description="IGNOU Online 2026 – Check Courses, Fees & Admission Last Date for July session. Free counselling for UGC-approved Online MBA, MCA, BCA, BBA, B.Com, BA, MA, M.Com & 200+ programs. NAAC A++ accredited."
         keywords="IGNOU Online Courses 2026, IGNOU July 2026 Session, IGNOU Admission 2026, IGNOU Distance Education 2026, Online MBA IGNOU 2026, IGNOU Online Degree, UGC Approved Online Courses, IGNOU Free Counselling, IGNOU MCA Online, IGNOU BCA Online, Best Online University India, IGNOU July Session Last Date"
         canonical="/"
       />
