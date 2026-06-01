@@ -17,6 +17,7 @@ import BcomLanding from "./pages/BcomLanding";
 import BlogList from "./pages/BlogList";
 import FeesStructure from "./pages/FeesStructure";
 import Compare from "./pages/Compare";
+import UniversityCompare from "./pages/UniversityCompare";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 
@@ -59,6 +60,7 @@ const App = () => (
           {/* ✅ Blog Pages */}
           <Route path="/fees" element={<FeesStructure />} />
           <Route path="/compare" element={<Compare />} />
+          <Route path="/compare-universities" element={<UniversityCompare />} />
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
 
