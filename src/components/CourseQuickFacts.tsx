@@ -1,4 +1,5 @@
-import { Clock, IndianRupee, GraduationCap, CalendarCheck } from "lucide-react";
+import { Clock, IndianRupee, GraduationCap, CalendarCheck, Scale } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface Props {
   fee: string;
@@ -39,6 +40,22 @@ const CourseQuickFacts = ({ fee, duration, eligibility, intake = "July 2026" }: 
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Compare Universities CTA — visible on every course page */}
+        <div className="mt-3 flex flex-col sm:flex-row items-center justify-between gap-2 p-3 rounded-lg bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100">
+          <div className="flex items-center gap-2 text-sm text-gray-700">
+            <Scale className="h-4 w-4 text-indigo-600 flex-shrink-0" />
+            <span>
+              <strong>Comparing options?</strong> Check this course at IGNOU vs Amity, Manipal, LPU & more.
+            </span>
+          </div>
+          <Link
+            to="/compare-universities"
+            className="text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 px-4 py-2 rounded-md whitespace-nowrap shadow-sm"
+          >
+            🎓 Compare Universities →
+          </Link>
         </div>
       </div>
     </section>
