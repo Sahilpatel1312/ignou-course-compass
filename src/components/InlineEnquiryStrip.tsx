@@ -110,18 +110,13 @@ const InlineEnquiryStrip = () => {
               <SelectValue placeholder="Select course..." />
             </SelectTrigger>
             <SelectContent className="max-h-60">
-              {ignouCourses.map((c, i) => {
-                const display =
-                  i < 10
-                    ? `Online ${c.name.match(/\(([^)]+)\)$/)?.[1] || c.name.split(" ").pop()}`
-                    : c.name;
-                return (
-                  <SelectItem key={c.id} value={c.name}>
-                    {display}
-                  </SelectItem>
-                );
-              })}
+              {ignouCourses.map((c) => (
+                <SelectItem key={c.id} value={c.name}>
+                  {c.name}
+                </SelectItem>
+              ))}
             </SelectContent>
+
           </Select>
           <Button
             type="submit"

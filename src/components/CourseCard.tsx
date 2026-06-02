@@ -16,14 +16,14 @@ import gradBa from "@/assets/grad-ba.jpg";
 import gradBcom from "@/assets/grad-bcom.jpg";
 
 const courseImageMap: Record<string, string> = {
-  "Online Master of Business Administration (MBA)": gradMba,
-  "Online Master of Computer Applications (MCA)": gradMca,
-  "Online Master of Arts (MA)": gradMa,
-  "Online Master of Commerce (M.Com)": gradMcom,
-  "Online Bachelor of Computer Applications (BCA)": gradBca,
-  "Online Bachelor of Business Administration (BBA)": gradBba,
-  "Online Bachelor of Arts (BA)": gradBa,
-  "Online Bachelor of Commerce (B.Com)": gradBcom,
+  "Online MBA": gradMba,
+  "Online MCA": gradMca,
+  "Online MA": gradMa,
+  "Online M.Com": gradMcom,
+  "Online BCA": gradBca,
+  "Online BBA": gradBba,
+  "Online BA": gradBa,
+  "Online B.Com": gradBcom,
 };
 
 interface CourseCardProps {
@@ -37,14 +37,14 @@ const CourseCard = ({ course, onApplyNow, onDownloadBrochure }: CourseCardProps)
 
   const handleCheckDetails = () => {
     const routeMap: { [key: string]: string } = {
-      "Online Master of Business Administration (MBA)": "/mba",
-      "Online Master of Computer Applications (MCA)": "/mca",
-      "Online Master of Arts (MA)": "/ma",
-      "Online Master of Commerce (M.Com)": "/mcom",
-      "Online Bachelor of Computer Applications (BCA)": "/bca",
-      "Online Bachelor of Business Administration (BBA)": "/bba",
-      "Online Bachelor of Arts (BA)": "/ba",
-      "Online Bachelor of Commerce (B.Com)": "/bcom"
+      "Online MBA": "/mba",
+      "Online MCA": "/mca",
+      "Online MA": "/ma",
+      "Online M.Com": "/mcom",
+      "Online BCA": "/bca",
+      "Online BBA": "/bba",
+      "Online BA": "/ba",
+      "Online B.Com": "/bcom",
     };
 
     const route = routeMap[course.name];
@@ -55,6 +55,7 @@ const CourseCard = ({ course, onApplyNow, onDownloadBrochure }: CourseCardProps)
       }, 100);
     }
   };
+
 
   const courseImage = courseImageMap[course.name];
 
