@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Check, X, Star, ExternalLink } from "lucide-react";
+import { Check, X, Star } from "lucide-react";
+
 import { universities, University } from "@/data/universities";
 
 interface Props {
@@ -93,8 +94,8 @@ const UniversityComparison = ({
           Pick up to <strong>3 universities</strong> to compare side-by-side · {selected.length}/3 selected
         </p>
 
-        {/* Comparison table */}
-        <div className="overflow-x-auto border rounded-xl bg-white shadow-sm">
+        {/* Comparison table — desktop / tablet */}
+        <div className="hidden md:block overflow-x-auto border rounded-xl bg-white shadow-sm">
           <table className="w-full text-sm min-w-[720px]">
             <thead>
               <tr className="bg-gradient-to-r from-indigo-600 to-blue-700 text-white">
@@ -156,28 +157,70 @@ const UniversityComparison = ({
                 <td className="p-3 font-semibold text-gray-700 sticky left-0 bg-white">Action</td>
                 {active.map((u) => (
                   <td key={u.id} className="p-3">
-                    <div className="flex flex-col gap-2">
-                      <Button
-                        size="sm"
-                        onClick={() => onEnquire(u.name)}
-                        className="bg-orange-500 hover:bg-orange-600 text-white text-xs"
-                      >
-                        Get Free Counselling
-                      </Button>
-                      <a
-                        href={u.website}
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                        className="text-xs text-blue-600 hover:underline inline-flex items-center justify-center gap-1"
-                      >
-                        Official Site <ExternalLink className="h-3 w-3" />
-                      </a>
-                    </div>
+                    <Button
+                      size="sm"
+                      onClick={() => onEnquire(u.name)}
+                      className="bg-orange-500 hover:bg-orange-600 text-white text-xs w-full"
+                    >
+                      Get Free Counselling
+                    </Button>
                   </td>
                 ))}
               </tr>
             </tbody>
           </table>
+        </div>
+
+        {/* Mobile — stacked cards (no horizontal scroll) */}
+        <div className="md:hidden space-y-4">
+          {active.map((u) => (
+            <div key={u.id} className="bg-white border rounded-xl shadow-sm overflow-hidden">
+              <div className="bg-gradient-to-r from-indigo-600 to-blue-700 text-white p-3">
+                <div className="flex items-center gap-2 font-bold text-base">
+                  {u.id === "ignou" && <Star className="h-4 w-4 fill-current text-yellow-300" />}
+                  {u.name}
+                </div>
+                <div className="text-[11px] text-indigo-100">{u.short}</div>
+              </div>
+              <dl className="divide-y text-sm">
+                {FIELDS.map((f) => (
+                  <div key={f.key} className="grid grid-cols-5 gap-2 px-3 py-2">
+                    <dt className="col-span-2 font-semibold text-gray-600 text-xs">{f.label}</dt>
+                    <dd className="col-span-3 text-gray-800 text-xs">{u[f.key] as string}</dd>
+                  </div>
+                ))}
+                {BOOL_FIELDS.map((f) => (
+                  <div key={f.key} className="grid grid-cols-5 gap-2 px-3 py-2">
+                    <dt className="col-span-2 font-semibold text-gray-600 text-xs">{f.label}</dt>
+                    <dd className="col-span-3 text-xs">
+                      {u[f.key] ? (
+                        <span className="inline-flex items-center gap-1 text-emerald-600 font-medium">
+                          <Check className="h-3.5 w-3.5" /> Yes
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center gap-1 text-gray-400 font-medium">
+                          <X className="h-3.5 w-3.5" /> No
+                        </span>
+                      )}
+                    </dd>
+                  </div>
+                ))}
+                <div className="grid grid-cols-5 gap-2 px-3 py-2 bg-yellow-50">
+                  <dt className="col-span-2 font-semibold text-gray-600 text-xs">Highlights</dt>
+                  <dd className="col-span-3 text-gray-800 text-xs">{u.highlights}</dd>
+                </div>
+              </dl>
+              <div className="p-3 border-t">
+                <Button
+                  size="sm"
+                  onClick={() => onEnquire(u.name)}
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white text-xs"
+                >
+                  Get Free Counselling
+                </Button>
+              </div>
+            </div>
+          ))}
         </div>
 
         <p className="text-center text-xs text-gray-500 mt-5">
@@ -190,3 +233,4 @@ const UniversityComparison = ({
 };
 
 export default UniversityComparison;
+

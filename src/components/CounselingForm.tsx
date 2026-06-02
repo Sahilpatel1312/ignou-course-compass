@@ -234,19 +234,13 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false, 
               <SelectValue placeholder="Select Course..." />
             </SelectTrigger>
             <SelectContent className="max-h-60">
-              {ignouCourses.map((course, index) => {
-                // For first 10 courses, show simplified "Online" + course name format
-                const displayName = index < 10 
-                  ? `Online ${course.name.match(/\(([^)]+)\)$/)?.[1] || course.name.split(' ').pop()}`
-                  : course.name;
-                
-                return (
-                  <SelectItem key={course.id} value={course.name}>
-                    {displayName}
-                  </SelectItem>
-                );
-              })}
+              {ignouCourses.map((course) => (
+                <SelectItem key={course.id} value={course.name}>
+                  {course.name}
+                </SelectItem>
+              ))}
             </SelectContent>
+
           </Select>
         </div>
 
