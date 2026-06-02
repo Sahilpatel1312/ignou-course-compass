@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Check, X, Star, ExternalLink } from "lucide-react";
+import { Check, X, Star } from "lucide-react";
+
 import { universities, University } from "@/data/universities";
 
 interface Props {
