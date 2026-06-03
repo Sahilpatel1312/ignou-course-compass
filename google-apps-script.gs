@@ -161,7 +161,7 @@ function processFormSubmission(formData) {
 
   try {
     const sheetId = '1_kdzz44E2w4AV5Sr2i00XTpRtQ9jDlzdml8Bg5hOvnM';
-    const sheet = SpreadsheetApp.openById(sheetId).getSheetByName('Campaign Sheet - Data'); // Sheet1 is your tab name
+    const sheet = SpreadsheetApp.openById(sheetId).getSheetByName('IG_ADS'); // Sheet1 is your tab name
 
     const rowData = [
       formData.fullName,           // Full name
