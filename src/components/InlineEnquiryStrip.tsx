@@ -40,26 +40,20 @@ const InlineEnquiryStrip = () => {
 
     setSubmitting(true);
 
-    const payload = JSON.stringify({
+    const payload = {
       fullName: "Quick Enquiry",
       email: `quick+${phone}@ignoudistance.in`,
-      phone,
-      course,
+      phoneNumber: phone,
+      interestedCourse: course,
       state: "Quick Enquiry (Hero Inline Form)",
-    });
+      location: "Quick Enquiry (Hero Inline Form)",
+      timestamp: new Date().toISOString(),
+    };
 
     const send = async (retry = 0) => {
       try {
-        const ctrl = new AbortController();
-        const t = setTimeout(() => ctrl.abort(), 15000);
-        const res = await fetch("https://ignou-server.onrender.com/api/submit-lead", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: payload,
-          signal: ctrl.signal,
-        });
-        clearTimeout(t);
-        if (!res.ok && retry < 2) setTimeout(() => send(retry + 1), 2000);
+        const { error } = await supabase.functions.invoke("counselling-form", { body: payload });
+        if (error && retry < 2) setTimeout(() => send(retry + 1), 2000);
       } catch {
         if (retry < 2) setTimeout(() => send(retry + 1), 2000);
       }
