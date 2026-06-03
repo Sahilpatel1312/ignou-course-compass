@@ -9,6 +9,7 @@ import { X, User, Phone, Mail, MapPin, BookOpen } from "lucide-react";
 import { ignouCourses } from "@/data/ignouCourses";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 
 interface CounselingFormProps {
   isOpen: boolean;
