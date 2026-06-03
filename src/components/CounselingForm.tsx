@@ -86,43 +86,30 @@ const CounselingForm = ({ isOpen, onClose, preSelectedCourse, embedded = false, 
     const payload = {
       fullName: formData.fullName,
       email: formData.email,
-      phone: formData.phoneNumber,
-      course: formData.interestedCourse,
+      phoneNumber: formData.phoneNumber,
+      interestedCourse: formData.interestedCourse,
       state: formData.state,
+      location: formData.state,
+      timestamp: new Date().toISOString(),
     };
 
-    // Fire the API request BEFORE closing/unmounting to prevent request loss
-    const submitPayload = JSON.stringify(payload);
-    
     const sendLead = async (retryCount = 0) => {
       try {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 15000);
-
-        const response = await fetch("https://ignou-server.onrender.com/api/submit-lead", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: submitPayload,
-          signal: controller.signal,
+        const { error } = await supabase.functions.invoke("counselling-form", {
+          body: payload,
         });
-
-        clearTimeout(timeoutId);
-        
-        if (!response.ok && retryCount < 2) {
-          console.warn(`Lead submission attempt ${retryCount + 1} failed, retrying...`);
+        if (error && retryCount < 2) {
           setTimeout(() => sendLead(retryCount + 1), 2000);
         }
       } catch (error: any) {
         if (retryCount < 2) {
-          console.warn(`Lead submission attempt ${retryCount + 1} error, retrying...`, error.message);
           setTimeout(() => sendLead(retryCount + 1), 2000);
         } else {
-          console.warn("All lead submission attempts failed:", error.message);
+          console.warn("Lead submission failed:", error?.message);
         }
       }
     };
 
-    // Start the request immediately (fire-and-forget, won't be affected by unmount)
     sendLead();
 
     // Show success optimistically
