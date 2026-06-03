@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { ignouCourses } from "@/data/ignouCourses";
+import { supabase } from "@/integrations/supabase/client";
 
 /**
  * Compact horizontal inline enquiry form for the hero area.
