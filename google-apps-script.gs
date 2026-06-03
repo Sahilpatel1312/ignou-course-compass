@@ -1,5 +1,5 @@
 // Google Apps Script for IGNOU Course Compass Lead Form
-// Sheet ID: 1K2GbYGqV7mjGXt4SQX29S10dvENR9IrAUxkzZQLKSAc
+// Sheet ID: 1_kdzz44E2w4AV5Sr2i00XTpRtQ9jDlzdml8Bg5hOvnM
 
 function doPost(e) {
   // Set CORS headers - Allow specific origins
@@ -160,8 +160,8 @@ function processFormSubmission(formData) {
   }
 
   try {
-    const sheetId = '1K2GbYGqV7mjGXt4SQX29S10dvENR9IrAUxkzZQLKSAc';
-    const sheet = SpreadsheetApp.openById(sheetId).getSheetByName('Sheet1'); // Sheet1 is your tab name
+    const sheetId = '1_kdzz44E2w4AV5Sr2i00XTpRtQ9jDlzdml8Bg5hOvnM';
+    const sheet = SpreadsheetApp.openById(sheetId).getSheetByName('Campaign Sheet - Data'); // Sheet1 is your tab name
 
     const rowData = [
       formData.fullName,           // Full name
@@ -195,7 +195,7 @@ function processFormSubmission(formData) {
 // Function to set up the sheet headers (run once manually)
 function setupSheetHeaders() {
   try {
-    const sheetId = '1K2GbYGqV7mjGXt4SQX29S10dvENR9IrAUxkzZQLKSAc';
+    const sheetId = '1_kdzz44E2w4AV5Sr2i00XTpRtQ9jDlzdml8Bg5hOvnM';
     const sheet = SpreadsheetApp.openById(sheetId).getActiveSheet();
     
     // Define headers
