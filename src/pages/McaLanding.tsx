@@ -16,6 +16,7 @@ import { mcaContentData } from "@/data/courseContentData";
 import SectionNav from "@/components/SectionNav";
 import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
+import CourseSchema from "@/components/CourseSchema";
 
 const McaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -47,6 +48,7 @@ const McaLanding = () => {
           eligibility: "Bachelor's degree with Mathematics at 10+2 or graduation level"
         }}
       />
+      <CourseSchema courseId="mca" />
       <Header onCounselingClick={handleCounselingClick} />
       <SectionNav
         sections={[

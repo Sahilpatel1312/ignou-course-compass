@@ -16,6 +16,7 @@ import { mcomContentData } from "@/data/courseContentData";
 import SectionNav from "@/components/SectionNav";
 import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
+import CourseSchema from "@/components/CourseSchema";
 
 const McomLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -34,6 +35,7 @@ const McomLanding = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <CourseSchema courseId="mcom" />
       <Header onCounselingClick={handleCounselingClick} />
       <SectionNav
         sections={[

@@ -16,6 +16,7 @@ import { mbaContentData } from "@/data/courseContentData";
 import SectionNav from "@/components/SectionNav";
 import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
+import CourseSchema from "@/components/CourseSchema";
 
 const MbaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -47,6 +48,7 @@ const MbaLanding = () => {
           eligibility: "Bachelor's degree with 50% marks from recognized university"
         }}
       />
+      <CourseSchema courseId="mba" />
       <Header onCounselingClick={handleCounselingClick} />
       <SectionNav
         sections={[

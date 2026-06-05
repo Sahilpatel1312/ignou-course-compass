@@ -17,6 +17,7 @@ import { baContentData } from "@/data/courseContentData";
 import SectionNav from "@/components/SectionNav";
 import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
+import CourseSchema from "@/components/CourseSchema";
 
 const BaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -48,6 +49,7 @@ const BaLanding = () => {
           eligibility: "12th pass from recognized board"
         }}
       />
+      <CourseSchema courseId="ba" />
       <Header onCounselingClick={handleCounselingClick} />
       <SectionNav
         sections={[
