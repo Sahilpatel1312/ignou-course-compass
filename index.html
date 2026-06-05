@@ -22,8 +22,42 @@
     <link rel="preconnect" href="https://www.google-analytics.com">
     
     <!-- DNS Prefetch -->
-    <link rel="dns-prefetch" href="//ignou-server.onrender.com">
     <link rel="dns-prefetch" href="//www.ignou.ac.in">
+    <link rel="dns-prefetch" href="//larrkviedxogkqilhxpn.supabase.co">
+
+    <!-- Sitewide Organization + WebSite JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ignou Distance",
+        "legalName": "AVEDU",
+        "url": "https://www.ignoudistance.in",
+        "logo": "https://www.ignoudistance.in/lovable-uploads/d22974e7-a912-4ccd-a68b-192612edb36f.png",
+        "description": "Ignou Distance (owned by AVEDU) is an independent education counselling portal providing information and admission counselling support for IGNOU distance and online programs. Not affiliated with IGNOU.",
+        "disambiguatingDescription": "Ignou Distance is NOT affiliated with, endorsed by, or part of Indira Gandhi National Open University (IGNOU). For official information visit https://www.ignou.ac.in",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-7975877374",
+          "contactType": "Admissions Counselling",
+          "areaServed": "IN",
+          "availableLanguage": ["English", "Hindi"]
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Ignou Distance",
+        "url": "https://www.ignoudistance.in",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.ignoudistance.in/blog?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
     
     <!-- Sitemap -->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
