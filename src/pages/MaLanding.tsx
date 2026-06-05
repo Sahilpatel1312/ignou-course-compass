@@ -17,6 +17,7 @@ import SectionNav from "@/components/SectionNav";
 import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
 import CourseSchema from "@/components/CourseSchema";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const MaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -50,6 +51,7 @@ const MaLanding = () => {
       />
       <CourseSchema courseId="ma" />
       <Header onCounselingClick={handleCounselingClick} />
+      <Breadcrumbs items={[{ name: "IGNOU MA", url: "/ma" }]} />
       <SectionNav
         sections={[
           { id: "highlights", label: "Highlights" },
