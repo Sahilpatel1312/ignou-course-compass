@@ -17,6 +17,7 @@ import { bcaContentData } from "@/data/courseContentData";
 import SectionNav from "@/components/SectionNav";
 import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
+import CourseSchema from "@/components/CourseSchema";
 
 const BcaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -48,6 +49,7 @@ const BcaLanding = () => {
           eligibility: "12th pass with Mathematics from recognized board"
         }}
       />
+      <CourseSchema courseId="bca" />
       <Header onCounselingClick={handleCounselingClick} />
       <SectionNav
         sections={[
