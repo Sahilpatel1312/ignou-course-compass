@@ -171,29 +171,43 @@ const UniversityComparison = ({
           </table>
         </div>
 
-        {/* Mobile — stacked cards (no horizontal scroll) */}
-        <div className="md:hidden space-y-4">
-          {active.map((u) => (
-            <div key={u.id} className="bg-white border rounded-xl shadow-sm overflow-hidden">
-              <div className="bg-gradient-to-r from-indigo-600 to-blue-700 text-white p-3">
-                <div className="flex items-center gap-2 font-bold text-base">
-                  {u.id === "ignou" && <Star className="h-4 w-4 fill-current text-yellow-300" />}
-                  {u.name}
-                </div>
-                <div className="text-[11px] text-indigo-100">{u.short}</div>
-              </div>
-              <dl className="divide-y text-sm">
-                {FIELDS.map((f) => (
-                  <div key={f.key} className="grid grid-cols-5 gap-2 px-3 py-2">
-                    <dt className="col-span-2 font-semibold text-gray-600 text-xs">{f.label}</dt>
-                    <dd className="col-span-3 text-gray-800 text-xs">{u[f.key] as string}</dd>
+        {/* Mobile — 3-column comparison grid (collegevidya-style) */}
+        <div className="md:hidden border rounded-xl bg-white shadow-sm overflow-hidden">
+          {/* Sticky header: 3 university cards side-by-side */}
+          <div className="sticky top-0 z-20 bg-white border-b shadow-sm">
+            <div className="text-center py-2 text-sm font-bold text-gray-800 bg-blue-100">
+              Universities to compare
+            </div>
+            <div className="grid grid-cols-3 divide-x">
+              {active.map((u) => (
+                <div key={u.id} className="p-2 bg-white flex flex-col items-center text-center">
+                  {u.id === "ignou" ? (
+                    <Star className="h-3 w-3 fill-current text-yellow-400 mb-1" />
+                  ) : (
+                    <div className="h-3 mb-1" />
+                  )}
+                  <div className="text-[11px] font-bold text-gray-800 leading-tight line-clamp-2 min-h-[28px]">
+                    {u.name}
                   </div>
-                ))}
-                {BOOL_FIELDS.map((f) => (
-                  <div key={f.key} className="grid grid-cols-5 gap-2 px-3 py-2">
-                    <dt className="col-span-2 font-semibold text-gray-600 text-xs">{f.label}</dt>
-                    <dd className="col-span-3 text-xs">
-                      {u[f.key] ? (
+                  <div className="mt-1 w-full rounded-md bg-blue-600 text-white text-[10px] font-semibold py-1 px-1 truncate">
+                    {u.mbaFee}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Parameter rows */}
+          {[...FIELDS, ...BOOL_FIELDS].map((f) => (
+            <div key={f.key} className="border-b">
+              <div className="text-center py-2 text-sm font-bold text-gray-800 bg-blue-50">
+                {f.label}
+              </div>
+              <div className="grid grid-cols-3 divide-x">
+                {active.map((u) => (
+                  <div key={u.id} className="p-2 text-center text-[11px] text-gray-800 break-words">
+                    {typeof u[f.key] === "boolean" ? (
+                      u[f.key] ? (
                         <span className="inline-flex items-center gap-1 text-emerald-600 font-medium">
                           <Check className="h-3.5 w-3.5" /> Yes
                         </span>
@@ -201,26 +215,44 @@ const UniversityComparison = ({
                         <span className="inline-flex items-center gap-1 text-gray-400 font-medium">
                           <X className="h-3.5 w-3.5" /> No
                         </span>
-                      )}
-                    </dd>
+                      )
+                    ) : (
+                      <span>{u[f.key] as string}</span>
+                    )}
                   </div>
                 ))}
-                <div className="grid grid-cols-5 gap-2 px-3 py-2 bg-yellow-50">
-                  <dt className="col-span-2 font-semibold text-gray-600 text-xs">Highlights</dt>
-                  <dd className="col-span-3 text-gray-800 text-xs">{u.highlights}</dd>
-                </div>
-              </dl>
-              <div className="p-3 border-t">
-                <Button
-                  size="sm"
-                  onClick={() => onEnquire(u.name)}
-                  className="w-full bg-orange-500 hover:bg-orange-600 text-white text-xs"
-                >
-                  Get Free Counselling
-                </Button>
               </div>
             </div>
           ))}
+
+          {/* Highlights */}
+          <div className="border-b">
+            <div className="text-center py-2 text-sm font-bold text-gray-800 bg-blue-50">
+              Highlights
+            </div>
+            <div className="grid grid-cols-3 divide-x">
+              {active.map((u) => (
+                <div key={u.id} className="p-2 text-center text-[11px] text-gray-700 break-words">
+                  {u.highlights}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Action row */}
+          <div className="grid grid-cols-3 divide-x bg-gray-50">
+            {active.map((u) => (
+              <div key={u.id} className="p-2">
+                <Button
+                  size="sm"
+                  onClick={() => onEnquire(u.name)}
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white text-[10px] px-1 h-8"
+                >
+                  Enquire
+                </Button>
+              </div>
+            ))}
+          </div>
         </div>
 
         <p className="text-center text-xs text-gray-500 mt-5">
