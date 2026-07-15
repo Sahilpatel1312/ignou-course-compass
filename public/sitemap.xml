@@ -234,4 +234,26 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url><loc>https://www.ignoudistance.in/university/ignou</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.ignoudistance.in/university/amity</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ignoudistance.in/university/manipal</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ignoudistance.in/university/smu</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ignoudistance.in/university/lpu</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ignoudistance.in/university/cu</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ignoudistance.in/university/dypatil</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ignoudistance.in/university/parul</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ignoudistance.in/university/vgu</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ignoudistance.in/university/shoolini</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ignoudistance.in/university/uttaranchal</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ignoudistance.in/best-online-mba</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.ignoudistance.in/best-online-mca</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.ignoudistance.in/best-online-ma</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.ignoudistance.in/best-online-mcom</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.ignoudistance.in/best-online-bca</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.ignoudistance.in/best-online-bba</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.ignoudistance.in/best-online-ba</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.ignoudistance.in/best-online-bcom</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.ignoudistance.in/blog/online-mba-fees-2026-ignou-vs-amity-vs-manipal-vs-lpu</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ignoudistance.in/blog/online-mca-fees-2026-ignou-vs-amity-vs-manipal</loc><lastmod>2026-07-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ignoudistance.in/blog/online-bba-bca-fees-2026-cheapest-university</loc><lastmod>2026-07-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

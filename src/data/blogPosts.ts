@@ -1937,6 +1937,140 @@ A Bachelor of Arts from IGNOU prepares you for:
 
 > **Want to choose the right BA subjects for your career goal?** Talk to our IGNOU counsellors for free — we'll guide you through subject selection, admission and career planning for the July 2026 session.
     `
+  },
+  {
+    id: "fees-mba-2026",
+    slug: "online-mba-fees-2026-ignou-vs-amity-vs-manipal-vs-lpu",
+    title: "Online MBA Fees 2026 — IGNOU vs Amity vs Manipal vs LPU (Full Comparison)",
+    excerpt: "Comparing online MBA fees across India's top universities for 2026. IGNOU stays the most affordable at ₹62,000, while Amity, Manipal & LPU range ₹1.4L–₹2L. Complete fee breakdown, EMI options, and value analysis.",
+    date: "2026-07-10",
+    author: "IGNOU Distance Team",
+    category: "Fees 2026",
+    readTime: "9 min read",
+    content: `
+## Online MBA Fees in India 2026 — Complete Comparison
+
+Choosing an online MBA in 2026 comes down to two questions: **which university is worth it, and can I afford it?** Here's the honest 2026 fee breakdown across India's top online MBA providers.
+
+### Fee Comparison Table (Total Program Cost)
+
+| University | Total Fee (2 yrs) | NAAC | EMI |
+|---|---|---|---|
+| **IGNOU** | ₹62,000 | A++ | Yes |
+| **Amity Online** | ₹1,99,000 | A+ | Yes |
+| **Manipal (MUJ)** | ₹1,66,000 | A+ | Yes |
+| **LPU Online** | ₹1,40,000 | A++ | Yes |
+| **Chandigarh Univ.** | ₹1,50,000 | A+ | Yes |
+| **DY Patil** | ₹1,80,000 | A++ | Yes |
+| **Parul University** | ₹1,20,000 | A++ | Yes |
+| **VGU** | ₹85,000 | A+ | Yes |
+| **Uttaranchal** | ₹90,000 | A+ | Yes |
+
+### Why IGNOU MBA is 3–4× cheaper
+
+IGNOU is a Central Government university — no shareholder pressure, no marketing overhead. The same UGC-DEB-approved MBA degree costs ₹62,000 total versus ₹1.4–2 lakh at private online universities.
+
+### When to pay more for a private university
+
+- You want **placement support** (Amity, Manipal, LPU have dedicated placement cells).
+- You want **live weekend classes** (IGNOU is mostly recorded + optional).
+- You need a **premium brand** for private-sector networking.
+
+### When IGNOU is the smarter pick
+
+- You're targeting **government jobs, PSU, or UPSC**.
+- You're a working professional who just wants a UGC-approved MBA.
+- **Budget is tight** — IGNOU's ₹62k is unbeatable.
+
+> Confused? Get free counselling — we'll match you to the right online MBA based on your budget, career goal & timeline.
+    `
+  },
+  {
+    id: "fees-mca-2026",
+    slug: "online-mca-fees-2026-ignou-vs-amity-vs-manipal",
+    title: "Online MCA Fees 2026 — Full University-Wise Comparison",
+    excerpt: "Online MCA fees for July 2026 session compared across IGNOU, Amity, Manipal, LPU & Chandigarh University. See exactly where MCA is cheapest, what you get for extra fees, and how to pick smartly.",
+    date: "2026-07-08",
+    author: "IGNOU Distance Team",
+    category: "Fees 2026",
+    readTime: "7 min read",
+    content: `
+## Online MCA Fees 2026 — Which University Gives Best Value?
+
+If you're planning an online MCA in July 2026, fee is often the deciding factor. Here's the full breakdown:
+
+### 2026 MCA Fee Comparison
+
+| University | Total Fee (2 yrs) | Live Classes | Placement |
+|---|---|---|---|
+| **IGNOU MCA** | ₹31,500 | Optional | Limited |
+| **Amity MCA Online** | ₹1,50,000 | Yes | Strong |
+| **Manipal MCA** | ₹1,50,000 | Yes | Strong |
+| **LPU MCA** | ₹1,25,000 | Yes | Excellent |
+| **Chandigarh MCA** | ₹1,40,000 | Yes | Strong |
+| **Parul MCA** | ₹1,00,000 | Yes | Strong |
+
+### IGNOU MCA = 4–5× Cheaper — What's the trade-off?
+
+- No live class schedule (recorded + assignments).
+- Placement assistance is minimal (IGNOU targets working professionals, not fresh grads).
+- But the **degree is 100% UGC-DEB approved** — accepted for Govt. IT jobs, PSU, and higher studies (M.Tech, PhD).
+
+### Best pick by profile
+
+- **Working IT professional** → IGNOU (cheapest, flexible).
+- **Fresh graduate wanting placements** → LPU or Manipal.
+- **Premium brand hunter** → Amity.
+
+> **Want personalised advice?** Book a free counselling call and our team will help you pick the right online MCA university based on 2026 fees, curriculum & placement outcomes.
+    `
+  },
+  {
+    id: "fees-bba-bca-2026",
+    slug: "online-bba-bca-fees-2026-cheapest-university",
+    title: "Online BBA & BCA Fees 2026 — Where to Study Cheapest in India",
+    excerpt: "Complete 2026 fee comparison for online BBA and BCA across IGNOU, Amity, Manipal, LPU & Parul. See the cheapest UGC-approved options and which university offers the best fee-to-placement ratio.",
+    date: "2026-07-05",
+    author: "IGNOU Distance Team",
+    category: "Fees 2026",
+    readTime: "8 min read",
+    content: `
+## Online BBA & BCA Fees 2026 — Full Comparison
+
+Just finished 12th and want an online undergraduate degree? Here's what BBA and BCA will actually cost you in 2026.
+
+### Online BBA Fees (3 Years Total)
+
+| University | Fee | NAAC |
+|---|---|---|
+| **IGNOU BBA** | ₹27,000 | A++ |
+| **Amity BBA Online** | ₹1,80,000 | A+ |
+| **Manipal BBA** | ₹1,50,000 | A+ |
+| **LPU BBA** | ₹1,20,000 | A++ |
+| **Parul BBA** | ₹90,000 | A++ |
+
+### Online BCA Fees (3 Years Total)
+
+| University | Fee | NAAC |
+|---|---|---|
+| **IGNOU BCA** | ₹42,000 | A++ |
+| **Amity BCA** | ₹1,80,000 | A+ |
+| **Manipal BCA** | ₹1,50,000 | A+ |
+| **LPU BCA** | ₹1,20,000 | A++ |
+
+### Why IGNOU is still the top pick for UG
+
+- **Lowest fee in India** — under ₹15k/year.
+- Accepted for **all Government jobs, PSU exams, banking**.
+- Freedom to work / earn while studying.
+
+### When to pay more
+
+If you want structured live classes, campus placements, or a private-sector brand — Amity, Manipal, or LPU justify their higher fees.
+
+> Get free counselling for July 2026 admission — we'll compare universities based on YOUR budget, subject preference & career goal.
+    `
   }
 ];
+
 
