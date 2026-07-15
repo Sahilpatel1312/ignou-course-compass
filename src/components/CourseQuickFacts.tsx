@@ -1,4 +1,4 @@
-import { Clock, IndianRupee, GraduationCap, CalendarCheck, Scale } from "lucide-react";
+import { Clock, IndianRupee, GraduationCap, CalendarCheck, Scale, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface Props {
@@ -6,13 +6,15 @@ interface Props {
   duration: string;
   eligibility: string;
   intake?: string;
+  /** Course slug (mba, mca, bba…) — enables "Best Online X" cross-link. */
+  courseSlug?: string;
 }
 
 /**
  * TL;DR card — 4 quick facts users can scan in 5 seconds.
  * Place near the top of every course landing page.
  */
-const CourseQuickFacts = ({ fee, duration, eligibility, intake = "July 2026" }: Props) => {
+const CourseQuickFacts = ({ fee, duration, eligibility, intake = "July 2026", courseSlug }: Props) => {
   const items = [
     { icon: IndianRupee, label: "Total Fee", value: fee, color: "text-emerald-600 bg-emerald-50" },
     { icon: Clock, label: "Duration", value: duration, color: "text-blue-600 bg-blue-50" },
@@ -57,6 +59,23 @@ const CourseQuickFacts = ({ fee, duration, eligibility, intake = "July 2026" }: 
             🎓 Compare Universities →
           </Link>
         </div>
+
+        {courseSlug && (
+          <div className="mt-2 flex flex-col sm:flex-row items-center justify-between gap-2 p-3 rounded-lg bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-100">
+            <div className="flex items-center gap-2 text-sm text-gray-700">
+              <Trophy className="h-4 w-4 text-amber-600 flex-shrink-0" />
+              <span>
+                See the <strong>Top 10 Online {courseSlug.toUpperCase()} universities in India 2026</strong>.
+              </span>
+            </div>
+            <Link
+              to={`/best-online-${courseSlug}`}
+              className="text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 px-4 py-2 rounded-md whitespace-nowrap shadow-sm"
+            >
+              🏆 View Best {courseSlug.toUpperCase()} Rankings →
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

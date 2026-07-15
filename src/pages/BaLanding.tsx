@@ -63,7 +63,7 @@ const BaLanding = () => {
         ]}
         onEnquireClick={handleApplyNow}
       />
-      <CourseQuickFacts fee="₹8,700" duration="3 Years" eligibility="12th pass" />
+      <CourseQuickFacts fee="₹8,700" duration="3 Years" eligibility="12th pass" courseSlug="ba" />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">

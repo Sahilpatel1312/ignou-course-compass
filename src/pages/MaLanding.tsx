@@ -62,7 +62,7 @@ const MaLanding = () => {
         ]}
         onEnquireClick={handleApplyNow}
       />
-      <CourseQuickFacts fee="₹7,200" duration="2 Years" eligibility="Bachelor's degree" />
+      <CourseQuickFacts fee="₹7,200" duration="2 Years" eligibility="Bachelor's degree" courseSlug="ma" />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">

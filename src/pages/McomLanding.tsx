@@ -50,7 +50,7 @@ const McomLanding = () => {
         ]}
         onEnquireClick={handleApplyNow}
       />
-      <CourseQuickFacts fee="₹15,500" duration="2 Years" eligibility="Bachelor's (B.Com pref.)" />
+      <CourseQuickFacts fee="₹15,500" duration="2 Years" eligibility="Bachelor's (B.Com pref.)" courseSlug="mcom" />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">
