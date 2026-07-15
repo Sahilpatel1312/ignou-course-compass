@@ -63,7 +63,7 @@ const McaLanding = () => {
         ]}
         onEnquireClick={handleApplyNow}
       />
-      <CourseQuickFacts fee="₹58,500" duration="3 Years" eligibility="Bachelor's with Maths" />
+      <CourseQuickFacts fee="₹58,500" duration="3 Years" eligibility="Bachelor's with Maths" courseSlug="mca" />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">

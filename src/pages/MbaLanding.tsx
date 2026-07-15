@@ -63,7 +63,7 @@ const MbaLanding = () => {
         ]}
         onEnquireClick={handleApplyNow}
       />
-      <CourseQuickFacts fee="₹62,000" duration="2 Years" eligibility="Bachelor's degree (50%)" />
+      <CourseQuickFacts fee="₹62,000" duration="2 Years" eligibility="Bachelor's degree (50%)" courseSlug="mba" />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16 text-white">
