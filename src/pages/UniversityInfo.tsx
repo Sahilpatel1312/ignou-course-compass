@@ -78,8 +78,8 @@ const UniversityInfo = () => {
           <div className="container mx-auto px-4">
             <Breadcrumbs
               items={[
-                { name: "Compare Universities", href: "/compare-universities" },
-                { name: uni.name },
+                { name: "Compare Universities", url: "/compare-universities" },
+                { name: uni.name, url: canonical },
               ]}
             />
             <div className="flex items-center gap-2 mt-2 mb-2">

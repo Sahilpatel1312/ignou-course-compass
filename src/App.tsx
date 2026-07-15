@@ -18,6 +18,8 @@ import BlogList from "./pages/BlogList";
 import FeesStructure from "./pages/FeesStructure";
 
 import UniversityCompare from "./pages/UniversityCompare";
+import UniversityInfo from "./pages/UniversityInfo";
+import BestOnlineHub from "./pages/BestOnlineHub";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 
@@ -61,6 +63,8 @@ const App = () => (
           <Route path="/fees" element={<FeesStructure />} />
 
           <Route path="/compare-universities" element={<UniversityCompare />} />
+          <Route path="/university/:slug" element={<UniversityInfo />} />
+          <Route path="/best-online-:program" element={<BestOnlineHub />} />
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
 

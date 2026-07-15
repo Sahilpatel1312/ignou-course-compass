@@ -77,7 +77,7 @@ const BestOnlineHub = () => {
       <main className="flex-1">
         <section className="bg-gradient-to-r from-purple-700 to-indigo-700 text-white py-8 md:py-12">
           <div className="container mx-auto px-4">
-            <Breadcrumbs items={[{ name: `Best Online ${cfg.short}` }]} />
+            <Breadcrumbs items={[{ name: `Best Online ${cfg.short}`, url: canonical }]} />
             <h1 className="text-2xl md:text-4xl font-bold mt-2">
               Best Online {cfg.short} in India 2026
             </h1>
