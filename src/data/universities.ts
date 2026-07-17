@@ -317,3 +317,26 @@ export const universities: University[] = [
     website: "https://uuonline.uu.ac.in",
   },
 ];
+
+export const universityLogos: Record<string, string> = {
+  amity: amityLogo.url,
+  manipal: manipalLogo.url,
+  lpu: lpuLogo.url,
+  cu: cuLogo.url,
+  dypatil: dypatilLogo.url,
+  parul: parulLogo.url,
+  vgu: vguLogo.url,
+  shoolini: shooliniLogo.url,
+  uttaranchal: uttaranchalLogo.url,
+};
+
+export const PROGRAM_LIST = [
+  { slug: "mba", short: "MBA", full: "Online MBA" },
+  { slug: "mca", short: "MCA", full: "Online MCA" },
+  { slug: "ma", short: "MA", full: "Online MA" },
+  { slug: "mcom", short: "M.Com", full: "Online M.Com" },
+  { slug: "bba", short: "BBA", full: "Online BBA" },
+  { slug: "bca", short: "BCA", full: "Online BCA" },
+  { slug: "ba", short: "BA", full: "Online BA" },
+  { slug: "bcom", short: "B.Com", full: "Online B.Com" },
+] as const;
