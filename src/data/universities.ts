@@ -1,12 +1,12 @@
-import amityLogo from "@/assets/unilogos/amity.png.asset.json";
-import manipalLogo from "@/assets/unilogos/manipal.png.asset.json";
-import lpuLogo from "@/assets/unilogos/lpu.png.asset.json";
-import cuLogo from "@/assets/unilogos/cu.png.asset.json";
-import dypatilLogo from "@/assets/unilogos/dypatil.png.asset.json";
-import parulLogo from "@/assets/unilogos/parul.png.asset.json";
-import vguLogo from "@/assets/unilogos/vgu.png.asset.json";
-import shooliniLogo from "@/assets/unilogos/shoolini.png.asset.json";
-import uttaranchalLogo from "@/assets/unilogos/uttaranchal.png.asset.json";
+import amityLogo from "@/assets/unilogos/amity.png";
+import manipalLogo from "@/assets/unilogos/manipal.png";
+import lpuLogo from "@/assets/unilogos/lpu.png";
+import cuLogo from "@/assets/unilogos/cu.png";
+import dypatilLogo from "@/assets/unilogos/dypatil.png";
+import parulLogo from "@/assets/unilogos/parul.png";
+import vguLogo from "@/assets/unilogos/vgu.png";
+import shooliniLogo from "@/assets/unilogos/shoolini.png";
+import uttaranchalLogo from "@/assets/unilogos/uttaranchal.png";
 
 export interface University {
   id: string;
