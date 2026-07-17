@@ -19,6 +19,7 @@ import FeesStructure from "./pages/FeesStructure";
 
 import UniversityCompare from "./pages/UniversityCompare";
 import UniversityInfo from "./pages/UniversityInfo";
+import UniversityProgram from "./pages/UniversityProgram";
 import BestOnlineHub from "./pages/BestOnlineHub";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
@@ -64,6 +65,7 @@ const App = () => (
 
           <Route path="/compare-universities" element={<UniversityCompare />} />
           <Route path="/university/:slug" element={<UniversityInfo />} />
+          <Route path="/university/:slug/:program" element={<UniversityProgram />} />
           <Route path="/best-online-:program" element={<BestOnlineHub />} />
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
