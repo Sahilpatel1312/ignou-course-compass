@@ -82,24 +82,36 @@ const UniversityInfo = () => {
                 { name: uni.name, url: canonical },
               ]}
             />
-            <div className="flex items-center gap-2 mt-2 mb-2">
-              {uni.id === "ignou" && (
-                <Star className="h-5 w-5 fill-current text-yellow-300" />
+            <div className="mt-3 flex flex-col md:flex-row md:items-center gap-4">
+              {universityLogos[uni.id] && (
+                <div className="bg-white rounded-lg p-3 h-16 w-32 flex items-center justify-center shrink-0">
+                  <img
+                    src={universityLogos[uni.id]}
+                    alt={`${uni.name} logo`}
+                    className="max-h-12 max-w-full object-contain"
+                  />
+                </div>
               )}
-              <span className="text-xs bg-white/20 px-2 py-1 rounded-full font-semibold">
-                {uni.approvals.split(",")[0]}
-              </span>
-              <span className="text-xs bg-white/20 px-2 py-1 rounded-full font-semibold">
-                NAAC {uni.naacGrade}
-              </span>
+              <div className="min-w-0">
+                <div className="flex items-center gap-2 mb-2 flex-wrap">
+                  {uni.id === "ignou" && (
+                    <Star className="h-5 w-5 fill-current text-yellow-300" />
+                  )}
+                  <span className="text-xs bg-white/20 px-2 py-1 rounded-full font-semibold">
+                    {uni.approvals.split(",")[0]}
+                  </span>
+                  <span className="text-xs bg-white/20 px-2 py-1 rounded-full font-semibold">
+                    NAAC {uni.naacGrade}
+                  </span>
+                </div>
+                <h1 className="text-2xl md:text-4xl font-bold">
+                  {uni.name} — Online Admission 2026
+                </h1>
+                <p className="text-blue-100 text-sm md:text-base mt-2 max-w-3xl">
+                  {uni.highlights}. Established {uni.established}. {uni.modeOfLearning}.
+                </p>
+              </div>
             </div>
-            <h1 className="text-2xl md:text-4xl font-bold">
-              {uni.name} — Online Admission 2026
-            </h1>
-            <p className="text-blue-100 text-sm md:text-base mt-2 max-w-3xl">
-              {uni.highlights}. Established {uni.established}. {uni.modeOfLearning}.
-              Popular courses: {uni.popularCourses}.
-            </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Button
                 onClick={() => setOpen(true)}
