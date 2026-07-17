@@ -8,7 +8,7 @@ import CounselingForm from "@/components/CounselingForm";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedLinks from "@/components/RelatedLinks";
 import { Button } from "@/components/ui/button";
-import { universities } from "@/data/universities";
+import { universities, universityLogos, PROGRAM_LIST } from "@/data/universities";
 
 const UniversityInfo = () => {
   const { slug } = useParams<{ slug: string }>();
