@@ -164,6 +164,27 @@ const UniversityInfo = () => {
               </table>
             </div>
 
+            {/* Programs at this university */}
+            <div className="mt-8">
+              <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-3">
+                Popular Programs at {uni.name}
+              </h2>
+              <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
+                {PROGRAM_LIST.map((p) => (
+                  <Link
+                    key={p.slug}
+                    to={`/university/${uni.id}/${p.slug}`}
+                    className="block p-3 bg-white border rounded-lg hover:border-indigo-400 hover:shadow-md transition"
+                  >
+                    <div className="text-sm font-bold text-gray-900">{p.full}</div>
+                    <div className="text-xs text-gray-500 mt-1">
+                      View fees & admission →
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             <div className="mt-6 p-4 rounded-lg bg-orange-50 border border-orange-200 flex flex-col md:flex-row items-center gap-3 justify-between">
               <p className="text-sm text-gray-800">
                 <strong>Confused between {uni.name} and IGNOU?</strong> Our counsellors
