@@ -1,3 +1,13 @@
+import amityLogo from "@/assets/unilogos/amity.png";
+import manipalLogo from "@/assets/unilogos/manipal.png";
+import lpuLogo from "@/assets/unilogos/lpu.png";
+import cuLogo from "@/assets/unilogos/cu.png";
+import dypatilLogo from "@/assets/unilogos/dypatil.png";
+import parulLogo from "@/assets/unilogos/parul.png";
+import vguLogo from "@/assets/unilogos/vgu.png";
+import shooliniLogo from "@/assets/unilogos/shoolini.png";
+import uttaranchalLogo from "@/assets/unilogos/uttaranchal.png";
+
 export interface University {
   id: string;
   name: string;
@@ -307,3 +317,26 @@ export const universities: University[] = [
     website: "https://uuonline.uu.ac.in",
   },
 ];
+
+export const universityLogos: Record<string, string> = {
+  amity: amityLogo,
+  manipal: manipalLogo,
+  lpu: lpuLogo,
+  cu: cuLogo,
+  dypatil: dypatilLogo,
+  parul: parulLogo,
+  vgu: vguLogo,
+  shoolini: shooliniLogo,
+  uttaranchal: uttaranchalLogo,
+};
+
+export const PROGRAM_LIST = [
+  { slug: "mba", short: "MBA", full: "Online MBA" },
+  { slug: "mca", short: "MCA", full: "Online MCA" },
+  { slug: "ma", short: "MA", full: "Online MA" },
+  { slug: "mcom", short: "M.Com", full: "Online M.Com" },
+  { slug: "bba", short: "BBA", full: "Online BBA" },
+  { slug: "bca", short: "BCA", full: "Online BCA" },
+  { slug: "ba", short: "BA", full: "Online BA" },
+  { slug: "bcom", short: "B.Com", full: "Online B.Com" },
+] as const;
