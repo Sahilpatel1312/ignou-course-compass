@@ -319,15 +319,15 @@ export const universities: University[] = [
 ];
 
 export const universityLogos: Record<string, string> = {
-  amity: amityLogo.url,
-  manipal: manipalLogo.url,
-  lpu: lpuLogo.url,
-  cu: cuLogo.url,
-  dypatil: dypatilLogo.url,
-  parul: parulLogo.url,
-  vgu: vguLogo.url,
-  shoolini: shooliniLogo.url,
-  uttaranchal: uttaranchalLogo.url,
+  amity: amityLogo,
+  manipal: manipalLogo,
+  lpu: lpuLogo,
+  cu: cuLogo,
+  dypatil: dypatilLogo,
+  parul: parulLogo,
+  vgu: vguLogo,
+  shoolini: shooliniLogo,
+  uttaranchal: uttaranchalLogo,
 };
 
 export const PROGRAM_LIST = [
