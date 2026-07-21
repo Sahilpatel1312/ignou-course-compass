@@ -174,7 +174,7 @@ const UniversityVs = () => {
           </div>
         </section>
 
-        <RelatedLinks currentPath={canonical} />
+        <RelatedLinks currentUniversityId={uniA.id} />
       </main>
 
       <Footer />
