@@ -20,6 +20,7 @@ import FeesStructure from "./pages/FeesStructure";
 import UniversityCompare from "./pages/UniversityCompare";
 import UniversityInfo from "./pages/UniversityInfo";
 import UniversityProgram from "./pages/UniversityProgram";
+import UniversityVs from "./pages/UniversityVs";
 import BestOnlineHub from "./pages/BestOnlineHub";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
