@@ -41,6 +41,29 @@ const UniversityCompare = () => {
         </div>
 
         <UniversityComparison onEnquire={handleEnquire} />
+
+        {/* Popular head-to-head comparisons — internal linking + SEO */}
+        <section className="py-10 bg-gray-50 border-t border-gray-100">
+          <div className="container mx-auto px-4">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 text-center">
+              Popular Head-to-Head Comparisons
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {[
+                ["ignou", "amity"], ["ignou", "manipal"], ["ignou", "lpu"], ["ignou", "cu"],
+                ["amity", "manipal"], ["amity", "lpu"], ["manipal", "lpu"], ["ignou", "dypatil"],
+              ].map(([a, b]) => (
+                <Link
+                  key={`${a}-${b}`}
+                  to={`/vs/${a}-vs-${b}`}
+                  className="bg-white rounded-lg border border-indigo-100 hover:border-indigo-400 hover:shadow-md transition p-3 text-center text-sm font-semibold text-indigo-700"
+                >
+                  {a.toUpperCase()} vs {b.toUpperCase()}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
