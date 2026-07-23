@@ -20,7 +20,7 @@ serve(async (req: Request) => {
     console.log("Received form data:", formData);
 
     // Google Apps Script web app URL - Updated with your provided URL
-    const googleScriptUrl = "https://script.google.com/macros/s/AKfycbwM_l7xQTEynnts6aBzfZuxUaGRI0BaLrsqIIq4ttkXH1nbij7k7flm8nJxH6lhQYpqiQ/exec";
+    const googleScriptUrl = "https://script.google.com/macros/s/AKfycbxDCGIr01-dyHzlxSGfWjz9cH0oL9Gqv-V7jODdrgLkJbR3MJY7oH8W5C1XwALG_lF8nQ/exec";
 
     // Prepare data in a format that Google Apps Script expects
     const googleSheetData = {
