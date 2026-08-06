@@ -60,9 +60,10 @@ const Header = ({ onCounselingClick }: { onCounselingClick?: () => void }) => {
                     className="h-10 w-13 sm:h-16 sm:w-21"
                   />
                   <div className="min-w-0">
-                    <h1 className="text-sm sm:text-2xl font-bold text-blue-900 leading-tight">
+                    <span className="block text-sm sm:text-2xl font-bold text-blue-900 leading-tight">
                       Indira Gandhi National Open University
-                    </h1>
+                    </span>
+
                     <p className="text-orange-600 font-semibold text-xs sm:text-sm hidden sm:block">
                       (A Central University established by an Act of Parliament in 1985)
                     </p>
