@@ -25,7 +25,7 @@ const PROGRAMS: Record<
 };
 
 const BestOnlineHub = () => {
-  const { program } = useParams<{ program: string }>();
+  const program = useLocation().pathname.replace("/best-online-", "").replace(/\/$/, "");
   const [open, setOpen] = useState(false);
   const [preselected, setPreselected] = useState("");
 
