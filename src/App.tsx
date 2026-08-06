@@ -59,7 +59,14 @@ const App = () => (
           <Route path="/compare-universities" element={<UniversityCompare />} />
           <Route path="/university/:slug" element={<UniversityInfo />} />
           <Route path="/university/:slug/:program" element={<UniversityProgram />} />
-          <Route path="/best-online-:program" element={<BestOnlineHub />} />
+          {["mba", "mca", "ma", "mcom", "bca", "bba", "ba", "bcom"].map((p) => (
+            <Route
+              key={p}
+              path={`/best-online-${p}`}
+              element={<BestOnlineHub />}
+            />
+          ))}
+
           <Route path="/vs/:matchup" element={<UniversityVs />} />
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
