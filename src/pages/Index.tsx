@@ -172,7 +172,7 @@ const Index = () => {
             {/* Right side content (Headings and Stats) */}
             <div className="lg:w-2/3">
               <div className="text-center lg:text-left mb-8">
-                <h2 className="text-3xl font-bold text-gray-800 mb-4">Why Choose IGNOU Distance Education 2026?</h2>
+                <h1 className="text-3xl font-bold text-gray-800 mb-4">IGNOU Online Admission 2026 – Courses, Fees &amp; Last Date</h1>
                 <p className="text-xl text-gray-600 max-w-3xl lg:mx-0 mx-auto">
                   India's largest open university offering UGC-approved IGNOU online degrees with world-class distance learning programs, flexibility and affordability
                 </p>
