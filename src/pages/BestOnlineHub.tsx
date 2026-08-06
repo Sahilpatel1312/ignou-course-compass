@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams, Navigate, Link } from "react-router-dom";
+import { useLocation, Navigate, Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -25,7 +25,7 @@ const PROGRAMS: Record<
 };
 
 const BestOnlineHub = () => {
-  const { program } = useParams<{ program: string }>();
+  const program = useLocation().pathname.replace("/best-online-", "").replace(/\/$/, "");
   const [open, setOpen] = useState(false);
   const [preselected, setPreselected] = useState("");
 

@@ -36,16 +36,8 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      {/* ✅ Hidden SEO Headings to Improve Keyword Indexing */}
-      <h1 style={{ display: "none" }}>
-        IGNOU Admission 2026 (July Session) – Apply Online Today
-      </h1>
-      <h1 style={{ display: "none" }}>
-        Apply for IGNOU MBA Admission 2026 – Distance & Online Mode
-      </h1>
-      <h1 style={{ display: "none" }}>
-        Indira Gandhi National Open University (IGNOU) Admission 2026–26 Open Now
-      </h1>
+
+
 
       <Toaster />
       <Sonner />
@@ -67,7 +59,14 @@ const App = () => (
           <Route path="/compare-universities" element={<UniversityCompare />} />
           <Route path="/university/:slug" element={<UniversityInfo />} />
           <Route path="/university/:slug/:program" element={<UniversityProgram />} />
-          <Route path="/best-online-:program" element={<BestOnlineHub />} />
+          {["mba", "mca", "ma", "mcom", "bca", "bba", "ba", "bcom"].map((p) => (
+            <Route
+              key={p}
+              path={`/best-online-${p}`}
+              element={<BestOnlineHub />}
+            />
+          ))}
+
           <Route path="/vs/:matchup" element={<UniversityVs />} />
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
