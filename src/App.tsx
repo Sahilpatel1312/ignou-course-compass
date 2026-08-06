@@ -36,16 +36,8 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      {/* ✅ Hidden SEO Headings to Improve Keyword Indexing */}
-      <h1 style={{ display: "none" }}>
-        IGNOU Admission 2026 (July Session) – Apply Online Today
-      </h1>
-      <h1 style={{ display: "none" }}>
-        Apply for IGNOU MBA Admission 2026 – Distance & Online Mode
-      </h1>
-      <h1 style={{ display: "none" }}>
-        Indira Gandhi National Open University (IGNOU) Admission 2026–26 Open Now
-      </h1>
+
+
 
       <Toaster />
       <Sonner />
