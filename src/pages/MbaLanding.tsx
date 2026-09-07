@@ -18,6 +18,7 @@ import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
 import CourseSchema from "@/components/CourseSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import AdmissionTimeline2026 from "@/components/AdmissionTimeline2026";
 
 const MbaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -37,9 +38,9 @@ const MbaLanding = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU MBA Online Course 2026 - Distance Learning MBA | UGC Approved Degree ₹62,000"
-        description="✅ Get Counselling for IGNOU MBA Online 2026 ✅ 9 Specializations Available ✅ UGC-Approved MBA Distance Education ✅ Fee ₹62,000 ✅ 2-Year Program ✅ No Entrance Exam ✅ Study from Home"
-        keywords="IGNOU MBA Online 2026, IGNOU MBA distance education, MBA from IGNOU fees, UGC approved MBA online, IGNOU MBA specializations, distance learning MBA India, online MBA without entrance exam, IGNOU MBA eligibility, MBA degree online India, best distance MBA program"
+        title="IGNOU MBA Online 2026 – Fees ₹62,000, Last Date & Eligibility"
+        description="IGNOU MBA Online 2026: total fee ₹62,000, 2-year UGC-approved degree, 9 specialisations, July 2026 admission last date, eligibility & syllabus. Free counselling."
+        keywords="IGNOU MBA online 2026, IGNOU MBA fees, IGNOU MBA admission last date 2026, IGNOU MBA eligibility, distance MBA India"
         canonical="/mba"
         course={{
           name: "Master of Business Administration (MBA)",
@@ -56,6 +57,7 @@ const MbaLanding = () => {
         sections={[
           { id: "highlights", label: "Highlights" },
           { id: "eligibility", label: "Eligibility & Fees" },
+          { id: "admission-2026", label: "Admission 2026" },
           { id: "curriculum", label: "Curriculum" },
           { id: "specializations", label: "Specializations" },
           { id: "career-opportunities", label: "Careers" },
@@ -347,6 +349,7 @@ const MbaLanding = () => {
 
       <CourseContentSections data={mbaContentData} onEnquireClick={handleApplyNow} />
 
+      <AdmissionTimeline2026 courseName="MBA" fee="₹62,000" duration="2 Years" eligibility="Bachelor's degree (50%)" onEnquireClick={handleApplyNow} />
       <RelatedBlogPosts courseKeywords={["mba", "management", "business administration", "mba admission", "mba fees"]} />
 
       <TestimonialsReviews />

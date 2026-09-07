@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import CounselingForm from "@/components/CounselingForm";
+import RelatedLinks from "@/components/RelatedLinks";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -180,6 +181,8 @@ const BlogPost = () => {
           </div>
         </div>
       </article>
+
+      <RelatedLinks />
 
       <Footer />
       <CounselingForm

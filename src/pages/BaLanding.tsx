@@ -19,6 +19,7 @@ import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
 import CourseSchema from "@/components/CourseSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import AdmissionTimeline2026 from "@/components/AdmissionTimeline2026";
 
 const BaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -38,9 +39,9 @@ const BaLanding = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU BA Online 2026 – Bachelor of Arts Distance"
-        description="Get Counselling for IGNOU BA Online 2026. UGC-approved BA distance education. 3-year program, total fee ₹8,700. Flexible learning."
-        keywords="IGNOU BA Online 2026, IGNOU BA distance education, UGC-approved BA IGNOU, BA admission IGNOU"
+        title="IGNOU BA Online 2026 – Fees ₹8,700, Last Date & Subjects"
+        description="IGNOU BA Online 2026: total fee ₹8,700, 3-year UGC-approved degree, subject combinations, July 2026 admission last date & eligibility. Free counselling."
+        keywords="IGNOU BA online 2026, IGNOU BA fees, IGNOU BA admission last date 2026, IGNOU BA subjects, IGNOU BA eligibility"
         canonical="/ba"
         course={{
           name: "Bachelor of Arts (BA)",
@@ -57,6 +58,7 @@ const BaLanding = () => {
         sections={[
           { id: "highlights", label: "Highlights" },
           { id: "eligibility", label: "Eligibility & Fees" },
+          { id: "admission-2026", label: "Admission 2026" },
           { id: "specializations", label: "Specializations" },
           { id: "career-opportunities", label: "Careers" },
           { id: "faqs", label: "FAQs" },
@@ -323,6 +325,7 @@ const BaLanding = () => {
 
       <CourseContentSections data={baContentData} onEnquireClick={handleApplyNow} />
 
+      <AdmissionTimeline2026 courseName="BA" fee="₹8,700" duration="3 Years" eligibility="12th pass" onEnquireClick={handleApplyNow} />
       <RelatedBlogPosts courseKeywords={["ba", "bachelor of arts", "humanities", "upsc", "after 12th"]} />
       <TestimonialsReviews />
       <Footer />

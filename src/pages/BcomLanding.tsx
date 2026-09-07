@@ -19,6 +19,7 @@ import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
 import CourseSchema from "@/components/CourseSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import AdmissionTimeline2026 from "@/components/AdmissionTimeline2026";
 
 const BcomLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -38,9 +39,9 @@ const BcomLanding = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU BCom Online 2026 – Bachelor of Commerce Distance"
-        description="Get Counselling for IGNOU BCom Online 2026. UGC-approved B.Com distance education. 3-year program, total fee ₹10,800. Flexible learning."
-        keywords="IGNOU BCom Online 2026, IGNOU B.Com distance education, UGC-approved BCom IGNOU, BCom admission IGNOU"
+        title="IGNOU B.Com Online 2026 – Fees ₹10,800, Last Date & Eligibility"
+        description="IGNOU B.Com Online 2026: total fee ₹10,800, 3-year UGC-approved commerce degree, July 2026 admission last date, eligibility & syllabus. Free counselling."
+        keywords="IGNOU BCom online 2026, IGNOU B.Com fees, IGNOU BCom admission last date 2026, IGNOU BCom eligibility, distance BCom"
         canonical="/bcom"
         course={{
           name: "Bachelor of Commerce (B.Com)",
@@ -57,6 +58,7 @@ const BcomLanding = () => {
         sections={[
           { id: "highlights", label: "Highlights" },
           { id: "eligibility", label: "Eligibility & Fees" },
+          { id: "admission-2026", label: "Admission 2026" },
           { id: "specializations", label: "Specializations" },
           { id: "career-opportunities", label: "Careers" },
           { id: "faqs", label: "FAQs" },
@@ -323,6 +325,7 @@ const BcomLanding = () => {
 
       <CourseContentSections data={bcomContentData} onEnquireClick={handleApplyNow} />
 
+      <AdmissionTimeline2026 courseName="B.Com" fee="₹10,800" duration="3 Years" eligibility="12th pass" onEnquireClick={handleApplyNow} />
       <RelatedBlogPosts courseKeywords={["b.com", "commerce", "accounting", "banking", "after 12th"]} />
       <TestimonialsReviews />
       <Footer />

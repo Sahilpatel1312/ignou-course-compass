@@ -55,6 +55,40 @@ const BestOnlineHub = () => {
     })),
   };
 
+
+  const faqs = [
+    {
+      q: `Which is the best university for an online ${cfg.short} in India in 2026?`,
+      a: `IGNOU is rated the best value online ${cfg.short} — a Central Government university with NAAC A++ and the lowest fee. Amity, Manipal and LPU are strong private alternatives if you want structured placement support.`,
+    },
+    {
+      q: `Is an online ${cfg.short} degree valid for jobs and government exams?`,
+      a: `Yes. An online ${cfg.short} from a UGC-DEB entitled university has the same legal status as a regular campus degree and is accepted for government jobs, PSU exams and higher studies.`,
+    },
+    {
+      q: `What is the fee for an online ${cfg.short} in 2026?`,
+      a: `Fees range widely — IGNOU's ${cfg.short} starts from the lowest bracket while private universities charge more. Compare the total programme fee in the ranking table above.`,
+    },
+    {
+      q: `Can I do an online ${cfg.short} while working full time?`,
+      a: `Yes. Classes are recorded or held on weekends, study material is digital and exams are scheduled twice a year, so working professionals can complete the ${cfg.short} without a career break.`,
+    },
+    {
+      q: `When does admission for the 2026 session close?`,
+      a: `Most universities run July 2026 and January 2027 cycles. The July 2026 window typically closes by the end of July — apply early to avoid a late fee.`,
+    },
+  ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   const enquire = (uniName: string) => {
     setPreselected(`Online ${cfg.short} — ${uniName}`);
     setOpen(true);
@@ -71,6 +105,10 @@ const BestOnlineHub = () => {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Header onCounselingClick={() => setOpen(true)} />
 
@@ -174,6 +212,56 @@ const BestOnlineHub = () => {
               <Link to={cfg.ignouPath} className="text-blue-700 font-semibold underline">
                 View IGNOU {cfg.short} details →
               </Link>
+            </div>
+          </div>
+        </section>
+
+
+        <section className="py-10 bg-gray-50 border-t">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-4">
+              How to choose the best online {cfg.short} university in 2026
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                { t: "UGC-DEB approval", d: `Only a UGC-DEB entitled online/distance ${cfg.short} is valid for government jobs, higher studies and most private employers.` },
+                { t: "Total fee, not per-semester", d: `Compare the full programme cost. IGNOU's ${cfg.short} is usually the most affordable, private universities charge more for placement support.` },
+                { t: "NAAC grade & rankings", d: "NAAC A++ / A+ universities have stronger faculty, learning platforms and employer recall." },
+                { t: "Placement & career support", d: "Check whether the university offers live placement drives, resume help and an alumni network — this varies a lot." },
+                { t: "Learning mode & flexibility", d: "Recorded lectures, weekend live classes and exam centre options matter most for working professionals." },
+                { t: "Specialisations offered", d: `Pick a university whose ${cfg.short} specialisation matches the job role you are targeting.` },
+              ].map((c) => (
+                <div key={c.t} className="bg-white p-4 rounded-xl border">
+                  <p className="font-semibold text-gray-900 mb-1">{c.t}</p>
+                  <p className="text-sm text-gray-600">{c.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-10">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-4">
+              Online {cfg.short} 2026 — Frequently Asked Questions
+            </h2>
+            <div className="space-y-3">
+              {faqs.map((f) => (
+                <details key={f.q} className="bg-white border rounded-xl p-4">
+                  <summary className="font-semibold text-gray-900 cursor-pointer text-sm md:text-base">
+                    {f.q}
+                  </summary>
+                  <p className="text-sm text-gray-600 mt-2">{f.a}</p>
+                </details>
+              ))}
+            </div>
+            <div className="mt-6 text-center">
+              <Button
+                onClick={() => setOpen(true)}
+                className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6"
+              >
+                Talk to a Counsellor — Free
+              </Button>
             </div>
           </div>
         </section>

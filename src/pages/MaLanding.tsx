@@ -18,6 +18,7 @@ import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
 import CourseSchema from "@/components/CourseSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import AdmissionTimeline2026 from "@/components/AdmissionTimeline2026";
 
 const MaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -37,9 +38,9 @@ const MaLanding = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU MA Online Programs 2026 - Master of Arts Distance Education"
-        description="Get Counselling for IGNOU MA Online Programs 2026. IGNOU MA in Political Science Online, IGNOU MA in English Online Course. UGC-approved distance learning programs. Low fees."
-        keywords="IGNOU MA Online Programs, IGNOU MA in Political Science Online, IGNOU MA in English Online Course, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs"
+        title="IGNOU MA Online 2026 – Fees ₹7,200, Last Date & Subjects"
+        description="IGNOU MA Online 2026: total fee ₹7,200, 2-year UGC-approved degree, English/Political Science/History & more, July 2026 last date & eligibility. Free counselling."
+        keywords="IGNOU MA online 2026, IGNOU MA fees, IGNOU MA admission last date 2026, IGNOU MA English, IGNOU MA Political Science"
         canonical="/ma"
         course={{
           name: "Master of Arts (MA)",
@@ -56,6 +57,7 @@ const MaLanding = () => {
         sections={[
           { id: "highlights", label: "Highlights" },
           { id: "eligibility", label: "Eligibility & Fees" },
+          { id: "admission-2026", label: "Admission 2026" },
           { id: "specializations", label: "Specializations" },
           { id: "career-opportunities", label: "Careers" },
           { id: "faqs", label: "FAQs" },
@@ -322,6 +324,7 @@ const MaLanding = () => {
 
       <CourseContentSections data={maContentData} onEnquireClick={handleApplyNow} />
 
+      <AdmissionTimeline2026 courseName="MA" fee="₹7,200" duration="2 Years" eligibility="Bachelor's degree" onEnquireClick={handleApplyNow} />
       <RelatedBlogPosts courseKeywords={["ma", "master of arts", "humanities", "upsc", "postgraduate"]} />
       <TestimonialsReviews />
       <Footer />

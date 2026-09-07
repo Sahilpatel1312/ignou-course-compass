@@ -19,6 +19,7 @@ import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
 import CourseSchema from "@/components/CourseSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import AdmissionTimeline2026 from "@/components/AdmissionTimeline2026";
 
 const BbaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -38,9 +39,9 @@ const BbaLanding = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU Online BBA/BCA Programs 2026 - Bachelor of Business Administration"
-        description="Get Counseling for IGNOU Online BBA/BCA Programs 2026. Bachelor of Business Administration distance learning. UGC-approved IGNOU Online Degree Programs. Fee ₹32,400."
-        keywords="IGNOU Online BBA/BCA Programs, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs, Best Online Courses by IGNOU"
+        title="IGNOU BBA Online 2026 – Fees ₹32,400, Last Date & Eligibility"
+        description="IGNOU BBA Online 2026: total fee ₹32,400, 3-year UGC-approved degree after 12th, July 2026 admission last date, eligibility & step-by-step process. Free counselling."
+        keywords="IGNOU BBA online 2026, IGNOU BBA fees, IGNOU BBA admission last date 2026, IGNOU BBA eligibility, BBA after 12th distance"
         canonical="/bba"
         course={{
           name: "Bachelor of Business Administration (BBA)",
@@ -57,6 +58,7 @@ const BbaLanding = () => {
         sections={[
           { id: "highlights", label: "Highlights" },
           { id: "eligibility", label: "Eligibility & Fees" },
+          { id: "admission-2026", label: "Admission 2026" },
           { id: "curriculum", label: "Curriculum" },
           { id: "specializations", label: "Specializations" },
           { id: "career-opportunities", label: "Careers" },
@@ -345,6 +347,7 @@ const BbaLanding = () => {
 
       <CourseContentSections data={bbaContentData} onEnquireClick={handleApplyNow} />
 
+      <AdmissionTimeline2026 courseName="BBA" fee="₹32,400" duration="3 Years" eligibility="12th pass" onEnquireClick={handleApplyNow} />
       <RelatedBlogPosts courseKeywords={["bba", "business administration", "management", "bachelor", "after 12th"]} />
       <TestimonialsReviews />
       <Footer />

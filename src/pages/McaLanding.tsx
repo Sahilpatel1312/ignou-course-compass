@@ -18,6 +18,7 @@ import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
 import CourseSchema from "@/components/CourseSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import AdmissionTimeline2026 from "@/components/AdmissionTimeline2026";
 
 const McaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -37,9 +38,9 @@ const McaLanding = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU MCA Online Course 2026 - Online MCA IGNOU | UGC Approved Degree"
-        description="Get Counselling for IGNOU MCA Online Course 2026. Online MCA IGNOU with advanced programming and IT skills. UGC-approved IGNOU Distance Education. Fee ₹58,500."
-        keywords="IGNOU MCA Online Course 2026, Online MCA IGNOU, IGNOU MCA Distance Education, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs"
+        title="IGNOU MCA Online 2026 – Fees ₹58,500, Last Date & Syllabus"
+        description="IGNOU MCA Online 2026: total fee ₹58,500, 3-year UGC-approved degree, semester-wise syllabus, July 2026 admission last date & eligibility. Free counselling."
+        keywords="IGNOU MCA online 2026, IGNOU MCA fees, IGNOU MCA admission last date 2026, IGNOU MCA syllabus, IGNOU MCA eligibility"
         canonical="/mca"
         course={{
           name: "Master of Computer Applications (MCA)",
@@ -56,6 +57,7 @@ const McaLanding = () => {
         sections={[
           { id: "highlights", label: "Highlights" },
           { id: "eligibility", label: "Eligibility & Fees" },
+          { id: "admission-2026", label: "Admission 2026" },
           { id: "curriculum", label: "Curriculum" },
           { id: "specializations", label: "Specializations" },
           { id: "career-opportunities", label: "Careers" },
@@ -361,6 +363,7 @@ const McaLanding = () => {
 
       <CourseContentSections data={mcaContentData} onEnquireClick={handleApplyNow} />
 
+      <AdmissionTimeline2026 courseName="MCA" fee="₹58,500" duration="3 Years" eligibility="Bachelor's with Maths" onEnquireClick={handleApplyNow} />
       <RelatedBlogPosts courseKeywords={["mca", "computer applications", "software", "it career", "programming"]} />
       <TestimonialsReviews />
       <Footer />

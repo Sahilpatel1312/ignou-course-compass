@@ -17,7 +17,9 @@ import SectionNav from "@/components/SectionNav";
 import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
 import CourseSchema from "@/components/CourseSchema";
+import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import AdmissionTimeline2026 from "@/components/AdmissionTimeline2026";
 
 const McomLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -36,6 +38,19 @@ const McomLanding = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="IGNOU M.Com Online 2026 – Fees ₹15,500, Last Date & Eligibility"
+        description="IGNOU M.Com Online 2026: total fee ₹15,500, 2-year UGC-approved commerce PG degree, July 2026 admission last date, eligibility & syllabus. Free counselling."
+        keywords="IGNOU MCom online 2026, IGNOU M.Com fees, IGNOU MCom admission last date 2026, IGNOU MCom eligibility, distance M.Com India"
+        canonical="/mcom"
+        course={{
+          name: "Master of Commerce (M.Com)",
+          description: "Postgraduate commerce programme covering advanced accounting, finance and business research",
+          duration: "2 Years",
+          fee: "₹15,500",
+          eligibility: "Bachelor's degree (B.Com preferred)"
+        }}
+      />
       <CourseSchema courseId="mcom" />
       <Header onCounselingClick={handleCounselingClick} />
       <Breadcrumbs items={[{ name: "IGNOU M.Com", url: "/mcom" }]} />
@@ -43,6 +58,7 @@ const McomLanding = () => {
         sections={[
           { id: "highlights", label: "Highlights" },
           { id: "eligibility", label: "Eligibility & Fees" },
+          { id: "admission-2026", label: "Admission 2026" },
           { id: "curriculum", label: "Curriculum" },
           { id: "specializations", label: "Specializations" },
           { id: "career-opportunities", label: "Careers" },
@@ -332,6 +348,7 @@ const McomLanding = () => {
 
       <CourseContentSections data={mcomContentData} onEnquireClick={handleApplyNow} />
 
+      <AdmissionTimeline2026 courseName="M.Com" fee="₹15,500" duration="2 Years" eligibility="Bachelor's (B.Com preferred)" onEnquireClick={handleApplyNow} />
       <RelatedBlogPosts courseKeywords={["m.com", "commerce", "accounting", "finance", "postgraduate"]} />
       <TestimonialsReviews />
       <Footer />
