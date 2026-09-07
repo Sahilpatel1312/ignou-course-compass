@@ -18,6 +18,7 @@ import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
 import CourseSchema from "@/components/CourseSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import AdmissionTimeline2026 from "@/components/AdmissionTimeline2026";
 
 const McomLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -332,6 +333,7 @@ const McomLanding = () => {
 
       <CourseContentSections data={mcomContentData} onEnquireClick={handleApplyNow} />
 
+      <AdmissionTimeline2026 courseName="M.Com" fee="₹15,500" duration="2 Years" eligibility="Bachelor's (B.Com preferred)" onEnquireClick={handleApplyNow} />
       <RelatedBlogPosts courseKeywords={["m.com", "commerce", "accounting", "finance", "postgraduate"]} />
       <TestimonialsReviews />
       <Footer />

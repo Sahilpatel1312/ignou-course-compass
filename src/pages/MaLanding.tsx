@@ -18,6 +18,7 @@ import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
 import CourseSchema from "@/components/CourseSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import AdmissionTimeline2026 from "@/components/AdmissionTimeline2026";
 
 const MaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -322,6 +323,7 @@ const MaLanding = () => {
 
       <CourseContentSections data={maContentData} onEnquireClick={handleApplyNow} />
 
+      <AdmissionTimeline2026 courseName="MA" fee="₹7,200" duration="2 Years" eligibility="Bachelor's degree" onEnquireClick={handleApplyNow} />
       <RelatedBlogPosts courseKeywords={["ma", "master of arts", "humanities", "upsc", "postgraduate"]} />
       <TestimonialsReviews />
       <Footer />

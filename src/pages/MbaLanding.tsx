@@ -18,6 +18,7 @@ import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
 import CourseSchema from "@/components/CourseSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import AdmissionTimeline2026 from "@/components/AdmissionTimeline2026";
 
 const MbaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -347,6 +348,7 @@ const MbaLanding = () => {
 
       <CourseContentSections data={mbaContentData} onEnquireClick={handleApplyNow} />
 
+      <AdmissionTimeline2026 courseName="MBA" fee="₹62,000" duration="2 Years" eligibility="Bachelor's degree (50%)" onEnquireClick={handleApplyNow} />
       <RelatedBlogPosts courseKeywords={["mba", "management", "business administration", "mba admission", "mba fees"]} />
 
       <TestimonialsReviews />

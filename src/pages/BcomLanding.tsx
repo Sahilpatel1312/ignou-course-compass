@@ -19,6 +19,7 @@ import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
 import CourseSchema from "@/components/CourseSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import AdmissionTimeline2026 from "@/components/AdmissionTimeline2026";
 
 const BcomLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -323,6 +324,7 @@ const BcomLanding = () => {
 
       <CourseContentSections data={bcomContentData} onEnquireClick={handleApplyNow} />
 
+      <AdmissionTimeline2026 courseName="B.Com" fee="₹10,800" duration="3 Years" eligibility="12th pass" onEnquireClick={handleApplyNow} />
       <RelatedBlogPosts courseKeywords={["b.com", "commerce", "accounting", "banking", "after 12th"]} />
       <TestimonialsReviews />
       <Footer />

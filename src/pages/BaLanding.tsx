@@ -19,6 +19,7 @@ import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
 import CourseSchema from "@/components/CourseSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import AdmissionTimeline2026 from "@/components/AdmissionTimeline2026";
 
 const BaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -323,6 +324,7 @@ const BaLanding = () => {
 
       <CourseContentSections data={baContentData} onEnquireClick={handleApplyNow} />
 
+      <AdmissionTimeline2026 courseName="BA" fee="₹8,700" duration="3 Years" eligibility="12th pass" onEnquireClick={handleApplyNow} />
       <RelatedBlogPosts courseKeywords={["ba", "bachelor of arts", "humanities", "upsc", "after 12th"]} />
       <TestimonialsReviews />
       <Footer />

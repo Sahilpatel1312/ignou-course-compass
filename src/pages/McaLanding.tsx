@@ -18,6 +18,7 @@ import CourseQuickFacts from "@/components/CourseQuickFacts";
 import SemesterCurriculum from "@/components/SemesterCurriculum";
 import CourseSchema from "@/components/CourseSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import AdmissionTimeline2026 from "@/components/AdmissionTimeline2026";
 
 const McaLanding = () => {
   const [isCounselingOpen, setIsCounselingOpen] = useState(false);
@@ -361,6 +362,7 @@ const McaLanding = () => {
 
       <CourseContentSections data={mcaContentData} onEnquireClick={handleApplyNow} />
 
+      <AdmissionTimeline2026 courseName="MCA" fee="₹58,500" duration="3 Years" eligibility="Bachelor's with Maths" onEnquireClick={handleApplyNow} />
       <RelatedBlogPosts courseKeywords={["mca", "computer applications", "software", "it career", "programming"]} />
       <TestimonialsReviews />
       <Footer />
