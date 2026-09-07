@@ -39,9 +39,9 @@ const BcaLanding = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="IGNOU BCA Online Course 2026 - Bachelor of Computer Applications | UGC Approved"
-        description="Get counselling for IGNOU BCA Online Course 2026. Bachelor of Computer Applications with programming, web development skills. UGC-approved IGNOU Distance Education. Fee ₹36,000."
-        keywords="IGNOU BCA Online Course, IGNOU BCA Eligibility & Fees, UGC-approved IGNOU Online Degrees, IGNOU Distance Learning Programs, Best Online Courses by IGNOU"
+        title="IGNOU BCA Online 2026 – Fees ₹36,000, Last Date & Syllabus"
+        description="IGNOU BCA Online 2026: total fee ₹36,000, 3-year UGC-approved degree, semester-wise syllabus, July 2026 admission last date & eligibility. Free counselling."
+        keywords="IGNOU BCA online 2026, IGNOU BCA fees, IGNOU BCA admission last date 2026, IGNOU BCA syllabus, IGNOU BCA eligibility"
         canonical="/bca"
         course={{
           name: "Bachelor of Computer Applications (BCA)",
@@ -58,6 +58,7 @@ const BcaLanding = () => {
         sections={[
           { id: "highlights", label: "Highlights" },
           { id: "eligibility", label: "Eligibility & Fees" },
+          { id: "admission-2026", label: "Admission 2026" },
           { id: "specializations", label: "Specializations" },
           { id: "career-opportunities", label: "Careers" },
           { id: "faqs", label: "FAQs" },
